@@ -175,6 +175,19 @@ var update = function (modifier) {
     // Move the player according to the distance
     player.x += deltaX;
     player.y += deltaY;
+
+    if (player.x < 0) {
+      player.x = 0;
+    } else if (player.x > canvas.width / 1.1) {
+      player.x = canvas.width / 1.1;
+    }
+
+    if (player.y < 0) {
+      player.y = 0;
+    } else if (player.y > canvas.height / 1.1) {
+      player.y = canvas.height / 1.1;
+    }
+
     // Update touch start position for the next move
     player.touchStartX = touchX;
     player.touchStartY = touchY;

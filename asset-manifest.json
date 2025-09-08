@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/static/css/main.6888bb36.css",
+    "main.js": "/static/js/main.c9e9fe86.js",
+    "static/media/oreo_logo.png": "/static/media/oreo_logo.227d20cc0bc82b33de08.png",
+    "static/media/man.JPG": "/static/media/man.ebf1bd030a3fea8912af.JPG",
+    "static/media/man.jpg": "/static/media/man.0ed07081b69ed119a937.jpg",
+    "static/media/man1.jpg": "/static/media/man1.48cfecf5d50d2b04657a.jpg",
+    "static/media/v1.jpg": "/static/media/v1.00394d4995e0de77f34b.jpg",
+    "static/media/v3.jpg": "/static/media/v3.d82e145e12b2e5c214f5.jpg",
+    "static/media/4.jpg": "/static/media/4.f7a99b6273a5a12c9dfe.jpg",
+    "static/media/2.jpg": "/static/media/2.8ecbd4e77efc914f3011.jpg",
+    "static/media/v2.jpg": "/static/media/v2.0aa8bb42f8da8d02d207.jpg",
+    "static/media/5.jpg": "/static/media/5.fbbf26994b81b06be801.jpg",
+    "static/media/3.jpg": "/static/media/3.3a6b9e3105062613ed6c.jpg",
+    "static/media/7.jpg": "/static/media/7.dd881208fdad9a6a2086.jpg",
+    "static/media/6.jpg": "/static/media/6.a125f55a458591ea6257.jpg",
+    "static/media/1.jpg": "/static/media/1.55c4f97cbbeab304dc01.jpg",
+    "index.html": "/index.html",
+    "main.6888bb36.css.map": "/static/css/main.6888bb36.css.map",
+    "main.c9e9fe86.js.map": "/static/js/main.c9e9fe86.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6888bb36.css",
+    "static/js/main.c9e9fe86.js"
+  ]
+}

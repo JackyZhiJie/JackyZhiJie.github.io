@@ -1,5 +1,5 @@
 {
-  "name": "photographer-portfolio",
+  "name": "jacky-portfolio",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -14,7 +14,7 @@
   "scripts": {
     "start": "react-scripts start",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "gh-pages -d build", 
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -39,7 +39,7 @@
   },
   "devDependencies": {
     "framer-motion": "^7.6.2",
-    "gh-pages": "^6.1.1",
+    "gh-pages": "^6.3.0",
     "react-icons": "^4.12.0",
     "react-router-dom": "^6.4.2",
     "react-scroll": "^1.8.8",

@@ -28,7 +28,7 @@ const Skills = () => {
     // add more skills here
   ];
   return (
-    <motion.section initial={{ opacity: 0, y: "100%" }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: "100%" }} transition={transition1} className="">
+    <motion.section initial={{ opacity: 0, y: "-80%" }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: "-80%" }} transition={transition1} className="">
       <div className="container mx-auto h-full relative ">
         {/* text & img wrapper */}
         <div className="flex flex-col-reverse lg:flex-row h-full mt-[3vh] justify-center items-center gap-x-12 text-center lg:text-left">
@@ -39,7 +39,7 @@ const Skills = () => {
             </div>
           </div>
           {/* text */}
-          <motion.div initial={{ opacity: 0, y: "-80%" }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: "-80%" }} transition={transition1} className="lg:flex-1 lg:w-auto z-10 flex flex-col justify-center items-center  ">
+          <motion.div className="lg:flex-1 lg:w-auto z-10 flex flex-col justify-center items-center  ">
             <h1 className="h1">Skills</h1>
             <div className="grid grid-cols-2 gap-2 justify-center mt-[3vh] mb-[1vh] ">
               {skills.map((skill, index) => (

@@ -6,7 +6,7 @@ import { transition1 } from "../transitions";
 
 const About = () => {
   return (
-    <motion.section initial={{ opacity: 0, y: "100%" }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: "100%" }} transition={transition1} className="">
+    <motion.section initial={{ opacity: 0, y: "-80%" }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: "-80%" }} transition={transition1} className="">
       <div className="container mx-auto h-full relative">
         {/* text & img wrapper */}
         {/* <div
@@ -27,10 +27,6 @@ const About = () => {
           </div>
           {/* text */}
           <motion.div
-            initial={{ opacity: 0, y: "-80%" }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: "-80%" }}
-            transition={transition1}
             className="lg:flex-1 
           lg:w-auto z-10 justify-center items-center lg:items-start m-1"
           >

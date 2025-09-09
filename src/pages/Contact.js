@@ -5,7 +5,7 @@ import { transition1 } from "../transitions";
 
 const Contact = () => {
   return (
-    <motion.section initial={{ opacity: 0, y: "100%" }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: "100%" }} transition={transition1} className="">
+    <motion.section initial={{ opacity: 0, y: "-80%" }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: "-80%" }} transition={transition1} className="">
       <div className="container mx-auto h-full relative">
         {/* text & img wrapper */}
         {/* <div
@@ -27,10 +27,6 @@ const Contact = () => {
           ></motion.div> */}
           {/* text & form */}
           <motion.div
-            initial={{ opacity: 0, y: "-80%" }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: "-80%" }}
-            transition={transition1}
             className="lg:flex-1 
           lg:w-auto z-10 justify-center items-center text-center lg:items-start"
           >
@@ -71,7 +67,7 @@ const Contact = () => {
             </form>
           </motion.div>
           {/* img */}
-          <motion.div initial={{ opacity: 0, y: "100%" }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: "100%" }} transition={{ transition: transition1, duration: 1.5 }}>
+          <motion.div>
             <div className="flex-1 h-full flex justify-center mb-0">
               <div className="rounded-lg h-full m-1">
                 <img src={manImg} alt="" onContextMenu={(e) => e.preventDefault()} className="rounded-lg h-[70vh]" />

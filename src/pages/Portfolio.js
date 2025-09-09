@@ -15,7 +15,7 @@ import { transition1 } from "../transitions";
 
 const Portfolio = () => {
   return (
-    <motion.section initial={{ opacity: 0, y: "100%" }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: "100%" }} transition={transition1} className="">
+    <motion.section initial={{ opacity: 0, y: "-80%" }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: "-80%" }} transition={transition1} className="">
       <div className="container mx-auto h-full relative">
         <div
           className="flex flex-col lg:flex-row h-full
@@ -23,7 +23,7 @@ const Portfolio = () => {
         lg:text-left pb-8"
         >
           {/* text */}
-          <motion.div initial={{ opacity: 0, y: "-80%" }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: "-80%" }} transition={transition1} className="flex flex-col lg:items-start">
+          <motion.div className="flex flex-col lg:items-start">
             <h1 className="h1">Portfolio</h1>
             <p className="mb-12 max-w-sm">
               <br />

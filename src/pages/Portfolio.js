@@ -23,11 +23,9 @@ const Portfolio = () => {
         lg:text-left pb-8"
         >
           {/* text */}
-          <motion.div className="flex flex-col lg:items-start">
-            <h1 className="h1">Portfolio</h1>
-            <p className="mb-12 max-w-sm">
-              <br />
-              <br />
+          <motion.div className="flex flex-col lg:text-center items-center">
+            <p className="h2">Portfolio</p>
+            <p className="mb-6 max-w-sm">
               Click the button below to view my whole portfolio in <b>Google Drive</b>. Amazing photos and videos are waiting for you.
             </p>
             <a href="https://drive.google.com/drive/folders/1tlPZHAjTWp-6rwtHee0GCxnmD77EC71G?usp=sharing" target="_blank" rel="noopener noreferrer" className="btn mb-[30px] mx-auto lg:mx-0 rounded-lg">

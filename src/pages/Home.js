@@ -13,22 +13,17 @@ const Home = () => {
       h-full justify-center items-center gap-x-8 text-center"
         >
           {/* text */}
-          <motion.div
-            className="lg:flex-1 
-          lg:w-auto z-10 flex flex-col justify-center items-center lg:items-start m-1"
-          >
-            <h1 className="h1 mt-[10vh]">
-              photographer <br /> & student
-            </h1>
-            <p
-              className="text-[5vh]
-            font-primary mb-4 lg:mb-6"
-            >
-              Hong Kong
-            </p>
-            <Link to={"/contact"} className="btn w-[20vw] mb-[3vh] rounded-lg">
+          <motion.div className="">
+            <p className="h1 mt-[5vh]">Hi, I am Jacky</p>
+            <p className="font-secondary text-[5vh]">Graduate Engineer & Photographer</p>
+            {/* <p className="h2 mt-[5vh]">
+              Graduate Engineer <br /> & <br /> Photographer
+            </p> */}
+            <br />
+            <p className="text-[5vh] font-primary mb-4 lg:mb-6 w-full">Hong Kong</p>
+            {/* <Link to={"/contact"} className="btn w-[20vw] mb-[3vh] rounded-lg">
               Hire me
-            </Link>
+            </Link> */}
           </motion.div>
           {/* img */}
           <div className="flex-1 h-full flex justify-center mb-0">

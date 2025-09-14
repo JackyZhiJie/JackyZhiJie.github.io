@@ -1,10 +1,11 @@
 import React from "react";
-import { FaFacebookF, FaInstagram, FaYoutube } from "react-icons/fa";
+import { FaFacebookF, FaInstagram, FaYoutube, FaLinkedinIn } from "react-icons/fa";
+import MobileNav from "./MobileNav";
 
 const Socials = () => {
   return (
     <div className="xl:flex ml-4">
-      <ul className="flex gap-x-4">
+      <ul className="flex gap-x-2">
         <li className="inline-block mx-1">
           <a href="https://www.facebook.com" target="_blank" rel="noreferrer">
             <FaFacebookF className="text-3xl text-primary" />
@@ -20,7 +21,15 @@ const Socials = () => {
             <FaYoutube className="text-3xl text-primary" />
           </a>
         </li>
-        <li className="inline-block mx-1"></li>
+        <li className="inline-block mx-1">
+          <a href="https://www.linkedin.com/in/jackyxczj" target="_blank" rel="noreferrer">
+            <FaLinkedinIn className="text-3xl text-primary" />
+          </a>
+        </li>
+        {/* Mobile Nav */}
+        <li className="inline-block mx-1">
+          <MobileNav />
+        </li>
       </ul>
     </div>
   );

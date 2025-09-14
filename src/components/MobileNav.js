@@ -48,7 +48,7 @@ const MobileNav = () => {
       {/* menu */}
       <AnimatePresence>
         {openMenu && (
-          <motion.div variants={menuVariants} initial="hidden" animate="show" exit="exit" className="bg-white shadow-2xl w-full absolute top-0 right-0 max-w-xs h-screen z-20">
+          <motion.div variants={menuVariants} initial="hidden" animate="show" exit="exit" className="bg-white shadow-2xl w-full fixed top-0 right-0 max-w-xs h-full z-20" style={{}}>
             <div onClick={() => setOpenMenu(false)} className="text-4xl absolute z-30 left-4 top-14 text-primary cursor-pointer">
               <IoMdClose />
             </div>
@@ -67,6 +67,9 @@ const MobileNav = () => {
               </li>
               <li>
                 <Link to="/contact">Contact</Link>
+              </li>
+              <li>
+                <Link to="/prose">Prose</Link>
               </li>
             </ul>
           </motion.div>

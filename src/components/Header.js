@@ -1,7 +1,6 @@
 import React from "react";
 import Socials from "./Socials";
 import Logo from "../img/header/oreo_logo.png"; //originally logo.svg
-import MobileNav from "./MobileNav";
 import { Link } from "react-router-dom";
 const Header = () => {
   return (
@@ -12,7 +11,7 @@ const Header = () => {
           <img src={Logo} alt="Logo" className="w-1/2" onContextMenu={(e) => e.preventDefault()} />
         </Link>
         {/* nav */}
-        <nav className="hidden lg:flex gap-x-12 font-semibold">
+        <nav className="hidden lg:flex gap-x-12 font-semibold text-lg lg:text-xl">
           {/* lg means  */}
           <Link to="/" className="text-[#696c6d] hover:text-primary transition">
             Home
@@ -29,12 +28,13 @@ const Header = () => {
           <Link to="/contact" className="text-[#696c6d] hover:text-primary transition">
             Contact
           </Link>
+          <Link to="/prose" className="text-[#696c6d] hover:text-primary transition">
+            Prose
+          </Link>
         </nav>
       </div>
       {/* Socials */}
       <Socials />
-      {/* Mobile Nav */}
-      <MobileNav />
     </header>
   );
 };

@@ -4,6 +4,7 @@ import About from "../pages/About";
 import Portfolio from "../pages/Portfolio";
 import Contact from "../pages/Contact";
 import Skills from "../pages/Skills";
+import Prose from "../pages/Prose";
 import { Routes, Route, useLocation, Router } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 
@@ -18,6 +19,7 @@ const AnimRoutes = () => {
         <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/skills" element={<Skills />} />
+        <Route path="/prose" element={<Prose />} />
       </Routes>
     </AnimatePresence>
   );

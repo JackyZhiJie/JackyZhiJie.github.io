@@ -15,12 +15,11 @@ import { transition1 } from "../transitions";
 
 const Portfolio = () => {
   return (
-    <motion.section initial={{ opacity: 0, y: "-80%" }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: "-80%" }} transition={transition1} className="">
-      <div className="container mx-auto h-full relative">
+    <motion.section initial={{ opacity: 0, y: "-80%" }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: "-80%" }} transition={transition1} className="items-center">
+      <div className="container mx-auto relative">
         <div
           className="flex flex-col lg:flex-row h-full
-        items-center justify-start gap-x-24 text-center
-        lg:text-left pb-8"
+        items-center justify-center gap-x-24 text-center pb-8"
         >
           {/* text */}
           <motion.div className="flex flex-col lg:text-center items-center">
@@ -33,7 +32,7 @@ const Portfolio = () => {
             </a>
           </motion.div>
           {/* img grid*/}
-          <div className="grid grid-cols-3 lg:gap-2  md:gap-1 w-full h-full">
+          <div className="grid grid-cols-3 lg:gap-2 md:gap-1 w-full h-full">
             {/* img */}
             <div
               className="max-w-[250px] lg:max-w-[320px]

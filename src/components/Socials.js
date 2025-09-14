@@ -1,5 +1,5 @@
 import React from "react";
-import { FaFacebookF, FaInstagram, FaYoutube, FaLinkedinIn } from "react-icons/fa";
+import { FaInstagram, FaLinkedinIn, FaGoogleDrive, FaSquare } from "react-icons/fa";
 import MobileNav from "./MobileNav";
 
 const Socials = () => {
@@ -12,8 +12,8 @@ const Socials = () => {
           </a>
         </li>
         <li className="inline-block mx-1">
-          <a href="https://www.youtube.com/@oreoproduction3586?si=WgpW1gBVtqEwD3-z" target="_blank" rel="noreferrer">
-            <FaYoutube className="text-3xl text-primary" />
+          <a href="https://drive.google.com/drive/folders/1tlPZHAjTWp-6rwtHee0GCxnmD77EC71G?usp=sharing" target="_blank" rel="noreferrer">
+            <FaGoogleDrive className="text-3xl text-primary" />
           </a>
         </li>
         <li className="inline-block mx-1">

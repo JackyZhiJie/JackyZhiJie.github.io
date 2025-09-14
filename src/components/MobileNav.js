@@ -62,14 +62,17 @@ const MobileNav = () => {
               <li>
                 <Link to="/skills">Skills</Link>
               </li>
-              <li>
+              {/* <li>
                 <Link to="/about">About</Link>
-              </li>
-              <li>
+              </li> */}
+              {/* <li>
                 <Link to="/contact">Contact</Link>
-              </li>
+              </li> */}
               <li>
                 <Link to="/prose">Prose</Link>
+              </li>
+              <li>
+                <Link to="/profile">Profile</Link>
               </li>
             </ul>
           </motion.div>

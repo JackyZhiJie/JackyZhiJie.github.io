@@ -22,7 +22,6 @@ export default function BlogPostGrid() {
       id: 2,
       title: "《七月滯暑》",
       date: "2024-08-01",
-      image: "https://images.unsplash.com/photo-1518531933037-91b2f5f229cc",
       category: "散文",
       fullcontent: `
       咖啡機發出「嘟~」的哀鳴，幾顆咖啡豆乖巧地溜進黑色的漩渦，在不見天日的齒輪間碎成齏粉。熱蒸氣率先獻祭自己，化成綿密的奶泡，傾瀉入不鏽鋼的保溫杯。深褐色的岩漿隨之而來，讓奶白開成了深淺交錯的花紋，四散開去。<br/><br/>
@@ -35,35 +34,93 @@ export default function BlogPostGrid() {
     },
     {
       id: 3,
-      title: "Digital Art Revolution",
-      excerpt: "How NFTs are changing the art marketplace",
-      date: "Maria Garcia",
+      title: "《六月浮云》",
+      date: "2025-07-02",
       image: "https://images.unsplash.com/photo-1561731216-c3a4d99437d5",
-      category: "Art",
+      category: "散文",
+      fullcontent: `
+      白雲被六月的陽光照射，像融化的雪糕，黏稠地澆築在輕鐵的強化玻璃上。我站在窗邊俯瞰「叮叮」走過，那些錯綜複雜的路軌讓我回想起論文草稿時，原子筆劃出的彩色蚯蚓。那些自有記憶以來就絡繹的輕鐵在這刻與記憶中的原子蚯蚓交疊，證明回憶不必是線性。<br/><br/>
+      Joker講過: "Nobody's panic when things go according to plan. Even if the plan is horrifying."<br/><br/>
+    事若循軌而行，即使籌策駭人，亦無人驚怕。<br/><br/>
+    書本及筆記在案頭上飄浮，字句如絮，一路綿延到窗外的白雲。白雲亂舞，恍惚與拋棄在書房角落那疊皺起的履歷重疊，碎成幾片難以名狀的惘然。看著這個將不可能變成可能的方寸之地，嘴角不自覺地彎起。那些挑燈的夜、挫敗的嘆息、靈光一現的瞬間，此刻如泉水湧現，肆意在腦海中奔馳。這種失控的美，難以言喻，卻又真實得令人心動。<br/><br/>
+    是混沌，是有序，或許已經不再重要。<br/><br/>
+    也許，脫軌馳騁是一種快意暢然；依轍而行是一種安穩自在。軌內軌外，皆是風景，更是存在的最佳證據。
+      `,
     },
     {
       id: 4,
-      title: "Future of Remote Work",
-      excerpt: "Navigating the hybrid workplace model",
-      date: "Alex Thompson",
-      image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f",
-      category: "Business",
+      title: "《五月囀音》",
+      date: "2025-05-31",
+      category: "散文",
+      fullcontent: `
+      五月的熱浪紛沓而至，為夏日掀起序幕。暮春初夏的猶疑早已消失得無影無蹤，風穿新葉的窸窣颯颯過渡到斑鳩的嚎叫，囀成夏蟬試聲。<br/><br/>
+      溫度總算穩定下來，但開始爬升到躁動不安的程度，葉子也按捺不住了。一年下來，寥寥可數的綠葉已經開遍整個花圃。滿地綠葉堆積，但沒有花，就會被拋棄嗎？葉子一片疊着另一片，在某個角度看，更像一片片青翠的花瓣。我已分不清是幻覺，還是現實。但在我看來，這種「花朵」比起野生的更稀有、更美麗。<br/><br/>
+      那個沒有表情的下午，我坐在石屎造的園圃的一隅，正當點開無聊時就會沉迷的遊戲時...<br/><br/>
+      「喂，唔該...」<br/><br/>
+      聽筒的另一邊是熟悉的聲音、熟悉的語句，像種特定的肥料，終於徐徐讓葉附近的花苞破繭而出。或許這種植物沒有指定的養分支持，便無法預期綻放。花的遲到反讓幽香在時差釀得更醇、更迷人。我想也是一種好事多磨吧。此刻不是永恆，來日方長；不是失敗，只是花開未至。更何況，即使沒有花，蔥蔥蘢蘢何嘗不是另一種絢爛豔麗？<br/><br/>
+      葉蔭影間，被踏碎的沙石之間亮起反光，像路軌中的綠意絕處逢生。不管轉成什麼樣子、什麼季節，我和城市依然活着。
+      `,
     },
     {
       id: 5,
-      title: "Mindful Photography",
-      excerpt: "Capturing moments with intention",
-      date: "David Kim",
-      image: "https://images.unsplash.com/photo-1452587925148-ce544e77e70d",
-      category: "Photography",
+      title: "《四月囈語》",
+      date: "2025-05-01",
+      category: "散文",
+      fullcontent: `
+      「明年春暖花開日，就是我們再會之時。」<br/><br/>
+      你想起上一年說過的話時，一片花瓣剛好降落在你的眉梢，未能到地，像一句不能兌現的承諾。萬紫千紅，究竟那一種花才可以落地生根、發芽長葉，再開花結果？<br/><br/>
+      今年的春天早已消失得不見蹤影，「春暖」卻來得格外遲疑 — 你甚至感受不到柔春之美，溫室裏的牡丹、玫瑰遲遲未能綻放。你每日都駐足看看那株「牡丹」，那株被悉心照料卻只得綠葉的「牡丹」。你像Perfect Days的主角一樣，每隔一段時間，都會為它們拍下一式一樣的照片。數數照片，日子就這樣過了。那幾片綠得蔥蘢的葉子裏，想必藏着一整年未盡的絮語。這堆只有葉的花是春日的囈語者，它們從未認真說話，只會東飄西蕩，隨風飄揚，像極了夢境中那些沒頭沒尾的詩句。有時沾在衣襟上，成了褪不去的夢痕；有時掉進流水，化在未寫完的詩裏。<br/><br/>
+      其實種子才可以落地生根，花又怎能栽種出花？根本是天方夜譚。看著那堆花作的種子、不能長出花的葉，你就知，這場春夢早該散了。`,
     },
     {
       id: 6,
-      title: "Urban Gardening Guide",
-      excerpt: "Growing your own food in limited spaces",
-      date: "Emma Roberts",
-      image: "https://images.unsplash.com/photo-1466692476868-aef1dfb1e735",
-      category: "Gardening",
+      title: "《三月獨白》",
+      date: "2025-04-01",
+      category: "散文",
+      fullcontent: `
+      三月的氣溫是激進的，熱得可怕，冷得更可怕。雨也是猶豫的，下的輕，停得也輕。酷熱的日子希望下雨降溫；冰冷的日子祈求放晴保暖。但遺憾的總是事與願違。路邊磚塊砌成的小下陷處盛了幾點雨水，像剛上墨水的鋼筆在稿紙落淚。墨色暈開，字句便化了。<br/><br/>
+      村口的木棉倒是開了，獨自美麗。今年的花期遲了嗎？我猜想，花和樹也許未達成共識吧。就像某些互動，不管有多努力，沒有共識，也是徒然。幾句話在心裏轉了幾轉，時份不合，終究沒有說出口。<br/><br/>
+      夜裏翻着相簿，滾到月頭一張村口的照片。片中的樹還是青綠，綠得有些寂寞。幡然醒悟，有些孤獨等待，不過是為了證明時間的存在。<br/><br/>
+      三月的高低跌宕煉成那灘濃得化不開的墨水。墨水書寫一字一句，滲在紙與紙之間，再化淡了。
+      `,
+    },
+    {
+      id: 7,
+      title: "《二月雜言》",
+      date: "2025-03-01",
+      category: "詩",
+      fullcontent: `
+    放眼望去 處處紅紅綠綠<br/>
+    是氧氣養分水分<br/>
+    還是禱告土地草地才可以栽出果實？<br/><br/>
+    拔去粉紅濾鏡後<br/>
+    幡然醒悟 區區灰灰白白<br/>
+    放晴兩天後回復一遍迷茫朦朧<br/><br/>
+    天空的幾寸積雲<br/>
+    是未來遺落的方程式<br/>
+    懸而未決<br/>
+    等待拆解<br/><br/>
+    我會在未結果的房間<br/>
+    等候下一個晴天<br/>
+    等候下一趟果期<br/>
+    像望天打掛的農夫一樣<br/>
+      靜候`,
+    },
+    {
+      id: 8,
+      title: "《一月絮語》",
+      date: "2025-02-10",
+      category: "散文",
+      fullcontent: `
+      一月的感覺最不真實。畢竟連年份都會寫錯的月份，又怎能有明確的方向？<br/><br/>
+      新年伊始，令人神傷的並不是身心靈依然沉浸在忽冷忽暖的天氣，而是上一年的內外問題積壓到新的一年。<br/><br/>
+      某個早上，太陽剛探出頭來，綻放出半絲和暖。暖意悄悄鑽入那個不見天日的房子，填滿了那雜亂無章的帷幕。時間一分一秒的過去，他似乎亦知道時間的存在。但他不太想在意，畢竟誰不想躺平？但他知道又不能不起，內在的時間開始加快這副早已荒廢的引擎啟動。<br/><br/>
+      「反正藏起來是一件不可能的事。至少不能在這一年、不可以是現在」他想。<br/><br/>
+      他就這樣一鼓作氣，奮力撐起，遠行去了。與不斷流走的時間一樣，溫度也是個奇怪的存在，永恆地變幻，似凍非凍。或許讓人無所適從的，是外冷內熱的張力。由荒蕪之地穿越到繁華高樓，他一邊嘗試喚醒內在的半絲慧根，一邊四處尋找有用的資訊...<br/><br/>
+      「於是，就成了饕餮之徒，一直沉淪下去嗎？」<br/>
+      「其實...」<br/><br/>
+      「不覺得悲傷嗎？」<br/>
+      「大概會吧。」我說。`,
     },
   ];
 
@@ -94,7 +151,7 @@ export default function BlogPostGrid() {
             <h2 className="font-tc text-2xl font-bold mb-2">{post.title}</h2>
             <p className="font-sans text-gray-600 mb-4">{post.excerpt}</p>
             <p className="font-dfkai text-xl text-gray-00 mb-2" dangerouslySetInnerHTML={{ __html: post.fullcontent }}></p>
-            <p className="font-sans italic text-sm text-gray-500">On {post.date}</p>
+            <p className="font-sans italic text-sm text-gray-500">{post.date}</p>
           </div>
         </div>
       ))}

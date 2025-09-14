@@ -22,14 +22,17 @@ const Header = () => {
           <Link to="/skills" className="text-[#696c6d] hover:text-primary transition">
             Skills
           </Link>
-          <Link to="/about" className="text-[#696c6d] hover:text-primary transition">
+          {/* <Link to="/about" className="text-[#696c6d] hover:text-primary transition">
             About
-          </Link>
-          <Link to="/contact" className="text-[#696c6d] hover:text-primary transition">
+          </Link> */}
+          {/* <Link to="/contact" className="text-[#696c6d] hover:text-primary transition">
             Contact
-          </Link>
+          </Link> */}
           <Link to="/prose" className="text-[#696c6d] hover:text-primary transition">
             Prose
+          </Link>
+          <Link to="/profile" className="text-[#696c6d] hover:text-primary transition">
+            Profile
           </Link>
         </nav>
       </div>

@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { transition1 } from "../transitions";
 //import icons
 import { FaPython, FaHtml5, FaCss3Alt } from "react-icons/fa";
-import { SiAdobepremierepro, SiAdobelightroom, SiAdobeaudition, SiCplusplus, SiAdobephotoshop } from "react-icons/si";
+import { SiAdobepremierepro, SiAdobelightroom, SiAdobeaudition, SiCplusplus, SiAdobephotoshop, SiArduino, SiGithub } from "react-icons/si";
 import { IoLogoJavascript, IoLogoFigma } from "react-icons/io5";
 import { RiReactjsLine } from "react-icons/ri";
 import { TfiMicrosoftAlt } from "react-icons/tfi";
@@ -24,6 +24,8 @@ const Skills = () => {
     { name: "Photoshop", level: 50, icon: <SiAdobephotoshop /> },
     { name: "Figma", level: 50, icon: <IoLogoFigma /> },
     { name: "Microsoft Office", level: 80, icon: <TfiMicrosoftAlt /> },
+    { name: "Arduino", level: 90, icon: <SiArduino /> },
+    { name: "GitHub", level: 60, icon: <SiGithub /> },
 
     // add more skills here
   ];
@@ -31,7 +33,7 @@ const Skills = () => {
     <motion.section initial={{ opacity: 0, y: "-80%" }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: "-80%" }} transition={transition1} className="">
       <div className="container mx-auto h-full relative ">
         {/* text & img wrapper */}
-        <div className="flex flex-col-reverse lg:flex-row h-full mt-[3vh] justify-center items-center gap-x-12 text-center lg:text-left">
+        <div className="flex flex-col-reverse lg:flex-row gap-x-12 justify-center items-center">
           {/* img */}
           <div className="flex-1 h-full flex justify-center mb-0">
             <div className="rounded-lg h-full m-1">
@@ -39,11 +41,11 @@ const Skills = () => {
             </div>
           </div>
           {/* text */}
-          <motion.div className="lg:flex-1 lg:w-auto z-10 flex flex-col justify-center items-center  ">
-            <h1 className="h1">Skills</h1>
-            <div className="grid grid-cols-2 gap-2 justify-center mt-[3vh] mb-[1vh] ">
+          <motion.div className="lg:flex-1 lg:w-auto flex flex-col text-center">
+            <p className="h2">Skills</p>
+            <div className="grid grid-cols-2 gap-2 mb-[1vh] ">
               {skills.map((skill, index) => (
-                <div key={index} className="flex mb-0">
+                <div key={index} className="flex items-center">
                   <div className="w-[5vw]">{skill.icon}</div>
                   <div className="">
                     <div className=" justify-between mb-2">

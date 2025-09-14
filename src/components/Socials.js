@@ -7,11 +7,6 @@ const Socials = () => {
     <div className="xl:flex ml-4">
       <ul className="flex gap-x-2">
         <li className="inline-block mx-1">
-          <a href="https://www.facebook.com" target="_blank" rel="noreferrer">
-            <FaFacebookF className="text-3xl text-primary" />
-          </a>
-        </li>
-        <li className="inline-block mx-1">
           <a href="https://www.instagram.com/oreofotolife/" target="_blank" rel="noreferrer">
             <FaInstagram className="text-3xl text-primary" />
           </a>

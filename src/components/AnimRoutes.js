@@ -1,12 +1,13 @@
 import React from "react";
 import Home from "../pages/Home";
-import About from "../pages/About";
+import About from "../pages/Profile";
 import Portfolio from "../pages/Portfolio";
 import Contact from "../pages/Contact";
 import Skills from "../pages/Skills";
 import Prose from "../pages/Prose";
 import { Routes, Route, useLocation, Router } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
+import Profile from "../pages/Profile";
 
 const AnimRoutes = () => {
   const location = useLocation();
@@ -20,6 +21,7 @@ const AnimRoutes = () => {
         <Route path="/contact" element={<Contact />} />
         <Route path="/skills" element={<Skills />} />
         <Route path="/prose" element={<Prose />} />
+        <Route path="/profile" element={<Profile />} />
       </Routes>
     </AnimatePresence>
   );

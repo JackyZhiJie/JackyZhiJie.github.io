@@ -1,11 +1,11 @@
 module.exports = {
   content: ["./src/**/*.{html,js}"],
   theme: {
-    fontFamily: {
-      primary: "Playfair Display",
-      secondary: "font-mono",
-      tertiary: "Times New Roman",
-    },
+    // fontFamily: {
+    //   primary: "Playfair Display",
+    //   secondary: "font-mono",
+    //   tertiary: "Times New Roman",
+    // },
     screens: {
       sm: "640px",
       md: "768px",
@@ -19,6 +19,9 @@ module.exports = {
         accent: "#EEF7F9",
       },
       fontFamily: {
+        primary: "Playfair Display",
+        secondary: "font-mono",
+        tertiary: "Times New Roman",
         tc: ['"Noto Sans TC"', '"Microsoft JhengHei"', '"PingFang TC"', '"PMingLiU"', "sans-serif"],
         dfkai: ["DFKai-SB", "serif"],
         pmingliu: ['"PMingLiU"', "serif"],

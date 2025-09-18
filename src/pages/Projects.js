@@ -11,13 +11,13 @@ import photoImg2 from "../img/about/man.jpg";
 const githubProjects = [
   {
     name: "CINTEC-Arduino-Green-Energy-Workshop",
-    description: "Developed and conducted at CUHK's Centre of Innovation of Technology. This STEM workshop focuses on piezoelectric energy harvesting and ultrasonic sensing using Arduino, introducing secondary school students to sustainable energy concepts through hands-on experimentation.",
+    description: "Developed and conducted at CUHK’s Centre of Innovation of Technology. This STEM workshop focuses on piezoelectric energy harvesting and ultrasonic sensing using Arduino, introducing secondary school students to sustainable energy concepts through hands-on experimentation.",
     link: "https://github.com/JackyZhiJie/CINTEC-Arduino-Green-Energy-Workshop",
     img: githubImg3,
   },
   {
     name: "CINTEC-Arduino-Air-Quality-Workshop",
-    description: "A comprehensive STEM workshop developed and conducted at CUHK's Centre of Innovation of Technology (CINTEC), focusing on environmental monitoring and Arduino programming. Designed to teach secondary school students about air pollution through hands-on experimentation with PM2.5 sensors.",
+    description: "A comprehensive STEM workshop developed and conducted at CUHK’s Centre of Innovation of Technology (CINTEC), focusing on environmental monitoring and Arduino programming. Designed to teach secondary school students about air pollution through hands-on experimentation with PM2.5 sensors.",
     link: "https://github.com/JackyZhiJie/CINTEC-Arduino-Air-Quality-Workshop",
     img: githubImg1,
   },

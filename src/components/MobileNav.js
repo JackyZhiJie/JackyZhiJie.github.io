@@ -69,7 +69,7 @@ const MobileNav = () => {
                 <Link to="/contact">Contact</Link>
               </li> */}
               <li>
-                <Link to="/profile">Achievements</Link>
+                <Link to="/achievements">Achievements</Link>
               </li>
               <li>
                 <Link to="/projects">Projects</Link>

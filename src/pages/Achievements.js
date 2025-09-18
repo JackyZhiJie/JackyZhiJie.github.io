@@ -44,7 +44,7 @@ const Profile = () => {
               </li>
               <li>
                 Publication at the 13th IEEE International Conference on Engineering Education (IEEE ICEED 2024)
-                <a href="https://ieeexplore.ieee.org/document/10923800" target="_blank" rel="noopener noreferrer" className="ml-2 text-teal-600 hover:text-teal-800 inline-flex align-middle" title="IEEE Paper's DOI">
+                <a href="https://ieeexplore.ieee.org/document/10923800" target="_blank" rel="noopener noreferrer" className="ml-2 text-teal-600 hover:text-teal-800 inline-flex align-middle" title="IEEE Paper’s DOI">
                   <FaLink className="inline w-4 h-4" />
                 </a>
               </li>

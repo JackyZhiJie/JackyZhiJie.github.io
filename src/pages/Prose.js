@@ -1,5 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import { transition1 } from "../transitions";
+
 export default function BlogPostGrid() {
   const blogPosts = [
     {
@@ -125,9 +128,9 @@ export default function BlogPostGrid() {
   ];
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 p-6">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:p-24 p-6">
       {blogPosts.map((post) => (
-        <div key={post.id} className="bg-white rounded-lg shadow-lg overflow-hidden">
+        <div key={post.id} className="bg-white rounded-lg shadow-lg overflow-hidden hover:scale-105 transition">
           {post.id >= 1 && post.id <= 8 ? (
             <div className="w-full h-48 overflow-hidden flex items-center justify-center">
               <iframe

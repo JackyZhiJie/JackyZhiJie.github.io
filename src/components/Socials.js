@@ -1,5 +1,5 @@
 import React from "react";
-import { FaInstagram, FaLinkedinIn, FaGoogleDrive, FaSquare } from "react-icons/fa";
+import { FaInstagram, FaLinkedinIn, FaGoogleDrive, FaGithub } from "react-icons/fa";
 import MobileNav from "./MobileNav";
 
 const Socials = () => {
@@ -19,6 +19,11 @@ const Socials = () => {
         <li className="inline-block mx-1">
           <a href="https://www.linkedin.com/in/jackyxczj" target="_blank" rel="noreferrer">
             <FaLinkedinIn className="text-3xl text-primary" />
+          </a>
+        </li>
+        <li className="inline-block mx-1">
+          <a href="https://github.com/JackyZhiJie" target="_blank" rel="noreferrer">
+            <FaGithub className="text-3xl text-primary" />
           </a>
         </li>
         {/* Mobile Nav */}

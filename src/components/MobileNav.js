@@ -56,9 +56,9 @@ const MobileNav = () => {
               <li>
                 <Link to="/">Home</Link>
               </li>
-              <li>
+              {/* <li>
                 <Link to="/portfolio">Portfolio</Link>
-              </li>
+              </li> */}
               <li>
                 <Link to="/skills">Skills</Link>
               </li>
@@ -69,10 +69,13 @@ const MobileNav = () => {
                 <Link to="/contact">Contact</Link>
               </li> */}
               <li>
-                <Link to="/prose">Prose</Link>
+                <Link to="/profile">Achievements</Link>
               </li>
               <li>
-                <Link to="/profile">Profile</Link>
+                <Link to="/projects">Projects</Link>
+              </li>
+              <li>
+                <Link to="/prose">Prose</Link>
               </li>
             </ul>
           </motion.div>

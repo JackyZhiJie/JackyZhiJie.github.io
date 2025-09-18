@@ -33,28 +33,28 @@ const Skills = () => {
     <motion.section initial={{ opacity: 0, y: "-80%" }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: "-80%" }} transition={transition1} className="">
       <div className="container mx-auto h-full relative ">
         {/* text & img wrapper */}
-        <div className="flex flex-col-reverse lg:flex-row gap-x-12 justify-center items-center">
+        <div className="flex flex-col-reverse lg:flex-row justify-center gap-x-6 items-center">
           {/* img */}
-          <div className="flex-1 h-full flex justify-center mb-0">
+          <div className="flex-0.8 h-full flex justify-center mb-0">
             <div className="rounded-lg h-full m-1">
-              <img src={manImg} alt="" onContextMenu={(e) => e.preventDefault()} className=" rounded-lg h-[70vh]" />
+              <img src={manImg} alt="" onContextMenu={(e) => e.preventDefault()} className=" rounded-2xl h-[65vh]" />
             </div>
           </div>
           {/* text */}
-          <motion.div className="lg:flex-1 lg:w-auto flex flex-col text-center">
+          <motion.div className="lg:flex-1.2 lg:w-auto flex flex-col text-center">
             <p className="h2">Skills</p>
-            <div className="grid grid-cols-2 gap-2 mb-[1vh] ">
+            <div className="bg-gray-50 rounded-xl p-2 grid grid-cols-2 gap-3 mb-[1vh] ">
               {skills.map((skill, index) => (
                 <div key={index} className="flex items-center">
-                  <div className="w-[5vw]">{skill.icon}</div>
+                  <div className="w-[3vw]">{skill.icon}</div>
                   <div className="">
-                    <div className=" justify-between mb-2">
+                    <div className=" justify-between mb-2 ">
                       <span className="">{skill.name}</span>
                       {/* <span>{skill.level}%</span> */}
                     </div>
-                    <div className="h-3 bg-gray-200 w-full rounded-full" style={{ width: "15vw" }}>
+                    <div className="h-3 bg-gray-200 w-full rounded-full hover:scale-105 transition" style={{ width: "20vw" }}>
                       {" "}
-                      <div style={{ width: `${skill.level}%` }} className="h-full bg-green-500 rounded-full"></div>
+                      <div style={{ width: `${skill.level}%` }} className="h-full bg-teal-600 rounded-full "></div>
                     </div>
                   </div>
                 </div>

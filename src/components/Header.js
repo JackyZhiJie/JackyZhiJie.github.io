@@ -16,9 +16,9 @@ const Header = () => {
           <Link to="/" className="text-[#696c6d] hover:text-primary transition">
             Home
           </Link>
-          <Link to="/portfolio" className="text-[#696c6d] hover:text-primary transition">
+          {/* <Link to="/portfolio" className="text-[#696c6d] hover:text-primary transition">
             Portfolio
-          </Link>
+          </Link> */}
           <Link to="/skills" className="text-[#696c6d] hover:text-primary transition">
             Skills
           </Link>
@@ -28,11 +28,14 @@ const Header = () => {
           {/* <Link to="/contact" className="text-[#696c6d] hover:text-primary transition">
             Contact
           </Link> */}
+          <Link to="/achievements" className="text-[#696c6d] hover:text-primary transition">
+            Achievements
+          </Link>
           <Link to="/prose" className="text-[#696c6d] hover:text-primary transition">
             Prose
           </Link>
-          <Link to="/profile" className="text-[#696c6d] hover:text-primary transition">
-            Profile
+          <Link to="/projects" className="text-[#696c6d] hover:text-primary transition">
+            Projects
           </Link>
         </nav>
       </div>

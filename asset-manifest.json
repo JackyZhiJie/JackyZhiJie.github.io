@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.2aea841a.css",
+    "main.css": "/static/css/main.39481c62.css",
     "main.js": "/static/js/main.8997f311.js",
     "static/media/oreo_logo.png": "/static/media/oreo_logo.227d20cc0bc82b33de08.png",
     "static/media/man.JPG": "/static/media/man.ebf1bd030a3fea8912af.JPG",
@@ -19,11 +19,11 @@
     "static/media/6.jpg": "/static/media/6.a125f55a458591ea6257.jpg",
     "static/media/1.jpg": "/static/media/1.55c4f97cbbeab304dc01.jpg",
     "index.html": "/index.html",
-    "main.2aea841a.css.map": "/static/css/main.2aea841a.css.map",
+    "main.39481c62.css.map": "/static/css/main.39481c62.css.map",
     "main.8997f311.js.map": "/static/js/main.8997f311.js.map"
   },
   "entrypoints": [
-    "static/css/main.2aea841a.css",
+    "static/css/main.39481c62.css",
     "static/js/main.8997f311.js"
   ]
 }

@@ -44,13 +44,13 @@ const Skills = () => {
                 <div className="bg-gray-50 rounded-xl p-2 grid grid-cols-2 gap-3 mb-[1vh] ">
                   {skills.map((skill, index) => (
                     <div key={index} className="flex items-center">
-                      <div className="w-[3vw]">{skill.icon}</div>
+                      <div className="w-[3vw] mr-2">{skill.icon}</div>
                       <div className="">
                         <div className=" justify-between mb-2 ">
                           <span className="">{skill.name}</span>
                           {/* <span>{skill.level}%</span> */}
                         </div>
-                        <div className="h-3 bg-gray-200 w-full rounded-full hover:scale-105 transition" style={{ width: "20vw" }}>
+                        <div className="h-[1vh] bg-gray-200 w-full rounded-full hover:scale-105 transition" style={{ width: "20vw" }}>
                           {" "}
                           <div style={{ width: `${skill.level}%` }} className="h-full bg-teal-600 rounded-full "></div>
                         </div>

@@ -31,45 +31,36 @@ const Skills = () => {
   ];
   return (
     <motion.section initial={{ opacity: 0, y: "-80%" }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: "-80%" }} transition={transition1} className="">
-      <div className="container mx-auto h-full relative ">
-        {/* text & img wrapper */}
-        <div className="flex flex-col-reverse lg:flex-row justify-center gap-x-6 items-center">
-          {/* img */}
-          <div className="flex-0.8 h-full flex justify-center mb-0">
-            <div className="rounded-lg h-full m-1">
-              <img src={manImg} alt="" onContextMenu={(e) => e.preventDefault()} className=" rounded-2xl h-[65vh]" />
+      <div className="container mx-auto px-2 max-w-6xl ">
+        <h1 className="h2 font-bold text-center tracking-tight">Skills</h1>
+        <div className="grid grid-cols-1 gap-10 ">
+          <div className="space-y-8 ">
+            <div className=" rounded-2xl shadow-lg hover:shadow-xl p-5 flex flex-col-reverse md:flex-row justify-center items-center gap-5 hover:scale-105 transition">
+              <div className="flex-0.8 h-full flex mb-0">
+                <img src={manImg} alt="" onContextMenu={(e) => e.preventDefault()} className=" rounded-2xl h-[50vh]" />
+              </div>
+
+              <div className="flex-1 m-1 h-[50vh]">
+                <div className="bg-gray-50 rounded-xl p-2 grid grid-cols-2 gap-3 mb-[1vh] ">
+                  {skills.map((skill, index) => (
+                    <div key={index} className="flex items-center">
+                      <div className="w-[3vw]">{skill.icon}</div>
+                      <div className="">
+                        <div className=" justify-between mb-2 ">
+                          <span className="">{skill.name}</span>
+                          {/* <span>{skill.level}%</span> */}
+                        </div>
+                        <div className="h-3 bg-gray-200 w-full rounded-full hover:scale-105 transition" style={{ width: "20vw" }}>
+                          {" "}
+                          <div style={{ width: `${skill.level}%` }} className="h-full bg-teal-600 rounded-full "></div>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
-          {/* text */}
-          <motion.div className="lg:flex-1.2 lg:w-auto flex flex-col text-center">
-            <p className="h2">Skills</p>
-            <div className="bg-gray-50 rounded-xl p-2 grid grid-cols-2 gap-3 mb-[1vh] ">
-              {skills.map((skill, index) => (
-                <div key={index} className="flex items-center">
-                  <div className="w-[3vw]">{skill.icon}</div>
-                  <div className="">
-                    <div className=" justify-between mb-2 ">
-                      <span className="">{skill.name}</span>
-                      {/* <span>{skill.level}%</span> */}
-                    </div>
-                    <div className="h-3 bg-gray-200 w-full rounded-full hover:scale-105 transition" style={{ width: "20vw" }}>
-                      {" "}
-                      <div style={{ width: `${skill.level}%` }} className="h-full bg-teal-600 rounded-full "></div>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {/* <p className="mb-3">I'm a computer engineering undergraduate with a minor in Journalism, based in Hong Kong. I have a passion for technology, writing, photography, and filmmaking.</p>
-            <p className="">With a strong foundation in both technical knowledge and communication skills, I aim to bridge the gap between engineering and journalism through multimedia storytelling.</p>
-            <div className="w-auto h-auto max-w-xs mx-auto ">
-              <br />
-              <Link to={"/portfolio"} className="btn rounded-lg">
-                View my work
-              </Link>
-            </div> */}
-          </motion.div>
         </div>
       </div>
     </motion.section>

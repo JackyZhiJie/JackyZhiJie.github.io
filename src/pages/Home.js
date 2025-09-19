@@ -10,7 +10,7 @@ const Home = () => {
         {/* Left: Image and Info */}
         <div className="flex items-center mt-4 lg:mb-0">
           <div className="">
-            <img src={manImg} alt="Jacky" className="rounded-2xl h-[62vh] duration-300 hover:scale-105 transition mx-auto mb-1" onContextMenu={(e) => e.preventDefault()} />
+            <img src={manImg} alt="Jacky" className="rounded-2xl h-[62vh] duration-300 hover:scale-105 transition mx-auto mb-2" onContextMenu={(e) => e.preventDefault()} />
             <div className="w-full text-center lg:text-center">
               <p className="text-lg md:text-xl font-semibold text-teal-700 mb-1">Graduate Engineer & Photographer</p>
               <p className="text-base text-gray-500 mb-0">Hong Kong</p>
@@ -18,7 +18,7 @@ const Home = () => {
           </div>
         </div>
         {/* Right: Description */}
-        <div className="flex-1 flex flex-col justify-center items-center text-center lg:text-left ">
+        <div className="flex-1 flex flex-col justify-center items-center text-center lg:text-left  ">
           <div className="flex-1 flex flex-col justify-end items-center">
             <p className="h3 font-bold text-gray-900 mb-3 leading-tight">Hi, I am Jacky!</p>
             <div className="bg-gray-50 rounded-xl shadow p-8 max-w-4xl w-full text-center lg:text-left duration-300 hover:scale-105 transition">

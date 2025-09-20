@@ -1,9 +1,13 @@
 {
   "files": {
-    "main.css": "/static/css/main.202124a1.css",
-    "main.js": "/static/js/main.51863b05.js",
+    "main.css": "/static/css/main.e6de42d2.css",
+    "main.js": "/static/js/main.4adf5e53.js",
+    "static/media/creativity_award.jpg": "/static/media/creativity_award.287dd2f3e6f27180d384.jpg",
+    "static/media/innovation_award.jpg": "/static/media/innovation_award.5f9e3e7245e07c96e7bd.jpg",
     "static/media/oreo_logo.png": "/static/media/oreo_logo.227d20cc0bc82b33de08.png",
     "static/media/man.JPG": "/static/media/man.ebf1bd030a3fea8912af.JPG",
+    "static/media/demo.png": "/static/media/demo.908b98465b02548cb4d0.png",
+    "static/media/algo.jpg": "/static/media/algo.00fea197e7fe36f98750.jpg",
     "static/media/img3.jpg": "/static/media/img3.b2c1de0aaa8788728479.jpg",
     "static/media/man.jpg": "/static/media/man.0ed07081b69ed119a937.jpg",
     "static/media/img1.jpg": "/static/media/img1.76f639d0a83598871da8.jpg",
@@ -19,11 +23,11 @@
     "static/media/6.jpg": "/static/media/6.a125f55a458591ea6257.jpg",
     "static/media/1.jpg": "/static/media/1.55c4f97cbbeab304dc01.jpg",
     "index.html": "/index.html",
-    "main.202124a1.css.map": "/static/css/main.202124a1.css.map",
-    "main.51863b05.js.map": "/static/js/main.51863b05.js.map"
+    "main.e6de42d2.css.map": "/static/css/main.e6de42d2.css.map",
+    "main.4adf5e53.js.map": "/static/js/main.4adf5e53.js.map"
   },
   "entrypoints": [
-    "static/css/main.202124a1.css",
-    "static/js/main.51863b05.js"
+    "static/css/main.e6de42d2.css",
+    "static/js/main.4adf5e53.js"
   ]
 }

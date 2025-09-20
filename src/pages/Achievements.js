@@ -36,7 +36,7 @@ const Achievements = () => {
                     <button onClick={prevImg} className="absolute left-0 top-1/2 -translate-y-1/2 bg-white bg-opacity-80 rounded-full p-2 shadow hover:bg-teal-100 transition z-10" aria-label="Previous">
                       <FaChevronLeft className="w-6 h-6 text-teal-700" />
                     </button>
-                    <img src={images[current].src} alt={images[current].alt} className="w-64 h-84 object-cover rounded-2xl border border-gray-100 shadow-sm mx-10 cursor-pointer" onClick={() => setPopup(true)} onContextMenu={(e) => e.preventDefault()} />
+                    <img src={images[current].src} alt={images[current].alt} loading="lazy" className="w-64 h-84 object-cover rounded-2xl border border-gray-100 shadow-sm mx-10 cursor-pointer" onClick={() => setPopup(true)} onContextMenu={(e) => e.preventDefault()} />
                     <button onClick={nextImg} className="absolute right-0 top-1/2 -translate-y-1/2 bg-white bg-opacity-80 rounded-full p-2 shadow hover:bg-teal-100 transition z-10" aria-label="Next">
                       <FaChevronRight className="w-6 h-6 text-teal-700" />
                     </button>

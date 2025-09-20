@@ -47,7 +47,7 @@ const Skills = () => {
                 {/* Skills List */}
                 <div className="flex-1">
                   <div className="bg-gray-100 rounded-xl shadow p-4 m-4 hover:scale-105 transition">
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4">
+                    <div className="grid grid-cols-2 gap-x-8 gap-y-4">
                       {skills.map((skill, index) => (
                         <div key={index} className="flex items-center mb-2">
                           <div className="text-lg mr-3">{skill.icon}</div>

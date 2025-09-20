@@ -1,16 +1,15 @@
 # Jacky Xie Chen Zhi jie Portfolio 🚀
-
-Welcome to my personal portfolio website!  
+Welcome to my personal portfolio website! It is interactive and responsive—give it a try!  
 This project showcases my engineering, creative, and photography work, as well as my technical skills and achievements.
 
 ## 🌟 Features
 
 - 🏠 **Home:** Introduction and background
 - 🛠️ **Skills:** Technical & creative skillset with progress bars
-- 📝 **Prose:** Selected writing and prose
 - 🏆 **Achievements:** Awards and recognitions
 - 📂 **Projects:** GitHub and photography projects
-- 📸 **Portfolio:** Photo gallery
+- 📝 **Prose:** Selected writing and prose
+- 📸 **Portfolio:** Photo gallery (Work In Progress)
 
 ## 📦 Tech Stack
 

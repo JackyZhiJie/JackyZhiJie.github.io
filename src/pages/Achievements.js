@@ -89,7 +89,7 @@ const Achievements = () => {
             <button className="absolute top-2 right-2 bg-white bg-opacity-80 rounded-full p-2 shadow hover:bg-teal-100 transition" onClick={() => setPopup(false)} aria-label="Close">
               <FaTimes className="w-6 h-6 text-teal-700" />
             </button>
-            <img src={images[current].src} alt={images[current].alt} className="max-h-[80vh] w-auto max-w-full rounded-2xl shadow-lg bg-white" onClick={(e) => e.stopPropagation()} style={{ objectFit: "contain" }} />
+            <img src={images[current].src} alt={images[current].alt} loading="lazy" className="max-h-[80vh] w-auto max-w-full rounded-2xl shadow-lg bg-white" onClick={(e) => e.stopPropagation()} style={{ objectFit: "contain" }} />
             <div className="text-center text-lg text-white mt-4">{images[current].alt}</div>
           </div>
         </div>

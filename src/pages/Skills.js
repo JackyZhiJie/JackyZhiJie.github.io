@@ -1,9 +1,8 @@
 import React from "react";
 import manImg from "../img/skills/man.JPG";
-import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { transition1 } from "../transitions";
-//import icons
+// import icons
 import { FaPython, FaHtml5, FaCss3Alt } from "react-icons/fa";
 import { SiAdobepremierepro, SiAdobelightroom, SiAdobeaudition, SiCplusplus, SiAdobephotoshop, SiArduino, SiGithub } from "react-icons/si";
 import { IoLogoJavascript, IoLogoFigma } from "react-icons/io5";
@@ -26,37 +25,45 @@ const Skills = () => {
     { name: "Microsoft Office", level: 80, icon: <TfiMicrosoftAlt /> },
     { name: "Arduino", level: 90, icon: <SiArduino /> },
     { name: "GitHub", level: 60, icon: <SiGithub /> },
-
-    // add more skills here
   ];
+
   return (
     <motion.section initial={{ opacity: 0, y: "-80%" }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: "-80%" }} transition={transition1} className="">
-      <div className="container mx-auto px-2 max-w-6xl ">
-        <h1 className="h2 font-bold text-center tracking-tight">Skills</h1>
-        <div className="grid grid-cols-1 gap-10 ">
-          <div className="space-y-8 ">
-            <div className=" rounded-2xl shadow-lg hover:shadow-xl p-5 flex flex-col md:flex-row justify-center gap-5">
-              <div className="hover:scale-105 transition">
-                <img src={manImg} alt="" onContextMenu={(e) => e.preventDefault()} className=" w-64 h-84 object-cover rounded-2xl border border-gray-100 shadow-sm" />
-              </div>
+      <div className="container mx-auto px-2 max-w-6xl">
+        <h1 className="h2 font-bold text-center tracking-tight mb-0">Skills</h1>
+        <div className="grid grid-cols-1 gap-10">
+          <div>
+            <div className="space-y-8">
+              <div className="bg-gray-50 rounded-2xl shadow-lg hover:shadow-xl px-2 flex flex-col md:flex-row items-center gap-5">
+                {/* Image */}
+                <div className="flex flex-col items-center">
+                  <img src={manImg} alt="Skills Profile" loading="lazy" className="w-64 h-64 object-cover rounded-2xl border border-gray-100 shadow-sm mx-10 hover:scale-105 transition" onContextMenu={(e) => e.preventDefault()} />
+                  <div className="w-64">
+                    {" "}
+                    <p className="text-base text-gray-800 mt-6">My skillset bridges engineering, software, and creative production, enabling me to deliver impactful solutions in both technical and artistic domains.</p>
+                  </div>
+                </div>
 
-              <div className="text-xl flex-1 m-1 h-[55vh]">
-                <div className="bg-gray-50 rounded-2xl shadow p-6 mb-6 max-w-5xl grid grid-cols-2 hover:scale-105 transition">
-                  {skills.map((skill, index) => (
-                    <div key={index} className="flex items-center mb-2">
-                      <div className="w-[3vw] mr-2">{skill.icon}</div>
-                      <div className="">
-                        <div className=" justify-between mb-2 ">
-                          <span className="">{skill.name}</span>
-                          {/* <span>{skill.level}%</span> */}
+                {/* Skills List */}
+                <div className="flex-1">
+                  <div className="bg-gray-100 rounded-xl shadow p-4 m-4 hover:scale-105 transition">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4">
+                      {skills.map((skill, index) => (
+                        <div key={index} className="flex items-center mb-2">
+                          <div className="text-lg mr-3">{skill.icon}</div>
+                          <div className="w-full">
+                            <div className="flex justify-between items-center mb-1">
+                              <span className="font-semibold">{skill.name}</span>
+                              <span className="text-xs text-gray-500">{skill.level}%</span>
+                            </div>
+                            <div className="h-3 bg-gray-200 w-full rounded-full">
+                              <div style={{ width: `${skill.level}%` }} className="h-full bg-teal-600 rounded-full transition-all duration-500"></div>
+                            </div>
+                          </div>
                         </div>
-                        <div className="h-[1vh] bg-gray-200 w-full rounded-full hover:scale-105 transition" style={{ width: "20vw" }}>
-                          {" "}
-                          <div style={{ width: `${skill.level}%` }} className="h-full bg-teal-600 rounded-full "></div>
-                        </div>
-                      </div>
+                      ))}
                     </div>
-                  ))}
+                  </div>
                 </div>
               </div>
             </div>

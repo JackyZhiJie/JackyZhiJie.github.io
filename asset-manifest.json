@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.e6de42d2.css",
-    "main.js": "/static/js/main.4adf5e53.js",
+    "main.css": "/static/css/main.9db04b7e.css",
+    "main.js": "/static/js/main.d6630916.js",
     "static/media/creativity_award.jpg": "/static/media/creativity_award.287dd2f3e6f27180d384.jpg",
     "static/media/innovation_award.jpg": "/static/media/innovation_award.5f9e3e7245e07c96e7bd.jpg",
     "static/media/oreo_logo.png": "/static/media/oreo_logo.227d20cc0bc82b33de08.png",
@@ -23,11 +23,11 @@
     "static/media/6.jpg": "/static/media/6.a125f55a458591ea6257.jpg",
     "static/media/1.jpg": "/static/media/1.55c4f97cbbeab304dc01.jpg",
     "index.html": "/index.html",
-    "main.e6de42d2.css.map": "/static/css/main.e6de42d2.css.map",
-    "main.4adf5e53.js.map": "/static/js/main.4adf5e53.js.map"
+    "main.9db04b7e.css.map": "/static/css/main.9db04b7e.css.map",
+    "main.d6630916.js.map": "/static/js/main.d6630916.js.map"
   },
   "entrypoints": [
-    "static/css/main.e6de42d2.css",
-    "static/js/main.4adf5e53.js"
+    "static/css/main.9db04b7e.css",
+    "static/js/main.d6630916.js"
   ]
 }

@@ -35,15 +35,15 @@ const Skills = () => {
         <h1 className="h2 font-bold text-center tracking-tight">Skills</h1>
         <div className="grid grid-cols-1 gap-10 ">
           <div className="space-y-8 ">
-            <div className=" rounded-2xl shadow-lg hover:shadow-xl p-5 flex flex-col-reverse md:flex-row justify-center items-center gap-5 hover:scale-105 transition">
-              <div className="flex-0.8 h-full flex mb-0">
-                <img src={manImg} alt="" onContextMenu={(e) => e.preventDefault()} className=" rounded-2xl h-[50vh]" />
+            <div className=" rounded-2xl shadow-lg hover:shadow-xl p-5 flex flex-col md:flex-row justify-center gap-5 hover:scale-105 transition">
+              <div className="">
+                <img src={manImg} alt="" onContextMenu={(e) => e.preventDefault()} className=" w-64 h-84 object-cover rounded-2xl border border-gray-100 shadow-sm" />
               </div>
 
-              <div className="flex-1 m-1 h-[50vh]">
-                <div className="bg-gray-50 rounded-xl p-2 grid grid-cols-2 gap-3 mb-[1vh] ">
+              <div className="text-xl flex-1 m-1 h-[55vh]">
+                <div className="bg-gray-50 rounded-2xl shadow p-6 mb-6 max-w-5xl grid grid-cols-2 ">
                   {skills.map((skill, index) => (
-                    <div key={index} className="flex items-center">
+                    <div key={index} className="flex items-center mb-2">
                       <div className="w-[3vw] mr-2">{skill.icon}</div>
                       <div className="">
                         <div className=" justify-between mb-2 ">

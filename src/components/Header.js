@@ -31,11 +31,11 @@ const Header = () => {
           <Link to="/achievements" className="text-[#696c6d] hover:text-primary transition">
             Achievements
           </Link>
-          <Link to="/prose" className="text-[#696c6d] hover:text-primary transition">
-            Prose
-          </Link>
           <Link to="/projects" className="text-[#696c6d] hover:text-primary transition">
             Projects
+          </Link>
+          <Link to="/prose" className="text-[#696c6d] hover:text-primary transition">
+            Prose
           </Link>
         </nav>
       </div>

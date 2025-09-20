@@ -35,13 +35,13 @@ const Skills = () => {
         <h1 className="h2 font-bold text-center tracking-tight">Skills</h1>
         <div className="grid grid-cols-1 gap-10 ">
           <div className="space-y-8 ">
-            <div className=" rounded-2xl shadow-lg hover:shadow-xl p-5 flex flex-col md:flex-row justify-center gap-5 hover:scale-105 transition">
-              <div className="">
+            <div className=" rounded-2xl shadow-lg hover:shadow-xl p-5 flex flex-col md:flex-row justify-center gap-5">
+              <div className="hover:scale-105 transition">
                 <img src={manImg} alt="" onContextMenu={(e) => e.preventDefault()} className=" w-64 h-84 object-cover rounded-2xl border border-gray-100 shadow-sm" />
               </div>
 
               <div className="text-xl flex-1 m-1 h-[55vh]">
-                <div className="bg-gray-50 rounded-2xl shadow p-6 mb-6 max-w-5xl grid grid-cols-2 ">
+                <div className="bg-gray-50 rounded-2xl shadow p-6 mb-6 max-w-5xl grid grid-cols-2 hover:scale-105 transition">
                   {skills.map((skill, index) => (
                     <div key={index} className="flex items-center mb-2">
                       <div className="w-[3vw] mr-2">{skill.icon}</div>

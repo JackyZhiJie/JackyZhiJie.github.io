@@ -4,7 +4,7 @@ import demoImg from "../img/write_right/demo.png";
 import algoImg from "../img/write_right/algo.jpg";
 import creativityAwardImg from "../img/write_right/creativity_award.jpg";
 import innovationAwardImg from "../img/write_right/innovation_award.jpg";
-import { FaLink, FaChevronLeft, FaChevronRight, FaTimes } from "react-icons/fa";
+import { FaLink, FaChevronLeft, FaChevronRight, FaTimes, FaYoutube } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { transition1 } from "../transitions";
 
@@ -67,6 +67,9 @@ const Achievements = () => {
                         <span>Publication at the 13th IEEE International Conference on Engineering Education (2024)</span>
                         <a href="https://ieeexplore.ieee.org/document/10923800" target="_blank" rel="noopener noreferrer" className="ml-2 text-teal-600 hover:text-teal-800 inline-flex align-middle" title="IEEE Paper">
                           <FaLink className="inline w-4 h-4" />
+                        </a>
+                        <a href="https://www.youtube.com/watch?v=DV9rwP-U1nE" target="_blank" rel="noopener noreferrer" className="ml-2 text-teal-600 hover:text-teal-800 inline-flex align-middle" title="Presentation Video">
+                          <FaYoutube className="inline w-4 h-4" />
                         </a>
                       </li>
                       <li className="flex text-lg items-center">

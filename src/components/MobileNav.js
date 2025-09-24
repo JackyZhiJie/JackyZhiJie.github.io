@@ -48,7 +48,7 @@ const MobileNav = () => {
       {/* menu */}
       <AnimatePresence>
         {openMenu && (
-          <motion.div variants={menuVariants} initial="hidden" animate="show" exit="exit" className="bg-white shadow-2xl w-full fixed top-0 right-0 max-w-xs h-[120vh] z-20" style={{}}>
+          <motion.div variants={menuVariants} initial="hidden" animate="show" exit="exit" className="bg-white shadow-2xl w-full fixed top-0 bottom-0 right-0 max-w-xs h-full z-20 rounded-l-xl" style={{}}>
             <div onClick={() => setOpenMenu(false)} className="text-4xl absolute z-30 left-4 top-14 text-primary cursor-pointer">
               <IoMdClose />
             </div>

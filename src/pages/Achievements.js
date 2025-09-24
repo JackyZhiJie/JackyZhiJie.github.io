@@ -46,7 +46,9 @@ const Achievements = () => {
                 {/* Text */}
                 <div className="flex-1">
                   <h2 className="text-2xl font-semibold mb-4 text-teal-700">Award-winning Handwriting Analysis Project</h2>
-                  <p className="text-gray-800 mb-2">Developed a web-based system to improve Chinese handwriting quality through font analysis, educational feedback, and game-based learning. The project covers algorithm development, interface design, and user testing.</p>
+                  <p className="text-gray-800 mb-2">
+                    Developed a web-based system to improve Chinese handwriting quality through font analysis, educational feedback, and game-based learning. This <b>individual</b> project covers algorithm development, interface design, and user testing.
+                  </p>
                   <div className="bg-gray-100 rounded-xl shadow p-4 mb-4 hover:scale-105 transition">
                     <ul className="list-disc list-inside text-gray-800 space-y-2">
                       <li className="flex text-lg items-center">

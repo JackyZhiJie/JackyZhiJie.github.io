@@ -22,10 +22,10 @@ const Home = () => {
           <div className="flex-1 flex flex-col justify-end items-center">
             <p className="h3 font-bold text-gray-900 mb-3 leading-tight">Hi, I am Jacky!</p>
             <div className="bg-gray-50 rounded-xl shadow p-8 max-w-4xl w-full text-center lg:text-left duration-300 hover:scale-105 transition">
-              <p className="text-base lg:text-2xl mb-3 text-gray-800">I am a Computer Engineering graduate from CUHK with a minor in Journalism and Communication, currently working as a Graduate Engineer at MTR. With technical expertise and strong communication skills, I have always been captivated by the convergence of technology and communication.</p>
-              <p className="text-base lg:text-2xl text-gray-800 mb-6">While I initially focused on educational technology, I’m now more passionate about applying these skills to transportation systems.</p>
+              <p className="text-base lg:text-xl mb-3 text-gray-800">I am a Computer Engineering graduate from CUHK with a minor in Journalism and Communication, currently working as a Graduate Engineer at MTR. With technical expertise and strong communication skills, I have always been captivated by the convergence of technology and communication.</p>
+              <p className="text-base lg:text-xl text-gray-800 mb-6">While I initially focused on educational technology, I’m now more passionate about applying these skills to transportation systems.</p>
               <div className="flex flex-wrap gap-2 mb-0 justify-center lg:justify-start">
-                {["Technology", "Engineering", "Photography", "Filmmaking", "Writing", "Humanities", "Education", "IoT"].map((tag) => (
+                {["Computer", "Technology", "Engineering", "Electronics", "Photography", "Filmmaking", "Writing", "Humanities", "Education", "IoT"].map((tag) => (
                   <span key={tag} className="inline-block bg-gray-500 text-white px-3 py-1 rounded-lg text-sm font-medium hover:bg-teal-600 transition">
                     {tag}
                   </span>

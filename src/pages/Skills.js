@@ -30,11 +30,11 @@ const Skills = () => {
   return (
     <motion.section initial={{ opacity: 0, y: "-80%" }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: "-80%" }} transition={transition1} className="">
       <div className="container mx-auto px-2 max-w-6xl">
-        <h1 className="h2 font-bold text-center tracking-tight mb-0">Skills</h1>
+        <h1 className="h3 font-bold text-center tracking-tight mb-0">Skills</h1>
         <div className="grid grid-cols-1 gap-10">
           <div>
             <div className="space-y-8">
-              <div className="bg-gray-50 rounded-2xl shadow-lg hover:shadow-xl px-2 flex flex-col md:flex-row items-center gap-5">
+              <div className="bg-gray-50 rounded-2xl shadow-lg hover:shadow-xl px-2 flex flex-col md:flex-row items-center gap-1">
                 {/* Image */}
                 <div className="flex flex-col items-center">
                   <img src={manImg} alt="Skills Profile" loading="lazy" className="w-64 h-64 object-cover rounded-2xl border border-gray-100 shadow-sm mx-10 hover:scale-105 transition" onContextMenu={(e) => e.preventDefault()} />

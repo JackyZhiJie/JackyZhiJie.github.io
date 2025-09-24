@@ -25,7 +25,7 @@ const Achievements = () => {
   return (
     <motion.section initial={{ opacity: 0, y: "-80%" }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: "-80%" }} transition={transition1} className="">
       <div className="container mx-auto px-2 max-w-6xl">
-        <h1 className="h2 font-bold text-center tracking-tight mb-0">Achievements</h1>
+        <h1 className="h3 font-bold text-center tracking-tight mb-0">Achievements</h1>
         <div className="grid grid-cols-1 gap-10">
           <div>
             <div className="space-y-8">
@@ -45,7 +45,7 @@ const Achievements = () => {
                 </div>
                 {/* Text */}
                 <div className="flex-1">
-                  <h2 className="text-2xl font-semibold mb-4 text-teal-700">Award-winning Handwriting Analysis Project</h2>
+                  <h2 className="text-2xl font-semibold mb-4 text-teal-700">Award-winning Handwriting Analysis Individual Project</h2>
                   <p className="text-gray-800 mb-2">
                     Developed a web-based system to improve Chinese handwriting quality through font analysis, educational feedback, and game-based learning. This <b>individual</b> project covers algorithm development, interface design, and user testing.
                   </p>
@@ -64,13 +64,16 @@ const Achievements = () => {
                         </a>
                       </li>
                       <li className="flex text-lg items-center">
-                        <span>Publication at the 13th IEEE International Conference on Engineering Education (2024)</span>
-                        <a href="https://ieeexplore.ieee.org/document/10923800" target="_blank" rel="noopener noreferrer" className="ml-2 text-teal-600 hover:text-teal-800 inline-flex align-middle" title="IEEE Paper">
-                          <FaLink className="inline w-4 h-4" />
-                        </a>
-                        <a href="https://www.youtube.com/watch?v=DV9rwP-U1nE" target="_blank" rel="noopener noreferrer" className="ml-2 text-teal-600 hover:text-teal-800 inline-flex align-middle" title="Presentation Video">
-                          <FaYoutube className="inline w-4 h-4" />
-                        </a>
+                        <span>
+                          Publication at the 13th IEEE International Conference on Engineering Education 2024 <br />
+                          <b>(First Author)</b>
+                          <a href="https://ieeexplore.ieee.org/document/10923800" target="_blank" rel="noopener noreferrer" className="ml-2 text-teal-600 hover:text-teal-800 inline-flex align-middle" title="IEEE Paper">
+                            <FaLink className="inline w-4 h-4" />
+                          </a>
+                          <a href="https://www.youtube.com/watch?v=DV9rwP-U1nE" target="_blank" rel="noopener noreferrer" className="ml-2 text-teal-600 hover:text-teal-800 inline-flex align-middle" title="Presentation Video">
+                            <FaYoutube className="inline w-4 h-4" />
+                          </a>
+                        </span>
                       </li>
                       <li className="flex text-lg items-center">
                         <span>Participated in the James Dyson Award 2025 (Write Right project, not awarded)</span>

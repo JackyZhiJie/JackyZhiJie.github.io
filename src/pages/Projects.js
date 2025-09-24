@@ -54,7 +54,7 @@ const photoProjects = [
 const Projects = () => (
   <motion.section initial={{ opacity: 0, y: "-80%" }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: "-80%" }} transition={transition1} className="">
     <div className="container mx-auto px-2 max-w-6xl">
-      <h1 className="h2 font-bold text-center tracking-tight mb-0">Projects</h1>
+      <h1 className="h3 font-bold text-center tracking-tight mb-0">Projects</h1>
       <div className="grid grid-cols-1 gap-10">
         {/* GitHub Projects */}
         <div className="p-5">

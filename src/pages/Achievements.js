@@ -9,7 +9,7 @@ import { motion } from "framer-motion";
 import { transition1 } from "../transitions";
 
 const images = [
-  { src: demoImg, alt: "Write Right" },
+  { src: demoImg, alt: "正筆 Write Right" },
   { src: algoImg, alt: "Innovative Hough Algorithm" },
   { src: creativityAwardImg, alt: "Professor Charles K. Kao Student Creativity Award" },
   { src: innovationAwardImg, alt: "CUHK Outstanding Student Award" },

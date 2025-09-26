@@ -7,7 +7,7 @@ const Header = () => {
     <header className="mt-[1vh] w-full px-[30px] lg:px-[100px] z-30 h-[100px] lg:h-[140px] flex items-center">
       <div className="flex flex-col lg:flex-row lg:items-center w-full justify-between">
         {/* Logo */}
-        <Link to="/" className="w-24 sm:w-32 md:w-48 lg:w-64 xl:w-80">
+        <Link to="/" className="w-24 sm:w-32 md:w-48 lg:w-64 xl:w-80" loading="lazy">
           <img src={Logo} alt="Logo" className="w-1/2" onContextMenu={(e) => e.preventDefault()} />
         </Link>
         {/* nav */}

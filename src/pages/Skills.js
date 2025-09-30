@@ -23,7 +23,7 @@ const Skills = () => {
     { name: "Photoshop", level: 50, icon: <SiAdobephotoshop /> },
     { name: "Figma", level: 50, icon: <IoLogoFigma /> },
     { name: "Microsoft Office", level: 80, icon: <TfiMicrosoftAlt /> },
-    { name: "Arduino", level: 90, icon: <SiArduino /> },
+    { name: "Arduino", level: 75, icon: <SiArduino /> },
     { name: "GitHub", level: 60, icon: <SiGithub /> },
   ];
 
@@ -38,16 +38,19 @@ const Skills = () => {
                 {/* Image */}
                 <div className="flex flex-col items-center">
                   <img src={manImg} alt="Skills Profile" loading="lazy" className="w-64 h-64 object-cover rounded-2xl border border-gray-100 shadow-sm mx-10 hover:scale-105 transition" onContextMenu={(e) => e.preventDefault()} />
-                  <div className="w-64">
+                  <div className="text-center w-64">
                     {" "}
-                    <p className="text-base text-gray-800 mt-6">My skillset bridges engineering, software, and creative production, enabling me to deliver impactful solutions in both technical and artistic domains.</p>
+                    <p className="text-base text-gray-800 mt-6">
+                      Currently learning
+                      <b>Ollama</b> and <b>n8n</b>
+                    </p>
                   </div>
                 </div>
 
                 {/* Skills List */}
                 <div className="flex-1">
                   <div className="bg-gray-100 rounded-xl shadow p-4 m-4 hover:scale-105 transition">
-                    <div className="grid grid-cols-2 gap-x-2 gap-y-4">
+                    <div className="grid grid-cols-2 lg:grid-cols-3 gap-x-2 gap-y-4">
                       {skills.map((skill, index) => (
                         <div key={index} className="flex items-center mb-2">
                           <div className="text-base mr-3">{skill.icon}</div>

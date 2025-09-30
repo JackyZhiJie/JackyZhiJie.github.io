@@ -41,8 +41,7 @@ const Skills = () => {
                   <div className="text-center w-64">
                     {" "}
                     <p className="text-base text-gray-800 mt-6">
-                      Currently learning
-                      <b>Ollama</b> and <b>n8n</b>
+                      Currently learning <b>Ollama</b> and <b>n8n</b>
                     </p>
                   </div>
                 </div>

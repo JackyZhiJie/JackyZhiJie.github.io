@@ -26,10 +26,6 @@ const Socials = () => {
             <FaGithub className="text-3xl text-primary hover:scale-105 transition" />
           </a>
         </li>
-        {/* Mobile Nav */}
-        <li className="inline-block mx-1 hover:scale-105 transition">
-          <MobileNav className="" />
-        </li>
       </ul>
     </div>
   );

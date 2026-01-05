@@ -1,13 +1,13 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { transition1 } from "../transitions";
-import { Link } from "react-router-dom";
 import githubImg1 from "../img/projects/img1.jpg";
 import githubImg3 from "../img/projects/img3.jpg";
 import githubImg from "../img/portfolio/v1.jpg";
 import photoImg from "../img/contact/man.jpg";
 import photoImg2 from "../img/about/man.jpg";
 import photoImg3 from "../img/projects/img5.jpg";
+import n8n from "../img/icon/n8n.png";
 
 const githubProjects = [
   {
@@ -45,9 +45,24 @@ const photoProjects = [
   },
   {
     name: "Other Photo Projects",
-    description: "Work in progress. Stay tuned for more updates! I have a lot of archives in photography but need to organize them.",
+    description: "Work in progress. Stay tuned for more updates! I have a lot of archives in photography but need to organise them.",
     link: "#",
     img: photoImg3,
+  },
+];
+
+const n8nProjects = [
+  {
+    name: "n8n - Automated News Reporter",
+    description: "This workflow is designed to keep the team updated with the latest railway and tech news without manual searching. By leveraging a local LLM, raw RSS feeds are being processed into structured, readable summaries, ensuring only the most relevant top 5 articles reach the inbox every morning.",
+    link: "https://github.com/JackyZhiJie/n8n-Tech-News-Automation",
+    img: n8n,
+  },
+  {
+    name: "n8n - Signalling Fault Detection Agent",
+    description: "This system acts as a watchdog for the signalling infrastructure. It monitors local log files for changes and instantly triggers an analysis pipeline.The AI Agent specifically looks for patterns indicating breakpoints in induction loop coils, converting raw binary data into actionable textual reports.",
+    link: "https://github.com/JackyZhiJie/n8n-Signalling-Facult-Detection-Agent",
+    img: n8n,
   },
 ];
 
@@ -56,6 +71,29 @@ const Projects = () => (
     <div className="container mx-auto px-2 max-w-6xl">
       <h1 className="h3 font-bold text-center tracking-tight mb-0">Projects</h1>
       <div className="grid grid-cols-1 gap-10">
+        {/* n8n Automation Projects */}
+        <div className="p-5">
+          <h2 className="text-2xl font-semibold text-teal-600 mb-6 flex items-center gap-2">
+            <svg className="w-7 h-7 text-gray-400" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+              <path d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V7M8 3h8l1 4H7l1-4z" />
+            </svg>
+            n8n AI/LLM Automation Projects
+          </h2>
+          <div className="space-y-8">
+            {n8nProjects.map((proj) => (
+              <div key={proj.name} className="bg-white rounded-2xl shadow-lg hover:shadow-xl p-5 flex flex-col md:flex-row items-center gap-5 hover:scale-105 transition">
+                <img src={proj.img} alt={proj.name} className="w-32 h-32 object-cover rounded-xl border border-gray-100 shadow-sm mb-4 md:mb-0" onContextMenu={(e) => e.preventDefault()} />
+                <div className="flex-1">
+                  <h3 className="text-lg font-bold mb-1 text-gray-800">{proj.name}</h3>
+                  <p className="mb-2 text-gray-600">{proj.description}</p>
+                  <a href={proj.link} target="_blank" rel="noopener noreferrer" className="inline-block text-teal-600 hover:text-teal-800 font-medium underline">
+                    View Project
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
         {/* GitHub Projects */}
         <div className="p-5">
           <h2 className="text-2xl font-semibold text-teal-600 mb-6 flex items-center gap-2">

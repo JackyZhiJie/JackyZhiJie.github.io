@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { IoMdClose } from "react-icons/io";
 import { CgMenuRight } from "react-icons/cg";
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
+// 1. Import AnimatePresence
+import { motion, AnimatePresence } from "framer-motion";
 
 const menuVariants = {
   hidden: {
@@ -32,7 +33,32 @@ const MobileNav = () => {
       <div onClick={() => setOpenMenu(true)} className="text-3xl cursor-pointer">
         <CgMenuRight />
       </div>
-      {/* menu */}
+
+      {/* --- BLUR OVERLAY START --- */}
+      <AnimatePresence>
+        {openMenu && (
+          <motion.div
+            // Initial state: No blur, transparent
+            initial={{ opacity: 0, backdropFilter: "blur(0px)" }}
+            // Animate state: Blur enabled, slightly visible background
+            animate={{
+              opacity: 1,
+              backdropFilter: "blur(8px)", // Equivalent to tailwind 'backdrop-blur-md'
+            }}
+            // Exit state: Revert to no blur, transparent
+            exit={{
+              opacity: 0,
+              backdropFilter: "blur(0px)",
+            }}
+            transition={{ duration: 0.4, ease: "easeInOut" }}
+            onClick={() => setOpenMenu(false)}
+            // Remove the static 'backdrop-blur' class since we are animating it manually
+            // We keep bg-black/10 for a slight tint, or remove it for pure blur
+            className="fixed inset-0 z-10 bg-black/10"
+          />
+        )}
+      </AnimatePresence>
+      {/* --- BLUR OVERLAY END --- */}
 
       <motion.div variants={menuVariants} initial="hidden" animate={openMenu ? "show" : "exit"} className="bg-white shadow-2xl w-full fixed top-0 bottom-0 right-0 max-w-xs h-full z-20 rounded-l-xl">
         <div onClick={() => setOpenMenu(false)} className="text-4xl absolute z-30 left-4 top-14 text-primary cursor-pointer">

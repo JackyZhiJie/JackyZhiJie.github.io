@@ -8,6 +8,8 @@ import { SiAdobepremierepro, SiAdobelightroom, SiAdobeaudition, SiCplusplus, SiA
 import { IoLogoJavascript, IoLogoFigma } from "react-icons/io5";
 import { RiReactjsLine } from "react-icons/ri";
 import { TfiMicrosoftAlt } from "react-icons/tfi";
+import docker from "../img/icon/docker.png";
+import n8n from "../img/icon/n8n.png";
 
 const Skills = () => {
   const skills = [
@@ -25,6 +27,8 @@ const Skills = () => {
     { name: "Microsoft Office", level: 80, icon: <TfiMicrosoftAlt /> },
     { name: "Arduino", level: 75, icon: <SiArduino /> },
     { name: "GitHub", level: 60, icon: <SiGithub /> },
+    { name: "Docker", level: 40, icon: <img src={docker} alt="Docker Icon" className="w-5" /> },
+    { name: "n8n", level: 40, icon: <img src={n8n} alt="n8n Icon" className="w-5" /> },
   ];
 
   return (

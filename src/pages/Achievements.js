@@ -1,35 +1,48 @@
 import React, { useState } from "react";
-import manImg from "../img/about/man.jpg";
-import demoImg from "../img/write_right/demo.png";
+// import manImg from "../img/about/man.jpg";
+// import demoImg from "../img/write_right/demo.png";
 import algoImg from "../img/write_right/algo.jpg";
 import creativityAwardImg from "../img/write_right/creativity_award.jpg";
 import innovationAwardImg from "../img/write_right/innovation_award.jpg";
+import iotProject1Img from "../img/iot/project1.jpg";
+import iotProject2Img from "../img/iot/project2.jpg";
+import iotAwardImg from "../img/iot/award.jpg";
 import { FaLink, FaChevronLeft, FaChevronRight, FaTimes, FaYoutube } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { transition1 } from "../transitions";
 
 const images = [
-  { src: demoImg, alt: "正筆 Write Right" },
+  // { src: demoImg, alt: "正筆" },
   { src: algoImg, alt: "Innovative Hough Algorithm" },
   { src: creativityAwardImg, alt: "Professor Charles K. Kao Student Creativity Award" },
   { src: innovationAwardImg, alt: "CUHK Outstanding Student Award" },
 ];
 
+const iotImages = [
+  { src: iotProject1Img, alt: "IoT Data Hackathon Project" },
+  { src: iotProject2Img, alt: "IoT Solutions Demo" },
+  { src: iotAwardImg, alt: "Hackathon Award" },
+];
+
 const Achievements = () => {
   const [current, setCurrent] = useState(0);
   const [popup, setPopup] = useState(false);
+  const [currentIot, setCurrentIot] = useState(0);
+  const [popupIot, setPopupIot] = useState(false);
 
   const prevImg = () => setCurrent((prev) => (prev === 0 ? images.length - 1 : prev - 1));
   const nextImg = () => setCurrent((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+  const prevIotImg = () => setCurrentIot((prev) => (prev === 0 ? iotImages.length - 1 : prev - 1));
+  const nextIotImg = () => setCurrentIot((prev) => (prev === iotImages.length - 1 ? 0 : prev + 1));
 
   return (
     <motion.section initial={{ opacity: 0, y: "-80%" }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: "-80%" }} transition={transition1} className="">
       <div className="container mx-auto px-2 max-w-6xl">
         <h1 className="h3 font-bold text-center tracking-tight mb-0">Achievements</h1>
-        <div className="grid grid-cols-1 gap-10">
+        <div className="grid grid-cols-1 gap-10 ">
           <div>
             <div className="space-y-8">
-              <div className="bg-gray-50 rounded-2xl shadow-lg hover:shadow-xl p-5 flex flex-col md:flex-row items-center gap-5">
+              <div className="bg-gray-50 rounded-2xl shadow-lg hover:shadow-2xl p-5 flex flex-col md:flex-row items-center gap-5">
                 {/* Slideshow */}
                 <div className="flex flex-col items-center gap-5">
                   <div className="relative flex items-center justify-center hover:scale-105 transition">
@@ -75,22 +88,78 @@ const Achievements = () => {
                           </a>
                         </span>
                       </li>
-                      <li className="flex text-lg items-center">
+                      {/* <li className="flex text-lg items-center">
                         <span>Participated in the James Dyson Award 2025 (Write Right project, not awarded)</span>
                         <a href="https://www.jamesdysonaward.org/2025/project/write-right" target="_blank" rel="noopener noreferrer" className="ml-2 text-teal-600 hover:text-teal-800 inline-flex align-middle" title="James Dyson Award Entry">
                           <FaLink className="inline w-4 h-4" />
                         </a>
-                      </li>
+                      </li> */}
                     </ul>
                   </div>
                   <p className="text-base text-gray-800 mt-6">This project demonstrates the integration of technical innovation and educational impact, earning recognition in competitions, university awards, and international publication.</p>
+                </div>
+              </div>
+              {/* IoT Data Hackathon Project */}
+              <div className="bg-gray-50 rounded-2xl shadow-lg hover:shadow-2xl p-5 flex flex-col md:flex-row items-center gap-5">
+                {/* Slideshow */}
+                <div className="flex flex-col items-center gap-5">
+                  <div className="relative flex items-center justify-center hover:scale-105 transition">
+                    <button onClick={prevIotImg} className="absolute left-0 top-1/2 -translate-y-1/2 bg-white bg-opacity-80 rounded-full p-2 shadow hover:bg-teal-100 transition z-10" aria-label="Previous">
+                      <FaChevronLeft className="w-6 h-6 text-teal-700" />
+                    </button>
+                    <img src={iotImages[currentIot].src} alt={iotImages[currentIot].alt} loading="lazy" className="w-64 h-84 object-cover rounded-2xl border border-gray-100 shadow-sm mx-10 cursor-pointer" onClick={() => setPopupIot(true)} onContextMenu={(e) => e.preventDefault()} />
+                    <button onClick={nextIotImg} className="absolute right-0 top-1/2 -translate-y-1/2 bg-white bg-opacity-80 rounded-full p-2 shadow hover:bg-teal-100 transition z-10" aria-label="Next">
+                      <FaChevronRight className="w-6 h-6 text-teal-700" />
+                    </button>
+                  </div>
+                  <div className="text-center text-lg text-gray-500 mt-2">{iotImages[currentIot].alt}</div>
+                </div>
+                {/* Text */}
+                <div className="flex-1">
+                  <h2 className="text-2xl font-semibold mb-4 text-teal-700">Champion of the Professional Stream - IoT Data Hackathon 2026</h2>
+                  <p className="text-gray-800 mb-2">
+                    Led team <b>Keep Data Moving</b> to victory by developing an innovative IoT solution addressing UAVs, data automation, and network security in the low-altitude economy. As team lead, pitched the winning prototype on stage and spearheaded the integration of complex technical systems with practical, data-driven insights.
+                  </p>
+                  <div className="bg-gray-100 rounded-xl shadow p-4 mb-4 hover:scale-105 transition">
+                    <ul className="list-disc list-inside text-gray-800 space-y-2">
+                      <li className="flex text-lg items-center">
+                        <span>🏆 Champion of the Professional Stream</span>
+                      </li>
+                      <li className="flex text-lg items-center">
+                        <span>🚁 Best Low-Altitude Economy Innovation Award (presented by HKT)</span>
+                      </li>
+                      <li className="flex text-lg items-center">
+                        <span>🛡️ Innovator of Secure by Design Award (presented by Check Point)</span>
+                      </li>
+                    </ul>
+                  </div>
+                  {/* Links Section */}
+                  <div className="flex flex-wrap gap-4 mb-4 justify-start">
+                    <a href="https://www.gs1hk.org/sites/default/files/2026-04/Booklet_RGBpreview_20260415_V1.pdf" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-teal-600 hover:text-teal-800 transition" title="Solution Casebook">
+                      <FaLink className="w-5 h-5" />
+                      <span className="text-base">Solution Casebook</span>
+                    </a>
+                    <a href="https://finance.yahoo.com/sectors/technology/articles/iot-data-hackathon-2026-winners-091300455.html" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-teal-600 hover:text-teal-800 transition" title="News Coverage - English">
+                      <FaLink className="w-5 h-5" />
+                      <span className="text-base">Yahoo News</span>
+                    </a>
+                    <a href="https://money.udn.com/money/story/123828/9445880" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-teal-600 hover:text-teal-800 transition" title="News Coverage - Chinese">
+                      <FaLink className="w-5 h-5" />
+                      <span className="text-base">經濟日報 報導</span>
+                    </a>
+                    <a href="https://www.linkedin.com/posts/jackyxczj_iothackathon2026-mtr-keepdatamoving-ugcPost-7451113202207080448-ot1o?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEeaIWkBvXUgDL8hhycIS1GHpA76UjYgM3E" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-teal-600 hover:text-teal-800 transition" title="My LinkedIn Post">
+                      <FaLink className="w-5 h-5" />
+                      <span className="text-base">My LinkedIn Post</span>
+                    </a>
+                  </div>
+                  <p className="text-base text-gray-800 mt-6">This victory showcases technical excellence in building robust, data-driven solutions for the emerging low-altitude economy, combined with strong team leadership and the ability to translate complex ideas into winning, practical solutions.</p>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      {/* Popup for large image */}
+      {/* Popup for large image - Handwriting Analysis */}
       {popup && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-70" onClick={() => setPopup(false)}>
           <div className="relative max-w-3xl w-full flex flex-col items-center">
@@ -99,6 +168,18 @@ const Achievements = () => {
             </button>
             <img src={images[current].src} alt={images[current].alt} loading="lazy" className="max-h-[80vh] w-auto max-w-full rounded-2xl shadow-lg bg-white" onClick={(e) => e.stopPropagation()} style={{ objectFit: "contain" }} />
             <div className="text-center text-lg text-white mt-4">{images[current].alt}</div>
+          </div>
+        </div>
+      )}
+      {/* Popup for large image - IoT Hackathon */}
+      {popupIot && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-70" onClick={() => setPopupIot(false)}>
+          <div className="relative max-w-3xl w-full flex flex-col items-center">
+            <button className="absolute top-2 right-2 bg-white bg-opacity-80 rounded-full p-2 shadow hover:bg-teal-100 transition" onClick={() => setPopupIot(false)} aria-label="Close">
+              <FaTimes className="w-6 h-6 text-teal-700" />
+            </button>
+            <img src={iotImages[currentIot].src} alt={iotImages[currentIot].alt} loading="lazy" className="max-h-[80vh] w-auto max-w-full rounded-2xl shadow-lg bg-white" onClick={(e) => e.stopPropagation()} style={{ objectFit: "contain" }} />
+            <div className="text-center text-lg text-white mt-4">{iotImages[currentIot].alt}</div>
           </div>
         </div>
       )}

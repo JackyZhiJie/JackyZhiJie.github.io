@@ -8,6 +8,7 @@ import photoImg from "../img/contact/man.jpg";
 import photoImg2 from "../img/about/man.jpg";
 import photoImg3 from "../img/projects/img5.jpg";
 import n8n from "../img/icon/n8n.png";
+import iotProject1Img from "../img/iot/project1.jpg";
 
 const githubProjects = [
   {
@@ -66,11 +67,48 @@ const n8nProjects = [
   },
 ];
 
+const IoTDataHackathon2026Projects = [
+  {
+    name: "IoT Data Hackathon 2026 - Keep Data Moving",
+    description: "Led team Keep Data Moving to victory developing an innovative IoT solution addressing UAVs, data automation, and network security in the low-altitude economy. Awarded Champion of the Professional Stream, Best Low-Altitude Economy Innovation Award, and Innovator of Secure by Design Award.",
+    link: "https://github.com/JackyZhiJie/Keep-Data-Moving-GS1-IoT-DataHackathon2026",
+    img: iotProject1Img,
+  },
+];
+
 const Projects = () => (
   <motion.section initial={{ opacity: 0, y: "-80%" }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: "-80%" }} transition={transition1} className="">
     <div className="container mx-auto px-2 max-w-6xl">
       <h1 className="h3 font-bold text-center tracking-tight mb-0">Projects</h1>
       <div className="grid grid-cols-1 gap-10">
+        {/* IoT Projects */}
+        <div className="p-5">
+          <h2 className="text-2xl font-semibold text-teal-600 mb-6 flex items-center gap-2">
+            <svg className="w-7 h-7 text-gray-400" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="1" fill="currentColor" />
+              <circle cx="19" cy="12" r="1" fill="currentColor" />
+              <circle cx="5" cy="12" r="1" fill="currentColor" />
+              <circle cx="12" cy="19" r="1" fill="currentColor" />
+              <circle cx="12" cy="5" r="1" fill="currentColor" />
+              <path d="M12 7v10M5 12h14M8.5 8.5l7 7M15.5 8.5l-7 7" />
+            </svg>
+            IoT Data Hackathon 2026 Projects
+          </h2>
+          <div className="space-y-8">
+            {IoTDataHackathon2026Projects.map((proj) => (
+              <div key={proj.name} className="bg-white rounded-2xl shadow-lg hover:shadow-xl p-5 flex flex-col md:flex-row items-center gap-5 hover:scale-105 transition">
+                <img src={proj.img} alt={proj.name} className="w-32 h-32 object-cover rounded-xl border border-gray-100 shadow-sm mb-4 md:mb-0" onContextMenu={(e) => e.preventDefault()} />
+                <div className="flex-1">
+                  <h3 className="text-lg font-bold mb-1 text-gray-800">{proj.name}</h3>
+                  <p className="mb-2 text-gray-600">{proj.description}</p>
+                  <a href={proj.link} target="_blank" rel="noopener noreferrer" className="inline-block text-teal-600 hover:text-teal-800 font-medium underline">
+                    View Project
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
         {/* n8n Automation Projects */}
         <div className="p-5">
           <h2 className="text-2xl font-semibold text-teal-600 mb-6 flex items-center gap-2">

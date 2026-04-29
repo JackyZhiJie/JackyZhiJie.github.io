@@ -38,13 +38,13 @@ const Skills = () => {
         <div className="grid grid-cols-1 gap-10">
           <div>
             <div className="space-y-8">
-              <div className="bg-gray-50 rounded-2xl shadow-lg hover:shadow-xl px-2 flex flex-col md:flex-row items-center gap-1">
+              <div className="bg-gray-50 dark:bg-gray-900 rounded-2xl shadow-lg hover:shadow-xl px-2 flex flex-col md:flex-row items-center gap-1">
                 {/* Image */}
                 <div className="flex flex-col items-center">
                   <img src={manImg} alt="Skills Profile" loading="lazy" className="w-64 h-64 object-cover rounded-2xl border border-gray-100 shadow-sm mx-10 hover:scale-105 transition" onContextMenu={(e) => e.preventDefault()} />
                   <div className="text-center w-64">
                     {" "}
-                    <p className="text-base text-gray-800 mt-6">
+                    <p className="text-base text-gray-800 dark:text-gray-200 mt-6">
                       Currently learning <b>Ollama</b> and <b>n8n</b>
                     </p>
                   </div>
@@ -52,7 +52,7 @@ const Skills = () => {
 
                 {/* Skills List */}
                 <div className="flex-1">
-                  <div className="bg-gray-100 rounded-xl shadow p-4 m-4 hover:scale-105 transition">
+                  <div className="bg-gray-100 dark:bg-gray-800 rounded-xl shadow p-4 m-4 hover:scale-105 transition">
                     <div className="grid grid-cols-2 lg:grid-cols-3 gap-x-2 gap-y-4">
                       {skills.map((skill, index) => (
                         <div key={index} className="flex items-center mb-2">
@@ -60,9 +60,9 @@ const Skills = () => {
                           <div className="w-[20vw]">
                             <div className="flex justify-between items-center mb-1">
                               <span className="text-xs font-semibold">{skill.name}</span>
-                              <span className="text-xs text-gray-500">{skill.level}%</span>
+                              <span className="text-xs text-gray-500 dark:text-gray-400">{skill.level}%</span>
                             </div>
-                            <div className="h-3 bg-gray-200 w-full rounded-full">
+                            <div className="h-3 bg-gray-200 dark:bg-gray-700 w-full rounded-full">
                               <div style={{ width: `${skill.level}%` }} className="h-full bg-teal-600 rounded-full transition-all duration-500"></div>
                             </div>
                           </div>

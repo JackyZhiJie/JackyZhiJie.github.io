@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply overflow-auto overflow-x-hidden text-primary font-secondary bg-white;
+    @apply overflow-auto overflow-x-hidden text-primary dark:text-accent font-secondary bg-white dark:bg-primary;
   }
   .h1 {
     @apply text-[54px] lg:text-[108px] font-primary font-bold tracking-[-0.05em] mb-2;

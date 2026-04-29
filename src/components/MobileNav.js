@@ -29,7 +29,7 @@ const MobileNav = () => {
   const [openMenu, setOpenMenu] = useState(false);
 
   return (
-    <nav className="text-primary xl:hidden">
+    <nav className="text-primary dark:text-accent xl:hidden">
       <div onClick={() => setOpenMenu(true)} className="text-3xl cursor-pointer">
         <CgMenuRight />
       </div>
@@ -60,11 +60,11 @@ const MobileNav = () => {
       </AnimatePresence>
       {/* --- BLUR OVERLAY END --- */}
 
-      <motion.div variants={menuVariants} initial="hidden" animate={openMenu ? "show" : "exit"} className="bg-white shadow-2xl w-full fixed top-0 bottom-0 right-0 max-w-xs h-full z-20 rounded-l-xl">
-        <div onClick={() => setOpenMenu(false)} className="text-4xl absolute z-30 left-4 top-14 text-primary cursor-pointer">
+      <motion.div variants={menuVariants} initial="hidden" animate={openMenu ? "show" : "exit"} className="bg-white dark:bg-primary shadow-2xl w-full fixed top-0 bottom-0 right-0 max-w-xs h-full z-20 rounded-l-xl">
+        <div onClick={() => setOpenMenu(false)} className="text-4xl absolute z-30 left-4 top-14 text-primary dark:text-accent cursor-pointer">
           <IoMdClose />
         </div>
-        <ul className="h-full flex flex-col justify-center items-center gap-y-12 text-primary font-primary font-bold text-3xl">
+        <ul className="h-full flex flex-col justify-center items-center gap-y-12 text-primary dark:text-accent font-primary font-bold text-3xl">
           <li>
             <Link to="/">Home</Link>
           </li>

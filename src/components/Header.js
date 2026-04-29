@@ -14,19 +14,19 @@ const Header = () => {
         {/* nav */}
         <nav className="hidden lg:flex gap-x-12 font-semibold text-lg lg:text-xl">
           {/* lg means  */}
-          <Link to="/" className="text-[#696c6d] hover:text-primary transition">
+          <Link to="/" className="text-[#696c6d] dark:text-gray-300 hover:text-primary dark:hover:text-accent transition">
             Home
           </Link>
-          <Link to="/skills" className="text-[#696c6d] hover:text-primary transition">
+          <Link to="/skills" className="text-[#696c6d] dark:text-gray-300 hover:text-primary dark:hover:text-accent transition">
             Skills
           </Link>
-          <Link to="/achievements" className="text-[#696c6d] hover:text-primary transition">
+          <Link to="/achievements" className="text-[#696c6d] dark:text-gray-300 hover:text-primary dark:hover:text-accent transition">
             Achievements
           </Link>
-          <Link to="/projects" className="text-[#696c6d] hover:text-primary transition">
+          <Link to="/projects" className="text-[#696c6d] dark:text-gray-300 hover:text-primary dark:hover:text-accent transition">
             Projects
           </Link>
-          <Link to="/prose" className="text-[#696c6d] hover:text-primary transition">
+          <Link to="/prose" className="text-[#696c6d] dark:text-gray-300 hover:text-primary dark:hover:text-accent transition">
             Prose
           </Link>
         </nav>

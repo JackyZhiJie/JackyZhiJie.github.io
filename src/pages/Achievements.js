@@ -42,28 +42,28 @@ const Achievements = () => {
         <div className="grid grid-cols-1 gap-10 ">
           <div>
             <div className="space-y-8">
-              <div className="bg-gray-50 rounded-2xl shadow-lg hover:shadow-2xl p-5 flex flex-col md:flex-row items-center gap-5">
+              <div className="bg-gray-50 dark:bg-gray-900 rounded-2xl shadow-lg hover:shadow-2xl p-5 flex flex-col md:flex-row items-center gap-5">
                 {/* Slideshow */}
                 <div className="flex flex-col items-center gap-5">
                   <div className="relative flex items-center justify-center hover:scale-105 transition">
-                    <button onClick={prevImg} className="absolute left-0 top-1/2 -translate-y-1/2 bg-white bg-opacity-80 rounded-full p-2 shadow hover:bg-teal-100 transition z-10" aria-label="Previous">
+                    <button onClick={prevImg} className="absolute left-0 top-1/2 -translate-y-1/2 bg-white dark:bg-gray-800 bg-opacity-80 rounded-full p-2 shadow hover:bg-teal-100 transition z-10" aria-label="Previous">
                       <FaChevronLeft className="w-6 h-6 text-teal-700" />
                     </button>
                     <img src={images[current].src} alt={images[current].alt} loading="lazy" className="w-64 h-84 object-cover rounded-2xl border border-gray-100 shadow-sm mx-10 cursor-pointer" onClick={() => setPopup(true)} onContextMenu={(e) => e.preventDefault()} />
-                    <button onClick={nextImg} className="absolute right-0 top-1/2 -translate-y-1/2 bg-white bg-opacity-80 rounded-full p-2 shadow hover:bg-teal-100 transition z-10" aria-label="Next">
+                    <button onClick={nextImg} className="absolute right-0 top-1/2 -translate-y-1/2 bg-white dark:bg-gray-800 bg-opacity-80 rounded-full p-2 shadow hover:bg-teal-100 transition z-10" aria-label="Next">
                       <FaChevronRight className="w-6 h-6 text-teal-700" />
                     </button>
                   </div>
-                  <div className="text-center text-lg text-gray-500 mt-2">{images[current].alt}</div>
+                  <div className="text-center text-lg text-gray-500 dark:text-gray-400 mt-2">{images[current].alt}</div>
                 </div>
                 {/* Text */}
                 <div className="flex-1">
                   <h2 className="text-2xl font-semibold mb-4 text-teal-700">Award-winning Handwriting Analysis Individual Project</h2>
-                  <p className="text-gray-800 mb-2">
+                  <p className="text-gray-800 dark:text-gray-200 mb-2">
                     Developed a web-based system to improve Chinese handwriting quality through font analysis, educational feedback, and game-based learning. This <b>individual</b> project covers algorithm development, interface design, and user testing.
                   </p>
-                  <div className="bg-gray-100 rounded-xl shadow p-4 mb-4 hover:scale-105 transition">
-                    <ul className="list-disc list-inside text-gray-800 space-y-2">
+                  <div className="bg-gray-100 dark:bg-gray-800 rounded-xl shadow p-4 mb-4 hover:scale-105 transition">
+                    <ul className="list-disc list-inside text-gray-800 dark:text-gray-200 space-y-2">
                       <li className="flex text-lg items-center">
                         <span>1st Runner-up, Professor Charles K. Kao Student Creativity Awards 2025</span>
                         <a href="https://www.cse.cuhk.edu.hk/news/achievements/pckksca2025/" target="_blank" rel="noopener noreferrer" className="ml-2 text-teal-600 hover:text-teal-800 inline-flex align-middle" title="Award Details">
@@ -96,32 +96,32 @@ const Achievements = () => {
                       </li> */}
                     </ul>
                   </div>
-                  <p className="text-base text-gray-800 mt-6">This project demonstrates the integration of technical innovation and educational impact, earning recognition in competitions, university awards, and international publication.</p>
+                  <p className="text-base text-gray-800 dark:text-gray-200 mt-6">This project demonstrates the integration of technical innovation and educational impact, earning recognition in competitions, university awards, and international publication.</p>
                 </div>
               </div>
               {/* IoT Data Hackathon Project */}
-              <div className="bg-gray-50 rounded-2xl shadow-lg hover:shadow-2xl p-5 flex flex-col md:flex-row items-center gap-5">
+              <div className="bg-gray-50 dark:bg-gray-900 rounded-2xl shadow-lg hover:shadow-2xl p-5 flex flex-col md:flex-row items-center gap-5">
                 {/* Slideshow */}
                 <div className="flex flex-col items-center gap-5">
                   <div className="relative flex items-center justify-center hover:scale-105 transition">
-                    <button onClick={prevIotImg} className="absolute left-0 top-1/2 -translate-y-1/2 bg-white bg-opacity-80 rounded-full p-2 shadow hover:bg-teal-100 transition z-10" aria-label="Previous">
+                    <button onClick={prevIotImg} className="absolute left-0 top-1/2 -translate-y-1/2 bg-white dark:bg-gray-800 bg-opacity-80 rounded-full p-2 shadow hover:bg-teal-100 transition z-10" aria-label="Previous">
                       <FaChevronLeft className="w-6 h-6 text-teal-700" />
                     </button>
                     <img src={iotImages[currentIot].src} alt={iotImages[currentIot].alt} loading="lazy" className="w-64 h-84 object-cover rounded-2xl border border-gray-100 shadow-sm mx-10 cursor-pointer" onClick={() => setPopupIot(true)} onContextMenu={(e) => e.preventDefault()} />
-                    <button onClick={nextIotImg} className="absolute right-0 top-1/2 -translate-y-1/2 bg-white bg-opacity-80 rounded-full p-2 shadow hover:bg-teal-100 transition z-10" aria-label="Next">
+                    <button onClick={nextIotImg} className="absolute right-0 top-1/2 -translate-y-1/2 bg-white dark:bg-gray-800 bg-opacity-80 rounded-full p-2 shadow hover:bg-teal-100 transition z-10" aria-label="Next">
                       <FaChevronRight className="w-6 h-6 text-teal-700" />
                     </button>
                   </div>
-                  <div className="text-center text-lg text-gray-500 mt-2">{iotImages[currentIot].alt}</div>
+                  <div className="text-center text-lg text-gray-500 dark:text-gray-400 mt-2">{iotImages[currentIot].alt}</div>
                 </div>
                 {/* Text */}
                 <div className="flex-1">
                   <h2 className="text-2xl font-semibold mb-4 text-teal-700">Champion of the Professional Stream - IoT Data Hackathon 2026</h2>
-                  <p className="text-gray-800 mb-2">
+                  <p className="text-gray-800 dark:text-gray-200 mb-2">
                     Led team <b>Keep Data Moving</b> to victory by developing an innovative IoT solution addressing UAVs, data automation, and network security in the low-altitude economy. As team lead, pitched the winning prototype on stage and spearheaded the integration of complex technical systems with practical, data-driven insights.
                   </p>
-                  <div className="bg-gray-100 rounded-xl shadow p-4 mb-4 hover:scale-105 transition">
-                    <ul className="list-disc list-inside text-gray-800 space-y-2">
+                  <div className="bg-gray-100 dark:bg-gray-800 rounded-xl shadow p-4 mb-4 hover:scale-105 transition">
+                    <ul className="list-disc list-inside text-gray-800 dark:text-gray-200 space-y-2">
                       <li className="flex text-lg items-center">
                         <span>🏆 Champion of the Professional Stream</span>
                       </li>
@@ -152,7 +152,7 @@ const Achievements = () => {
                       <span className="text-base">My LinkedIn Post</span>
                     </a>
                   </div>
-                  <p className="text-base text-gray-800 mt-6">This victory showcases technical excellence in building robust, data-driven solutions for the emerging low-altitude economy, combined with strong team leadership and the ability to translate complex ideas into winning, practical solutions.</p>
+                  <p className="text-base text-gray-800 dark:text-gray-200 mt-6">This victory showcases technical excellence in building robust, data-driven solutions for the emerging low-altitude economy, combined with strong team leadership and the ability to translate complex ideas into winning, practical solutions.</p>
                 </div>
               </div>
             </div>
@@ -163,10 +163,10 @@ const Achievements = () => {
       {popup && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-70" onClick={() => setPopup(false)}>
           <div className="relative max-w-3xl w-full flex flex-col items-center">
-            <button className="absolute top-2 right-2 bg-white bg-opacity-80 rounded-full p-2 shadow hover:bg-teal-100 transition" onClick={() => setPopup(false)} aria-label="Close">
+            <button className="absolute top-2 right-2 bg-white dark:bg-gray-800 bg-opacity-80 rounded-full p-2 shadow hover:bg-teal-100 transition" onClick={() => setPopup(false)} aria-label="Close">
               <FaTimes className="w-6 h-6 text-teal-700" />
             </button>
-            <img src={images[current].src} alt={images[current].alt} loading="lazy" className="max-h-[80vh] w-auto max-w-full rounded-2xl shadow-lg bg-white" onClick={(e) => e.stopPropagation()} style={{ objectFit: "contain" }} />
+            <img src={images[current].src} alt={images[current].alt} loading="lazy" className="max-h-[80vh] w-auto max-w-full rounded-2xl shadow-lg bg-white dark:bg-gray-800" onClick={(e) => e.stopPropagation()} style={{ objectFit: "contain" }} />
             <div className="text-center text-lg text-white mt-4">{images[current].alt}</div>
           </div>
         </div>
@@ -175,10 +175,10 @@ const Achievements = () => {
       {popupIot && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-70" onClick={() => setPopupIot(false)}>
           <div className="relative max-w-3xl w-full flex flex-col items-center">
-            <button className="absolute top-2 right-2 bg-white bg-opacity-80 rounded-full p-2 shadow hover:bg-teal-100 transition" onClick={() => setPopupIot(false)} aria-label="Close">
+            <button className="absolute top-2 right-2 bg-white dark:bg-gray-800 bg-opacity-80 rounded-full p-2 shadow hover:bg-teal-100 transition" onClick={() => setPopupIot(false)} aria-label="Close">
               <FaTimes className="w-6 h-6 text-teal-700" />
             </button>
-            <img src={iotImages[currentIot].src} alt={iotImages[currentIot].alt} loading="lazy" className="max-h-[80vh] w-auto max-w-full rounded-2xl shadow-lg bg-white" onClick={(e) => e.stopPropagation()} style={{ objectFit: "contain" }} />
+            <img src={iotImages[currentIot].src} alt={iotImages[currentIot].alt} loading="lazy" className="max-h-[80vh] w-auto max-w-full rounded-2xl shadow-lg bg-white dark:bg-gray-800" onClick={(e) => e.stopPropagation()} style={{ objectFit: "contain" }} />
             <div className="text-center text-lg text-white mt-4">{iotImages[currentIot].alt}</div>
           </div>
         </div>

@@ -130,7 +130,7 @@ export default function BlogPostGrid() {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:p-24 p-6">
       {blogPosts.map((post) => (
-        <div key={post.id} className="bg-white rounded-lg shadow-lg overflow-hidden hover:scale-105 transition">
+        <div key={post.id} className="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden hover:scale-105 transition">
           {post.id >= 1 && post.id <= 8 ? (
             <div className="w-full h-48 overflow-hidden flex items-center justify-center">
               <iframe
@@ -150,11 +150,11 @@ export default function BlogPostGrid() {
           )}
 
           <div className="p-6">
-            <p className="font-mono text-sm text-gray-500 mb-2">{post.category}</p>
+            <p className="font-mono text-sm text-gray-500 dark:text-gray-400 mb-2">{post.category}</p>
             <h2 className="font-tc text-2xl font-bold mb-2">{post.title}</h2>
-            <p className="font-sans text-gray-600 mb-4">{post.excerpt}</p>
-            <p className="font-dfkai text-xl text-gray-00 mb-2" dangerouslySetInnerHTML={{ __html: post.fullcontent }}></p>
-            <p className="font-sans italic text-sm text-gray-500">{post.date}</p>
+            <p className="font-sans text-gray-600 dark:text-gray-300 mb-4">{post.excerpt}</p>
+            <p className="font-dfkai text-xl text-gray-00 dark:text-gray-200 mb-2" dangerouslySetInnerHTML={{ __html: post.fullcontent }}></p>
+            <p className="font-sans italic text-sm text-gray-500 dark:text-gray-400">{post.date}</p>
           </div>
         </div>
       ))}

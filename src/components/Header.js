@@ -17,8 +17,8 @@ const Header = () => {
           <Link to="/" className="text-[#696c6d] dark:text-gray-300 hover:text-primary dark:hover:text-accent transition">
             Home
           </Link>
-          <Link to="/skills" className="text-[#696c6d] dark:text-gray-300 hover:text-primary dark:hover:text-accent transition">
-            Skills
+          <Link to="/about" className="text-[#696c6d] dark:text-gray-300 hover:text-primary dark:hover:text-accent transition">
+            About
           </Link>
           <Link to="/achievements" className="text-[#696c6d] dark:text-gray-300 hover:text-primary dark:hover:text-accent transition">
             Achievements

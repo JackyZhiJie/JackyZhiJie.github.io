@@ -1,9 +1,8 @@
 import React from "react";
 import Home from "../pages/Home";
-import About from "../pages/Achievements";
+import About from "../pages/About";
 import Portfolio from "../pages/Portfolio";
 import Contact from "../pages/Contact";
-import Skills from "../pages/Skills";
 import Prose from "../pages/Prose";
 import { Routes, Route, useLocation, Router } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
@@ -20,7 +19,6 @@ const AnimRoutes = () => {
         <Route path="/about" element={<About />} />
         <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/skills" element={<Skills />} />
         <Route path="/prose" element={<Prose />} />
         <Route path="/achievements" element={<Achievements />} />
         <Route path="/projects" element={<Projects />} />

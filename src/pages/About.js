@@ -121,7 +121,7 @@ const About = () => {
             <img src={manImg} alt="Jacky Profile" loading="lazy" className="w-48 h-48 md:w-56 md:h-56 object-cover rounded-full border-4 border-teal-500/20 shadow-md hover:scale-[1.10] transition-transform duration-300" onContextMenu={(e) => e.preventDefault()} />
             <div className="text-center mt-4">
               <h2 className="text-xl font-bold text-gray-800 dark:text-gray-200">Jacky</h2>
-              <p className="text-sm text-teal-600 dark:text-teal-400 font-medium">Computer Engineer & HCI Researcher</p>
+              <p className="text-sm text-teal-600 dark:text-teal-400 font-medium">Graduate Engineer & HCI Researcher</p>
             </div>
           </div>
 

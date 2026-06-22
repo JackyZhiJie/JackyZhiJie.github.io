@@ -5,8 +5,8 @@ import { transition1 } from "../transitions";
 
 const Home = () => {
   return (
-    <motion.section initial={{ opacity: 0, y: "-80%" }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: "-80%" }} transition={transition1} className="">
-      <div className="container mx-auto px-4 items-center justify-center flex flex-col lg:flex-row gap-x-12 max-w-5xl">
+    <motion.section initial={{ opacity: 0, y: "-80%" }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: "-80%" }} transition={transition1} className="py-2">
+      <div className="container mx-auto px-4 items-center justify-center flex flex-col lg:flex-row gap-x-12 max-w-5xl mb-4">
         {/* Left: Image and Info */}
         <div className="flex items-center mt-4 lg:mb-0">
           <div className="">

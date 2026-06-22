@@ -110,7 +110,7 @@ const About = () => {
   ];
 
   return (
-    <motion.section initial={{ opacity: 0, y: "-80%" }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: "-80%" }} transition={transition1} className="py-6">
+    <motion.section initial={{ opacity: 0, y: "-80%" }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: "-80%" }} transition={transition1} className="py-2">
       <div className="container mx-auto px-4 max-w-6xl">
         <h1 className="h3 font-bold text-center tracking-tight mb-8">About Me</h1>
 
@@ -144,7 +144,7 @@ const About = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-12">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-2">
           {/* --- PROFESSIONAL TIMELINE (Left 7 Columns) --- */}
           <div className="lg:col-span-7">
             <h3 className="text-2xl font-bold mb-6 text-gray-800 dark:text-gray-100 flex items-center gap-2">Professional Timeline</h3>

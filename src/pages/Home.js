@@ -1,5 +1,6 @@
 import React from "react";
 import manImg from "../img/home/man1.jpg";
+import manImg2 from "../img/contact/man.jpg";
 import { motion } from "framer-motion";
 import { transition1 } from "../transitions";
 
@@ -10,7 +11,7 @@ const Home = () => {
         {/* Left: Image and Info */}
         <div className="flex items-center mt-4 lg:mb-0">
           <div className="">
-            <img src={manImg} alt="Jacky" className="rounded-2xl h-[62vh] duration-300 hover:scale-105 transition mx-auto mb-2" onContextMenu={(e) => e.preventDefault()} />
+            <img src={manImg2} alt="Jacky" className="rounded-2xl h-[62vh] duration-300 hover:scale-105 transition mx-auto mb-2" onContextMenu={(e) => e.preventDefault()} />
             <div className="w-full text-center lg:text-center">
               <p className="text-lg md:text-xl font-semibold text-teal-700 mb-1">Graduate Engineer & HCI Researcher</p>
               <p className="text-base text-gray-500 dark:text-gray-400 mb-0">Hong Kong</p>

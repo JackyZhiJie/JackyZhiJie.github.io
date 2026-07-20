@@ -1,0 +1,71 @@
+@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Noto+Serif+TC:wght@300;400;500;600;700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  @apply transition-colors duration-400 ease-out;
+}
+
+.serif-title {
+  font-family: "Lora", serif;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #283030;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #e1d9cd;
+  border-radius: 999px;
+}
+
+/* Fluid card animations */
+.project-card {
+  @apply transition-all duration-400;
+}
+
+.project-card.hidden {
+  @apply opacity-0 pointer-events-none absolute;
+  transform: scale(0.96) translateY(8px);
+}
+
+/* Ambient visual lighting effects */
+@keyframes pulseGlow {
+  0%,
+  100% {
+    opacity: 0.15;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}
+
+.ambient-glow {
+  animation: pulseGlow 10s infinite ease-in-out;
+}
+
+/* Responsive utilities */
+@media (max-width: 640px) {
+  .container {
+    @apply px-4;
+  }
+}

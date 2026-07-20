@@ -1,0 +1,1172 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jacky Xie Chen | B.Eng, MTR Graduate Engineer & HCI Researcher</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Elegant Lora Serif paired with clean Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        serif: ['Lora', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        // Biophilic Dark Slate colors (calming workspace environment)
+                        bioDark: {
+                            bg: '#111414',
+                            card: '#181D1D',
+                            border: '#283030',
+                            textMuted: '#899797',
+                            accentSage: '#86A396',
+                            accentTerra: '#C27B63',
+                            accentMoss: '#26332E'
+                        },
+                        // Biophilic Light Ceramic colors (warm physical gallery)
+                        bioLight: {
+                            bg: '#FBF9F6',
+                            card: '#F1EDE7',
+                            border: '#E1D9CD',
+                            textMuted: '#67706B',
+                            accentSage: '#4A7261',
+                            accentTerra: '#AB583F'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            transition: background-color 0.4s ease, color 0.4s ease;
+        }
+        .serif-title {
+            font-family: 'Lora', serif;
+        }
+        /* Custom scrollbars */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .dark ::-webkit-scrollbar-thumb {
+            background: #283030;
+            border-radius: 999px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #E1D9CD;
+            border-radius: 999px;
+        }
+        /* Fluid card animations */
+        .project-card {
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .project-card.hidden {
+            opacity: 0;
+            transform: scale(0.96) translateY(8px);
+            pointer-events: none;
+            position: absolute;
+        }
+        /* Ambient visual lighting effects */
+        @keyframes pulseGlow {
+            0%, 100% { opacity: 0.15; }
+            50% { opacity: 0.4; }
+        }
+        .ambient-glow {
+            animation: pulseGlow 10s infinite ease-in-out;
+        }
+    </style>
+</head>
+<body class="dark bg-bioDark-bg text-gray-100 min-h-screen flex flex-col antialiased">
+
+    <!-- Ambient background light elements for spatial feel -->
+    <div class="fixed top-[-10%] right-[-10%] w-[50vw] h-[50vw] rounded-full bg-bioDark-accentSage/15 dark:bg-bioDark-accentSage/5 blur-[130px] pointer-events-none z-0 ambient-glow"></div>
+    <div class="fixed bottom-[-10%] left-[-10%] w-[45vw] h-[45vw] rounded-full bg-bioDark-accentTerra/15 dark:bg-bioDark-accentTerra/5 blur-[130px] pointer-events-none z-0 ambient-glow" style="animation-delay: -5s;"></div>
+
+    <!-- Nav Header -->
+    <header class="sticky top-0 z-50 backdrop-blur-md bg-bioDark-bg/80 dark:bg-bioDark-bg/80 border-b border-bioDark-border/30 dark:border-bioDark-border/30 transition-all duration-300">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            
+            <!-- Logo / Personal Monogram -->
+            <a href="#" onclick="navigateTo('home'); return false;" class="flex items-center gap-2.5 group">
+                <div class="w-9 h-9 rounded-lg bg-gradient-to-tr from-bioDark-accentSage to-bioDark-accentTerra flex items-center justify-center text-white font-bold text-sm transition-transform duration-300 group-hover:scale-105">
+                    JX
+                </div>
+                <div>
+                    <span class="serif-title font-semibold tracking-wide text-lg text-gray-900 dark:text-gray-100">Jacky Xie Chen</span>
+                    <span class="block text-[10px] text-bioLight-textMuted dark:text-bioDark-textMuted font-medium tracking-wider uppercase">Graduate Engineer @ MTR | HCI Researcher</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden md:flex items-center gap-1">
+                <button onclick="navigateTo('home')" class="nav-link px-4 py-2 rounded-lg text-sm font-semibold transition-colors text-bioLight-accentSage dark:text-bioDark-accentSage bg-bioLight-card dark:bg-bioDark-accentMoss/30">Home</button>
+                <button onclick="navigateTo('work-research')" class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-bioLight-textMuted dark:text-bioDark-textMuted hover:text-gray-900 dark:hover:text-white transition-colors">Work & Research</button>
+                <button onclick="navigateTo('creative-log')" class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-bioLight-textMuted dark:text-bioDark-textMuted hover:text-gray-900 dark:hover:text-white transition-colors">Creative Log</button>
+                <button onclick="navigateTo('about')" class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-bioLight-textMuted dark:text-bioDark-textMuted hover:text-gray-900 dark:hover:text-white transition-colors">About & CV</button>
+            </nav>
+
+            <!-- Utility Action Bar (Socials, Theme Toggle) -->
+            <div class="flex items-center gap-3">
+                <!-- Theme Toggle Button -->
+                <button onclick="toggleTheme()" class="p-2 rounded-lg hover:bg-bioLight-card dark:hover:bg-bioDark-card border border-bioLight-border dark:border-bioDark-border transition-colors text-gray-700 dark:text-gray-300" aria-label="Toggle Theme">
+                    <i data-lucide="sun" id="sun-icon" class="w-4 h-4 hidden"></i>
+                    <i data-lucide="moon" id="moon-icon" class="w-4 h-4"></i>
+                </button>
+                
+                <!-- Contact Direct Quick action button -->
+                <a href="mailto:jackyxiechenzhijie@gmail.com" class="hidden sm:flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-bioLight-accentSage text-white dark:bg-bioDark-accentSage dark:text-bioDark-bg shadow-sm hover:opacity-95 transition-opacity">
+                    <i data-lucide="mail" class="w-3.5 h-3.5"></i>
+                    Contact
+                </a>
+
+                <!-- Mobile Menu Toggle Button -->
+                <button onclick="toggleMobileMenu()" class="md:hidden p-2 rounded-lg hover:bg-bioLight-card dark:hover:bg-bioDark-card border border-bioLight-border dark:border-bioDark-border transition-colors text-gray-700 dark:text-gray-300">
+                    <i data-lucide="menu" id="menu-icon" class="w-4 h-4"></i>
+                </button>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- Mobile Menu Drawer -->
+    <div id="mobile-menu" class="hidden md:hidden fixed inset-x-0 top-16 bg-bioLight-bg/95 dark:bg-bioDark-bg/95 border-b border-bioLight-border dark:border-bioDark-border/50 shadow-lg z-40 transition-all duration-300">
+        <div class="px-4 py-4 space-y-2">
+            <button onclick="navigateTo('home'); toggleMobileMenu();" class="mobile-nav-link block w-full text-left px-4 py-3 rounded-xl font-medium bg-bioLight-card dark:bg-bioDark-card text-bioLight-accentSage dark:text-bioDark-accentSage">Home</button>
+            <button onclick="navigateTo('work-research'); toggleMobileMenu();" class="mobile-nav-link block w-full text-left px-4 py-3 rounded-xl font-medium text-bioLight-textMuted dark:text-bioDark-textMuted">Work & Research</button>
+            <button onclick="navigateTo('creative-log'); toggleMobileMenu();" class="mobile-nav-link block w-full text-left px-4 py-3 rounded-xl font-medium text-bioLight-textMuted dark:text-bioDark-textMuted">Creative Log</button>
+            <button onclick="navigateTo('about'); toggleMobileMenu();" class="mobile-nav-link block w-full text-left px-4 py-3 rounded-xl font-medium text-bioLight-textMuted dark:text-bioDark-textMuted">About & CV</button>
+            
+            <div class="pt-3 border-t border-bioLight-border dark:border-bioDark-border flex justify-between items-center px-4">
+                <span class="text-xs text-bioLight-textMuted dark:text-bioDark-textMuted">Connect with Jacky</span>
+                <div class="flex gap-4">
+                    <a href="https://www.linkedin.com/in/jackyxczj" target="_blank" class="text-bioLight-textMuted hover:text-gray-900 dark:text-bioDark-textMuted dark:hover:text-white transition-colors">
+                        <i data-lucide="linkedin" class="w-4.5 h-4.5"></i>
+                    </a>
+                    <a href="https://github.com/JackyZhiJie" target="_blank" class="text-bioLight-textMuted hover:text-gray-900 dark:text-bioDark-textMuted dark:hover:text-white transition-colors">
+                        <i data-lucide="github" class="w-4.5 h-4.5"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content Containers -->
+    <main class="flex-grow z-10 max-w-6xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-8 md:py-12">
+
+        <!-- ================================================================= -->
+        <!-- ================================================================= -->
+        <section id="tab-home" class="space-y-12 sm:space-y-16">
+            
+            <!-- Hybrid Hero Intro -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+                
+                <!-- Profile Image Frame -->
+                <div class="lg:col-span-4 flex justify-center">
+                    <div class="relative group">
+                        <!-- Dual borders representing hybrid engineer/researcher tracks -->
+                        <div class="absolute inset-0 rounded-2xl bg-gradient-to-tr from-bioDark-accentSage via-transparent to-bioDark-accentTerra opacity-35 blur-sm scale-102 group-hover:scale-105 transition-transform duration-500"></div>
+                        <div class="relative bg-bioLight-card dark:bg-bioDark-card p-2 rounded-2xl border border-bioLight-border dark:border-bioDark-border/60">
+                            <!-- SVG Silhouette avatar styled biophilically -->
+                            <div class="w-64 h-80 rounded-xl overflow-hidden bg-cover bg-center flex items-end justify-center relative bg-gradient-to-b from-[#86A396]/30 to-[#26332E]/80">
+                                <div class="absolute inset-0 flex flex-col justify-end p-4 text-white z-10 bg-gradient-to-t from-black/85 via-black/25 to-transparent">
+                                    <h3 class="serif-title font-medium text-lg leading-tight">Jacky Xie Chen</h3>
+                                    <p class="text-xs text-gray-300 font-light mt-0.5">Graduate Engineer @ MTR & MPhil Student @ CityU</p>
+                                </div>
+                                <!-- Minimal physical architectural overlay grid -->
+                                <svg class="w-full h-full opacity-25" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <line x1="10" y1="90" x2="90" y2="90" stroke="currentColor" stroke-width="0.75"/>
+                                    <rect x="25" y="30" width="15" height="60" stroke="currentColor" stroke-width="0.75"/>
+                                    <rect x="45" y="15" width="20" height="75" stroke="currentColor" stroke-width="0.75"/>
+                                    <circle cx="55" cy="40" r="4" stroke="currentColor" stroke-width="0.75"/>
+                                    <line x1="25" y1="50" x2="40" y2="50" stroke="currentColor" stroke-width="0.5"/>
+                                    <line x1="45" y1="60" x2="65" y2="60" stroke="currentColor" stroke-width="0.5"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Text Presentation (Hybrid Bio) -->
+                <div class="lg:col-span-8 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-bioLight-card dark:bg-bioDark-accentMoss/20 border border-bioLight-border dark:border-bioDark-border/40 text-xs font-semibold text-bioLight-accentSage dark:text-bioDark-accentSage tracking-wide">
+                        <span class="w-2 h-2 rounded-full bg-bioDark-accentSage animate-ping"></span>
+                        Connecting Public Scale Infrastructure with Human Well-being
+                    </div>
+                    
+                    <h1 class="serif-title text-4xl sm:text-5xl lg:text-6xl font-normal tracking-tight text-gray-900 dark:text-white leading-tight">
+                        Bridging <span class="italic font-medium text-bioLight-accentSage dark:text-bioDark-accentSage">systems</span> and sensory interactions.
+                    </h1>
+
+                    <p class="text-base sm:text-lg text-bioLight-textMuted dark:text-bioDark-textMuted font-light max-w-2xl leading-relaxed">
+                        I am a Computer Engineering graduate from <strong class="font-medium text-gray-800 dark:text-gray-200">CUHK</strong> with a minor in Journalism. Today, I combine real-world physical systems scale as an <strong class="font-medium text-gray-800 dark:text-gray-200">MTR Graduate Engineer</strong> with research-backed human studies as an <strong class="font-medium text-gray-800 dark:text-gray-200">MPhil student at CityU's BiWell Lab</strong>, seeking to make massive structures responsive to human well-being.
+                    </p>
+
+                    <div class="flex flex-wrap justify-center lg:justify-start gap-4 pt-2">
+                        <a href="https://www.linkedin.com/in/jackyxczj" target="_blank" class="flex items-center gap-2 px-4.5 py-2.5 rounded-xl text-sm font-semibold border border-bioLight-border dark:border-bioDark-border hover:bg-bioLight-card dark:hover:bg-bioDark-card transition-all">
+                            <i data-lucide="linkedin" class="w-4 h-4"></i>
+                            <span class="px-1.5">LinkedIn Profile</span>
+                        </a>
+                        <a href="https://github.com/JackyZhiJie" target="_blank" class="flex items-center gap-2 px-4.5 py-2.5 rounded-xl text-sm font-semibold border border-bioLight-border dark:border-bioDark-border hover:bg-bioLight-card dark:hover:bg-bioDark-card transition-all">
+                            <i data-lucide="github" class="w-4 h-4"></i>
+                            <span class="px-1.5">GitHub Repositories</span>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Progressive Disclosure: The 3 Gateways -->
+            <div class="space-y-6">
+                <div class="text-center md:text-left">
+                    <h2 class="serif-title text-2xl font-normal text-gray-900 dark:text-white">Three Pillars of Action</h2>
+                    <p class="text-sm text-bioLight-textMuted dark:text-bioDark-textMuted mt-1">Explore my background across physical engineering grids, human-centered systems research, and creative storytelling.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    
+                    <!-- Gateway 1: Transit & Systems -->
+                    <div onclick="navigateToGateway('work-research', 'transit')" class="group relative bg-bioLight-card dark:bg-bioDark-card rounded-2xl border border-bioLight-border dark:border-bioDark-border p-6 hover:border-bioLight-accentSage dark:hover:border-bioDark-accentSage cursor-pointer transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                        <div class="w-12 h-12 rounded-xl bg-bioLight-accentSage/10 dark:bg-bioDark-accentSage/10 flex items-center justify-center text-bioLight-accentSage dark:text-bioDark-accentSage mb-5 group-hover:scale-105 transition-transform">
+                            <i data-lucide="train" class="w-6 h-6"></i>
+                        </div>
+                        <span class="block text-[11px] font-bold text-bioLight-accentSage dark:text-bioDark-accentSage tracking-wider uppercase mb-1">Scale & Infrastructure</span>
+                        <h3 class="serif-title text-xl font-medium text-gray-900 dark:text-white mb-2">Transit & Systems</h3>
+                        <p class="text-xs text-bioLight-textMuted dark:text-bioDark-textMuted leading-relaxed mb-4">
+                            Navigating real-world railway networks at MTR, managing large assets (EMSD), and building visual, high-integrity telemetry modules.
+                        </p>
+                        <div class="flex items-center gap-1.5 text-xs font-semibold text-bioLight-accentSage dark:text-bioDark-accentSage mt-auto">
+                            Explore Systems <i data-lucide="arrow-right" class="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform"></i>
+                        </div>
+                    </div>
+
+                    <!-- Gateway 2: Human-Building Interaction -->
+                    <div onclick="navigateToGateway('work-research', 'hci')" class="group relative bg-bioLight-card dark:bg-bioDark-card rounded-2xl border border-bioLight-border dark:border-bioDark-border p-6 hover:border-bioLight-accentTerra dark:hover:border-bioDark-accentTerra cursor-pointer transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                        <div class="w-12 h-12 rounded-xl bg-bioLight-accentTerra/10 dark:bg-bioDark-accentTerra/10 flex items-center justify-center text-bioLight-accentTerra dark:text-bioDark-accentTerra mb-5 group-hover:scale-105 transition-transform">
+                            <i data-lucide="brain" class="w-6 h-6"></i>
+                        </div>
+                        <span class="block text-[11px] font-bold text-bioLight-accentTerra dark:text-bioDark-accentTerra tracking-wider uppercase mb-1">Human Studies</span>
+                        <h3 class="serif-title text-xl font-medium text-gray-900 dark:text-white mb-2">HCI / HBI & Well-being</h3>
+                        <p class="text-xs text-bioLight-textMuted dark:text-bioDark-textMuted leading-relaxed mb-4">
+                            Investigating sensory adaptations, physical building interfaces (BiWell Lab), and educational tools, supported by published IEEE research.
+                        </p>
+                        <div class="flex items-center gap-1.5 text-xs font-semibold text-bioLight-accentTerra dark:text-bioDark-accentTerra mt-auto">
+                            Explore Research <i data-lucide="arrow-right" class="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform"></i>
+                        </div>
+                    </div>
+
+                    <!-- Gateway 3: Prose & Media -->
+                    <div onclick="navigateTo('creative-log')" class="group relative bg-bioLight-card dark:bg-bioDark-card rounded-2xl border border-bioLight-border dark:border-bioDark-border p-6 hover:border-bioLight-accentSage dark:hover:border-bioDark-accentSage cursor-pointer transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                        <div class="w-12 h-12 rounded-xl bg-bioLight-accentSage/10 dark:bg-bioDark-accentSage/10 flex items-center justify-center text-bioLight-accentSage dark:text-bioDark-accentSage mb-5 group-hover:scale-105 transition-transform">
+                            <i data-lucide="camera" class="w-6 h-6"></i>
+                        </div>
+                        <span class="block text-[11px] font-bold text-bioLight-accentSage dark:text-bioDark-accentSage tracking-wider uppercase mb-1">Media & Narratives</span>
+                        <h3 class="serif-title text-xl font-medium text-gray-900 dark:text-white mb-2">Multimedia & Prose</h3>
+                        <p class="text-xs text-bioLight-textMuted dark:text-bioDark-textMuted leading-relaxed mb-4">
+                            Blending a minor in Journalism with high-quality street photography and humanistic articles to communicate technological insights clearly.
+                        </p>
+                        <div class="flex items-center gap-1.5 text-xs font-semibold text-bioLight-accentSage dark:text-bioDark-accentSage mt-auto">
+                            Explore Creative Log <i data-lucide="arrow-right" class="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform"></i>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Live Lab Sandbox Widget Panel -->
+            <div class="bg-bioLight-card dark:bg-bioDark-card rounded-2xl border border-bioLight-border dark:border-bioDark-border/60 p-6 md:p-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    <div class="lg:col-span-5 space-y-4">
+                        <span class="text-xs font-bold text-bioLight-accentSage dark:text-bioDark-accentSage tracking-widest uppercase">BiWell Lab Sandbox</span>
+                        <h3 class="serif-title text-2xl font-normal text-gray-900 dark:text-white">Smart Environmental Facade</h3>
+                        <p class="text-xs text-bioLight-textMuted dark:text-bioDark-textMuted leading-relaxed">
+                            This panel highlights real-world Human-Building Interaction (HBI) objectives. Tune the sliders to adjust structural circadian temperature and facade transmission values, observing the corresponding bio-behavior change.
+                        </p>
+                        
+                        <div class="space-y-4 pt-2">
+                            <!-- Input 1 -->
+                            <div>
+                                <div class="flex justify-between text-xs font-medium text-gray-700 dark:text-gray-300 mb-1.5">
+                                    <span>Circadian Temperature Control (K)</span>
+                                    <span id="temp-val" class="font-semibold text-bioLight-accentTerra dark:text-bioDark-accentTerra">3200 K</span>
+                                </div>
+                                <input type="range" id="temp-slider" min="2000" max="6500" value="3200" oninput="updateAmbientSimulation()" class="w-full accent-bioLight-accentTerra dark:accent-bioDark-accentTerra">
+                            </div>
+                            <!-- Input 2 -->
+                            <div>
+                                <div class="flex justify-between text-xs font-medium text-gray-700 dark:text-gray-300 mb-1.5">
+                                    <span>Facade Light Transmission (%)</span>
+                                    <span id="trans-val" class="font-semibold text-bioLight-accentSage dark:text-bioDark-accentSage">65%</span>
+                                </div>
+                                <input type="range" id="trans-slider" min="10" max="100" value="65" oninput="updateAmbientSimulation()" class="w-full accent-bioLight-accentSage dark:accent-bioDark-accentSage">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Ambient Simulator Output Display -->
+                    <div class="lg:col-span-7 flex flex-col items-center w-full">
+                        <div class="relative w-full aspect-[16/9] rounded-xl overflow-hidden border border-bioLight-border dark:border-bioDark-border flex items-center justify-center bg-[#151a1a] transition-all" id="ambient-canvas">
+                            
+                            <!-- Dynamic SVG visualizer showing physical facade layout -->
+                            <svg class="absolute inset-0 w-full h-full opacity-25" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <pattern id="facade-grid" width="40" height="40" patternUnits="userSpaceOnUse">
+                                        <rect width="40" height="40" fill="none" stroke="currentColor" stroke-width="0.5" class="text-bioDark-border"/>
+                                        <circle cx="20" cy="20" r="8" id="svg-facade-cell" fill="none" stroke="currentColor" stroke-width="1.5" class="text-bioDark-accentSage"/>
+                                    </pattern>
+                                </defs>
+                                <rect width="100%" height="100%" fill="url(#facade-grid)" />
+                            </svg>
+
+                            <div class="text-center z-10 px-4">
+                                <div id="ambient-status" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/55 border border-white/10 text-[11px] font-medium text-white mb-2">
+                                    Cozy Architectural Aura
+                                </div>
+                                <h4 class="serif-title text-2xl font-light text-white shadow-sm" id="ambient-aura-label">Warm Evening Glow</h4>
+                                <p class="text-[11px] text-gray-300 mt-1 max-w-sm" id="ambient-desc-label">Facilitating natural melatonin production by filtering blue light frequencies.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- ================================================================= -->
+        <!-- ================================================================= -->
+        <section id="tab-work-research" class="hidden space-y-8">
+            
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+                <div>
+                    <h2 class="serif-title text-3xl font-normal text-gray-900 dark:text-white">Selected Works & Projects</h2>
+                    <p class="text-sm text-bioLight-textMuted dark:text-bioDark-textMuted mt-1">Intersections of physical architecture, computer engineering, and user-centered design.</p>
+                </div>
+                
+                <!-- Horizontal Filter Navigation -->
+                <div class="flex flex-wrap gap-1.5 bg-bioLight-card dark:bg-bioDark-card p-1 rounded-xl border border-bioLight-border dark:border-bioDark-border/60 self-start">
+                    <button onclick="filterProjects('all')" id="filter-btn-all" class="filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-bioLight-accentSage text-white dark:bg-bioDark-accentSage dark:text-bioDark-bg transition-colors">Show All</button>
+                    <button onclick="filterProjects('transit')" id="filter-btn-transit" class="filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold text-bioLight-textMuted dark:text-bioDark-textMuted hover:text-gray-900 dark:hover:text-white transition-colors">Systems & Transit</button>
+                    <button onclick="filterProjects('hci')" id="filter-btn-hci" class="filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold text-bioLight-textMuted dark:text-bioDark-textMuted hover:text-gray-900 dark:hover:text-white transition-colors">HCI / HBI Research</button>
+                    <button onclick="filterProjects('multimedia')" id="filter-btn-multimedia" class="filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold text-bioLight-textMuted dark:text-bioDark-textMuted hover:text-gray-900 dark:hover:text-white transition-colors">Multimedia & Dev</button>
+                </div>
+            </div>
+
+            <!-- Dynamic Project Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 relative" id="project-grid-container">
+
+                <!-- Project 1: MTR Telemetry Signal Decoder -->
+                <div class="project-card group bg-bioLight-card dark:bg-bioDark-card rounded-2xl border border-bioLight-border dark:border-bioDark-border p-5 flex flex-col justify-between" data-category="transit flex">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="p-2 rounded-xl bg-bioLight-accentSage/10 dark:bg-bioDark-accentSage/10 text-bioLight-accentSage dark:text-bioDark-accentSage">
+                                <i data-lucide="terminal" class="w-5 h-5"></i>
+                            </div>
+                            <span class="text-[10px] font-bold px-2.5 py-1 rounded-full bg-bioLight-border/40 dark:bg-bioDark-border/60 text-bioLight-textMuted dark:text-bioDark-textMuted">MTR Group</span>
+                        </div>
+                        <h4 class="serif-title text-lg font-medium text-gray-900 dark:text-white mb-1 group-hover:text-bioLight-accentSage dark:group-hover:text-bioDark-accentSage transition-colors">Railway Operations Diagnostic</h4>
+                        <p class="text-xs text-bioLight-textMuted dark:text-bioDark-textMuted leading-relaxed mb-4">
+                            Converting raw digital station relay logs into diagnostic telemetry views for field operations. Streamlines real-time troubleshooting routines.
+                        </p>
+                    </div>
+                    
+                    <!-- Live Waveform interactive mockup -->
+                    <div class="bg-black/20 dark:bg-black/40 rounded-xl p-3 border border-bioLight-border/30 dark:border-bioDark-border/30 mb-4 text-left">
+                        <div class="flex justify-between items-center mb-1.5">
+                            <span class="text-[9px] font-mono text-bioLight-accentSage dark:text-bioDark-accentSage uppercase">Operations Telemetry Stream</span>
+                            <span id="decoder-status" class="text-[8px] bg-emerald-500/15 text-emerald-400 px-1.5 py-0.5 rounded-full font-semibold animate-pulse">Online</span>
+                        </div>
+                        <!-- SVG Simulated Waveform -->
+                        <div class="h-10 flex items-center justify-center overflow-hidden">
+                            <svg class="w-full h-full" viewBox="0 0 200 40">
+                                <path id="signal-path" d="M0 20 Q 20 20, 40 20 T 80 20 T 120 20 T 160 20 T 200 20" fill="none" stroke="#86A396" stroke-width="1.5"></path>
+                            </svg>
+                        </div>
+                        <button onclick="triggerSignalDecode()" class="mt-2 w-full py-1 rounded bg-bioLight-accentSage/10 dark:bg-bioDark-accentSage/10 hover:bg-bioLight-accentSage hover:text-white text-[9px] font-bold tracking-wider uppercase text-bioLight-accentSage dark:text-bioDark-accentSage transition-colors">Decode Live Stream</button>
+                    </div>
+
+                    <div class="flex flex-wrap gap-1.5">
+                        <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-black/20 dark:bg-black/40 border border-bioLight-border dark:border-bioDark-border/60 text-gray-600 dark:text-gray-400">Python</span>
+                        <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-black/20 dark:bg-black/40 border border-bioLight-border dark:border-bioDark-border/60 text-gray-600 dark:text-gray-400">C++ Logistics</span>
+                        <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-black/20 dark:bg-black/40 border border-bioLight-border dark:border-bioDark-border/60 text-gray-600 dark:text-gray-400">Log Parsing</span>
+                    </div>
+                </div>
+
+                <!-- Project 2: First Author IEEE ICEED Paper on Handwriting Educational technology -->
+                <div class="project-card group bg-bioLight-card dark:bg-bioDark-card rounded-2xl border border-bioLight-border dark:border-bioDark-border p-5 flex flex-col justify-between" data-category="hci flex">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="p-2 rounded-xl bg-bioLight-accentTerra/10 dark:bg-bioDark-accentTerra/10 text-bioLight-accentTerra dark:text-bioDark-accentTerra">
+                                <i data-lucide="award" class="w-5 h-5"></i>
+                            </div>
+                            <span class="text-[10px] font-bold px-2.5 py-1 rounded-full bg-bioLight-border/40 dark:bg-bioDark-border/60 text-bioLight-textMuted dark:text-bioDark-textMuted">IEEE Publication</span>
+                        </div>
+                        <h4 class="serif-title text-lg font-medium text-gray-900 dark:text-white mb-1 group-hover:text-bioLight-accentTerra dark:group-hover:text-bioDark-accentTerra transition-colors">Chinese Handwriting Web System</h4>
+                        <p class="text-xs text-bioLight-textMuted dark:text-bioDark-textMuted leading-relaxed mb-4">
+                            First author on an educational handwriting platform analyzing font vectors and stroke paths to assist cognitive fine-motor acquisition in children. Published in ICEED 2024.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-black/10 dark:bg-black/30 rounded-xl p-3 border border-bioLight-border/30 dark:border-bioDark-border/30 mb-4">
+                        <span class="block text-[9px] font-bold text-bioLight-accentTerra dark:text-bioDark-accentTerra uppercase tracking-widest mb-1">Publications Metadata</span>
+                        <p class="text-[10px] text-gray-600 dark:text-gray-400 leading-normal font-mono">
+                            DOI: 10.1109/ICEED62316.2024.1092380
+                        </p>
+                    </div>
+
+                    <div class="flex flex-wrap gap-1.5">
+                        <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-black/20 dark:bg-black/40 border border-bioLight-border dark:border-bioDark-border/60 text-gray-600 dark:text-gray-400">ReactJS</span>
+                        <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-black/20 dark:bg-black/40 border border-bioLight-border dark:border-bioDark-border/60 text-gray-600 dark:text-gray-400">OpenCV API</span>
+                        <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-black/20 dark:bg-black/40 border border-bioLight-border dark:border-bioDark-border/60 text-gray-600 dark:text-gray-400">Font Vector</span>
+                    </div>
+                </div>
+
+                <!-- Project 3: EMSD Summer Internship NetBox Deployment -->
+                <div class="project-card group bg-bioLight-card dark:bg-bioDark-card rounded-2xl border border-bioLight-border dark:border-bioDark-border p-5 flex flex-col justify-between" data-category="transit flex">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="p-2 rounded-xl bg-bioLight-accentSage/10 dark:bg-bioDark-accentSage/10 text-bioLight-accentSage dark:text-bioDark-accentSage">
+                                <i data-lucide="server" class="w-5 h-5"></i>
+                            </div>
+                            <span class="text-[10px] font-bold px-2.5 py-1 rounded-full bg-bioLight-border/40 dark:bg-bioDark-border/60 text-bioLight-textMuted dark:text-bioDark-textMuted">EMSD HKSAR</span>
+                        </div>
+                        <h4 class="serif-title text-lg font-medium text-gray-900 dark:text-white mb-1 group-hover:text-bioLight-accentSage dark:group-hover:text-bioDark-accentSage transition-colors">Infrastructure Network Mapping</h4>
+                        <p class="text-xs text-bioLight-textMuted dark:text-bioDark-textMuted leading-relaxed mb-4">
+                            Led IT network infrastructure digital transformation. Implemented NetBox tool under Linux, compiling detailed visuals and configurations of over 200+ network assets.
+                        </p>
+                    </div>
+
+                    <div class="bg-black/10 dark:bg-black/30 rounded-xl p-3 border border-bioLight-border/30 dark:border-bioDark-border/30 mb-4 text-center">
+                        <span class="block text-[9px] font-bold text-bioLight-accentSage dark:text-bioDark-accentSage uppercase tracking-widest mb-1 text-left">Infrastructure Metrics</span>
+                        <div class="flex items-center justify-around text-xs py-1">
+                            <div>
+                                <span class="block font-bold text-gray-950 dark:text-white text-base">200+</span>
+                                <span class="text-[8px] text-gray-500 uppercase font-semibold">Tracked Nodes</span>
+                            </div>
+                            <div class="h-8 w-px bg-bioLight-border dark:bg-bioDark-border/40"></div>
+                            <div>
+                                <span class="block font-bold text-emerald-500 text-base">100%</span>
+                                <span class="text-[8px] text-gray-500 uppercase font-semibold">Visualized</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-wrap gap-1.5">
+                        <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-black/20 dark:bg-black/40 border border-bioLight-border dark:border-bioDark-border/60 text-gray-600 dark:text-gray-400">NetBox</span>
+                        <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-black/20 dark:bg-black/40 border border-bioLight-border dark:border-bioDark-border/60 text-gray-600 dark:text-gray-400">Linux OS</span>
+                        <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-black/20 dark:bg-black/40 border border-bioLight-border dark:border-bioDark-border/60 text-gray-600 dark:text-gray-400">Asset Mgmt</span>
+                    </div>
+                </div>
+
+                <!-- Project 4: OGCIO / Digital Policy Office Promotional Campaigns -->
+                <div class="project-card group bg-bioLight-card dark:bg-bioDark-card rounded-2xl border border-bioLight-border dark:border-bioDark-border p-5 flex flex-col justify-between" data-category="multimedia flex">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="p-2 rounded-xl bg-bioLight-accentSage/10 dark:bg-bioDark-accentSage/10 text-bioLight-accentSage dark:text-bioDark-accentSage">
+                                <i data-lucide="smartphone" class="w-5 h-5"></i>
+                            </div>
+                            <span class="text-[10px] font-bold px-2.5 py-1 rounded-full bg-bioLight-border/40 dark:bg-bioDark-border/60 text-bioLight-textMuted dark:text-bioDark-textMuted">OGCIO HKSAR</span>
+                        </div>
+                        <h4 class="serif-title text-lg font-medium text-gray-900 dark:text-white mb-1 group-hover:text-bioLight-accentSage dark:group-hover:text-bioDark-accentSage transition-colors">iAM Smart Digital Assets</h4>
+                        <p class="text-xs text-bioLight-textMuted dark:text-bioDark-textMuted leading-relaxed mb-4">
+                            Created over 30+ infographics, animated marketing deliverables, and layout adjustments for the "iAM Smart" suite, boosting community digital engagement during HKCCF 2024.
+                        </p>
+                    </div>
+
+                    <div class="flex flex-wrap gap-1.5">
+                        <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-black/20 dark:bg-black/40 border border-bioLight-border dark:border-bioDark-border/60 text-gray-600 dark:text-gray-400">Media Design</span>
+                        <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-black/20 dark:bg-black/40 border border-bioLight-border dark:border-bioDark-border/60 text-gray-600 dark:text-gray-400">HTML Maintenance</span>
+                        <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-black/20 dark:bg-black/40 border border-bioLight-border dark:border-bioDark-border/60 text-gray-600 dark:text-gray-400">Premiere Pro</span>
+                    </div>
+                </div>
+
+                <!-- Project 5: Smart IoT Data Hackathon Champion 2026 -->
+                <div class="project-card group bg-bioLight-card dark:bg-bioDark-card rounded-2xl border border-bioLight-border dark:border-bioDark-border p-5 flex flex-col justify-between" data-category="hci transit flex">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="p-2 rounded-xl bg-bioLight-accentTerra/10 dark:bg-bioDark-accentTerra/10 text-bioLight-accentTerra dark:text-bioDark-accentTerra">
+                                <i data-lucide="trophy" class="w-5 h-5"></i>
+                            </div>
+                            <span class="text-[10px] font-bold px-2.5 py-1 rounded-full bg-bioLight-border/40 dark:bg-bioDark-border/60 text-bioLight-textMuted dark:text-bioDark-textMuted">Hackathon 1st</span>
+                        </div>
+                        <h4 class="serif-title text-lg font-medium text-gray-900 dark:text-white mb-1 group-hover:text-bioLight-accentTerra dark:group-hover:text-bioDark-accentTerra transition-colors">IoT Data Hackathon Champion</h4>
+                        <p class="text-xs text-bioLight-textMuted dark:text-bioDark-textMuted leading-relaxed mb-4">
+                            Awarded 1st Place (Professional Stream) and Double Innovation Award for designing an integrated, real-time sensory environmental telemetry tracking station.
+                        </p>
+                    </div>
+
+                    <div class="flex flex-wrap gap-1.5">
+                        <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-black/20 dark:bg-black/40 border border-bioLight-border dark:border-bioDark-border/60 text-gray-600 dark:text-gray-400">Arduino</span>
+                        <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-black/20 dark:bg-black/40 border border-bioLight-border dark:border-bioDark-border/60 text-gray-600 dark:text-gray-400">MQTT Protocols</span>
+                        <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-black/20 dark:bg-black/40 border border-bioLight-border dark:border-bioDark-border/60 text-gray-600 dark:text-gray-400">ReactJS</span>
+                    </div>
+                </div>
+
+                <!-- Project 6: HKSciFest Arduino Sensory Gas Identifier -->
+                <div class="project-card group bg-bioLight-card dark:bg-bioDark-card rounded-2xl border border-bioLight-border dark:border-bioDark-border p-5 flex flex-col justify-between" data-category="multimedia flex">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="p-2 rounded-xl bg-bioLight-accentSage/10 dark:bg-bioDark-accentSage/10 text-bioLight-accentSage dark:text-bioDark-accentSage">
+                                <i data-lucide="cpu" class="w-5 h-5"></i>
+                            </div>
+                            <span class="text-[10px] font-bold px-2.5 py-1 rounded-full bg-bioLight-border/40 dark:bg-bioDark-border/60 text-bioLight-textMuted dark:text-bioDark-textMuted">CUHK STEM</span>
+                        </div>
+                        <h4 class="serif-title text-lg font-medium text-gray-900 dark:text-white mb-1 group-hover:text-bioLight-accentSage dark:group-hover:text-bioDark-accentSage transition-colors">STEM Arduino Gas Monitor</h4>
+                        <p class="text-xs text-bioLight-textMuted dark:text-bioDark-textMuted leading-relaxed mb-4">
+                            Engineered robust Arduino air toxicity sensors and organized STEM workshops for the HKSciFest, rendering environmental data simple for students.
+                        </p>
+                    </div>
+
+                    <div class="flex flex-wrap gap-1.5">
+                        <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-black/20 dark:bg-black/40 border border-bioLight-border dark:border-bioDark-border/60 text-gray-600 dark:text-gray-400">Arduino C</span>
+                        <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-black/20 dark:bg-black/40 border border-bioLight-border dark:border-bioDark-border/60 text-gray-600 dark:text-gray-400">Gas Calibration</span>
+                        <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-black/20 dark:bg-black/40 border border-bioLight-border dark:border-bioDark-border/60 text-gray-600 dark:text-gray-400">Public STEM</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ================================================================= -->
+        <!-- ================================================================= -->
+        <section id="tab-creative-log" class="hidden space-y-10">
+            
+            <div class="border-b border-bioLight-border dark:border-bioDark-border/50 pb-6">
+                <h2 class="serif-title text-3xl font-normal text-gray-900 dark:text-white">Prose & Frames</h2>
+                <p class="text-sm text-bioLight-textMuted dark:text-bioDark-textMuted mt-1">Merging technical clarity with human narratives and street imagery.</p>
+            </div>
+
+            <!-- Double Column: Left (Prose list), Right (Frames Gallery) -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+                
+                <!-- Prose List -->
+                <div class="lg:col-span-7 space-y-6">
+                    <h3 class="serif-title text-xl font-normal text-bioLight-accentSage dark:text-bioDark-accentSage border-b border-bioLight-border dark:border-bioDark-border/20 pb-2">Selected Reflections</h3>
+                    
+                    <!-- Article Item 1 -->
+                    <article onclick="openProse('empathy')" class="group cursor-pointer space-y-2 p-4 rounded-xl hover:bg-bioLight-card dark:hover:bg-bioDark-card transition-colors border border-transparent hover:border-bioLight-border dark:hover:border-bioDark-border/60">
+                        <div class="flex justify-between text-xs text-bioLight-textMuted dark:text-bioDark-textMuted">
+                            <span>Analysis & Society</span>
+                            <time>March 12, 2026</time>
+                        </div>
+                        <h4 class="serif-title text-lg font-medium text-gray-900 dark:text-white group-hover:text-bioLight-accentSage dark:group-hover:text-bioDark-accentSage transition-colors">On Empathy in Engineering</h4>
+                        <p class="text-xs text-bioLight-textMuted dark:text-bioDark-textMuted line-clamp-2">
+                            How we balance mathematical rigor with user-centric intuition. Bringing communication humanities into infrastructural systems.
+                        </p>
+                        <span class="inline-flex items-center gap-1 text-[11px] font-semibold text-bioLight-accentSage dark:text-bioDark-accentSage mt-2">Read Essay <i data-lucide="arrow-up-right" class="w-3 h-3"></i></span>
+                    </article>
+
+                    <!-- Article Item 2 -->
+                    <article onclick="openProse('glass')" class="group cursor-pointer space-y-2 p-4 rounded-xl hover:bg-bioLight-card dark:hover:bg-bioDark-card transition-colors border border-transparent hover:border-bioLight-border dark:hover:border-bioDark-border/60">
+                        <div class="flex justify-between text-xs text-bioLight-textMuted dark:text-bioDark-textMuted">
+                            <span>Urban Systems</span>
+                            <time>January 20, 2026</time>
+                        </div>
+                        <h4 class="serif-title text-lg font-medium text-gray-900 dark:text-white group-hover:text-bioLight-accentSage dark:group-hover:text-bioDark-accentSage transition-colors">City of Glass, City of Steel</h4>
+                        <p class="text-xs text-bioLight-textMuted dark:text-bioDark-textMuted line-clamp-2">
+                            Reflections on Hong Kong's vertical architecture, dense networks, and spatial density limits. Exploring the mental wellness spectrum.
+                        </p>
+                        <span class="inline-flex items-center gap-1 text-[11px] font-semibold text-bioLight-accentSage dark:text-bioDark-accentSage mt-2">Read Essay <i data-lucide="arrow-up-right" class="w-3 h-3"></i></span>
+                    </article>
+
+                    <!-- Article Item 3 -->
+                    <article onclick="openProse('signaling')" class="group cursor-pointer space-y-2 p-4 rounded-xl hover:bg-bioLight-card dark:hover:bg-bioDark-card transition-colors border border-transparent hover:border-bioLight-border dark:hover:border-bioDark-border/60">
+                        <div class="flex justify-between text-xs text-bioLight-textMuted dark:text-bioDark-textMuted">
+                            <span>Transit Chronicles</span>
+                            <time>November 05, 2025</time>
+                        </div>
+                        <h4 class="serif-title text-lg font-medium text-gray-900 dark:text-white group-hover:text-bioLight-accentSage dark:group-hover:text-bioDark-accentSage transition-colors">The Subterranean Rhythm</h4>
+                        <p class="text-xs text-bioLight-textMuted dark:text-bioDark-textMuted line-clamp-2">
+                            A philosophical take on railway scheduling systems. How modern automated transit tracks mold the psychological flow of urban inhabitants...
+                        </p>
+                        <span class="inline-flex items-center gap-1 text-[11px] font-semibold text-bioLight-accentSage dark:text-bioDark-accentSage mt-2">Read Essay <i data-lucide="arrow-up-right" class="w-3 h-3"></i></span>
+                    </article>
+
+                </div>
+
+                <!-- Frames Gallery -->
+                <div class="lg:col-span-5 space-y-6">
+                    <h3 class="serif-title text-xl font-normal text-bioLight-accentTerra dark:text-bioDark-accentTerra border-b border-bioLight-border dark:border-bioDark-border/20 pb-2">Captured Frames</h3>
+                    
+                    <div class="grid grid-cols-2 gap-4">
+                        
+                        <!-- Street Photo Card 1 -->
+                        <div class="relative rounded-xl overflow-hidden group border border-bioLight-border dark:border-bioDark-border/60 bg-gradient-to-br from-[#121515] to-[#2E3535]">
+                            <div class="aspect-square flex items-center justify-center p-4">
+                                <svg class="w-full h-full text-bioLight-accentSage dark:text-bioDark-accentSage opacity-40 group-hover:scale-105 transition-transform duration-500" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <path d="M10 90 L10 20 L40 20 L40 90 Z" />
+                                    <path d="M45 90 L45 10 L75 10 L75 90 Z" />
+                                    <path d="M80 90 L80 35 L95 35 L95 90 Z" />
+                                    <line x1="20" y1="30" x2="30" y2="30" />
+                                    <line x1="20" y1="45" x2="30" y2="45" />
+                                    <line x1="55" y1="20" x2="65" y2="20" />
+                                    <line x1="55" y1="35" x2="65" y2="35" />
+                                    <line x1="55" y1="50" x2="65" y2="50" />
+                                </svg>
+                            </div>
+                            <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-3 text-white">
+                                <span class="text-[9px] uppercase tracking-wider text-bioDark-accentSage">Architecture</span>
+                                <p class="serif-title text-xs font-normal">Quarry Bay Towers</p>
+                            </div>
+                        </div>
+
+                        <!-- Street Photo Card 2 -->
+                        <div class="relative rounded-xl overflow-hidden group border border-bioLight-border dark:border-bioDark-border/60 bg-gradient-to-br from-[#121515] to-[#2E3535]">
+                            <div class="aspect-square flex items-center justify-center p-4">
+                                <svg class="w-full h-full text-bioLight-accentTerra dark:text-bioDark-accentTerra opacity-40 group-hover:scale-105 transition-transform duration-500" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <path d="M10 50 Q 50 10, 90 50 T 10 50" stroke-dasharray="2,2"/>
+                                    <line x1="10" y1="70" x2="90" y2="70" stroke-width="2"/>
+                                    <circle cx="30" cy="70" r="4" fill="currentColor"/>
+                                    <circle cx="70" cy="70" r="4" fill="currentColor"/>
+                                    <rect x="20" y="55" width="60" height="10" />
+                                </svg>
+                            </div>
+                            <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-3 text-white">
+                                <span class="text-[9px] uppercase tracking-wider text-bioDark-accentTerra">Transit</span>
+                                <p class="serif-title text-xs font-normal">MTR Blue Hour</p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <p class="text-[10px] text-bioLight-textMuted dark:text-bioDark-textMuted text-center font-light italic">All street frames captured via Fuji X-T5 & Leica lenses.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ================================================================= -->
+        <!-- ================================================================= -->
+        <section id="tab-about" class="hidden space-y-12">
+            
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 animate-fade-in">
+                
+                <!-- Expanded Bio + Skills Categories -->
+                <div class="lg:col-span-7 space-y-8">
+                    <div class="space-y-4">
+                        <h2 class="serif-title text-3xl font-normal text-gray-900 dark:text-white font-serif">Connecting the Dots</h2>
+                        <p class="text-sm text-bioLight-textMuted dark:text-bioDark-textMuted leading-relaxed">
+                            I am Xie Chen Zhi Jie (Jacky), a Computer Engineering and Journalism graduate of CUHK, currently transitioning my technical trajectory toward smart building networks and Human-Building Interaction (HBI) research.
+                        </p>
+                        <p class="text-sm text-bioLight-textMuted dark:text-bioDark-textMuted leading-relaxed">
+                            Throughout my experience with MTR's massive signaling systems, the Digital Policy Office's promotional vectors, and EMSD's network assets mapping, my focus has remained on communication: simplifying complex structures to optimize physical environment wellness.
+                        </p>
+                    </div>
+
+                    <!-- Structured Skills Matrices -->
+                    <div class="space-y-6">
+                        <h3 class="serif-title text-xl font-normal text-gray-900 dark:text-white">Professional Competences</h3>
+                        
+                        <div class="space-y-4">
+                            <!-- Category 1 -->
+                            <div class="space-y-2">
+                                <span class="text-[10px] font-bold text-bioLight-accentSage dark:text-bioDark-accentSage tracking-widest uppercase">Systems & Infrastructure</span>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-3 py-1 rounded-lg text-xs font-medium bg-bioLight-card dark:bg-bioDark-card border border-bioLight-border dark:border-bioDark-border/60">Python Data Stack</span>
+                                    <span class="px-3 py-1 rounded-lg text-xs font-medium bg-bioLight-card dark:bg-bioDark-card border border-bioLight-border dark:border-bioDark-border/60">C++ Programming</span>
+                                    <span class="px-3 py-1 rounded-lg text-xs font-medium bg-bioLight-card dark:bg-bioDark-card border border-bioLight-border dark:border-bioDark-border/60">NetBox Network Tools</span>
+                                    <span class="px-3 py-1 rounded-lg text-xs font-medium bg-bioLight-card dark:bg-bioDark-card border border-bioLight-border dark:border-bioDark-border/60">Linux Environments</span>
+                                    <span class="px-3 py-1 rounded-lg text-xs font-medium bg-bioLight-card dark:bg-bioDark-card border border-bioLight-border dark:border-bioDark-border/60">Arduino & ESP32 IoT</span>
+                                    <span class="px-3 py-1 rounded-lg text-xs font-medium bg-bioLight-card dark:bg-bioDark-card border border-bioLight-border dark:border-bioDark-border/60">GitHub Workflows</span>
+                                </div>
+                            </div>
+
+                            <!-- Category 2 -->
+                            <div class="space-y-2">
+                                <span class="text-[10px] font-bold text-bioLight-accentTerra dark:text-bioDark-accentTerra tracking-widest uppercase">Research & Prototypes (HCI)</span>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-3 py-1 rounded-lg text-xs font-medium bg-bioLight-card dark:bg-bioDark-card border border-bioLight-border dark:border-bioDark-border/60">Figma Wireframing</span>
+                                    <span class="px-3 py-1 rounded-lg text-xs font-medium bg-bioLight-card dark:bg-bioDark-card border border-bioLight-border dark:border-bioDark-border/60">ReactJS Development</span>
+                                    <span class="px-3 py-1 rounded-lg text-xs font-medium bg-bioLight-card dark:bg-bioDark-card border border-bioLight-border dark:border-bioDark-border/60">Onshape Engineering</span>
+                                    <span class="px-3 py-1 rounded-lg text-xs font-medium bg-bioLight-card dark:bg-bioDark-card border border-bioLight-border dark:border-bioDark-border/60">OpenCV</span>
+                                    <span class="px-3 py-1 rounded-lg text-xs font-medium bg-bioLight-card dark:bg-bioDark-card border border-bioLight-border dark:border-bioDark-border/60">Bootstrap</span>
+                                </div>
+                            </div>
+
+                            <!-- Category 3 -->
+                            <div class="space-y-2">
+                                <span class="text-[10px] font-bold text-bioLight-accentSage dark:text-bioDark-accentSage tracking-widest uppercase">Communications & Languages</span>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-3 py-1 rounded-lg text-xs font-medium bg-bioLight-card dark:bg-bioDark-card border border-bioLight-border dark:border-bioDark-border/60">Multimedia Production</span>
+                                    <span class="px-3 py-1 rounded-lg text-xs font-medium bg-bioLight-card dark:bg-bioDark-card border border-bioLight-border dark:border-bioDark-border/60">Lightroom & Premiere Pro</span>
+                                    <span class="px-3 py-1 rounded-lg text-xs font-medium bg-bioLight-card dark:bg-bioDark-card border border-bioLight-border dark:border-bioDark-border/60">Cantonese (Native)</span>
+                                    <span class="px-3 py-1 rounded-lg text-xs font-medium bg-bioLight-card dark:bg-bioDark-card border border-bioLight-border dark:border-bioDark-border/60">English (Proficient)</span>
+                                    <span class="px-3 py-1 rounded-lg text-xs font-medium bg-bioLight-card dark:bg-bioDark-card border border-bioLight-border dark:border-bioDark-border/60">Mandarin (Proficient)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline / Resume Structure -->
+                <div class="lg:col-span-5 space-y-6">
+                    <h3 class="serif-title text-xl font-normal text-gray-900 dark:text-white">Professional Timeline</h3>
+                    
+                    <div class="relative border-l border-bioLight-border dark:border-bioDark-border/60 pl-4 space-y-6">
+                        
+                        <!-- Timeline Item 1 -->
+                        <div class="relative">
+                            <div class="absolute -left-[21px] top-1 w-3 h-3 rounded-full bg-bioLight-accentTerra dark:bg-bioDark-accentTerra border-4 border-bioLight-bg dark:border-bioDark-bg"></div>
+                            <span class="text-[10px] font-bold text-bioLight-accentTerra dark:text-bioDark-accentTerra">Present Semester</span>
+                            <h4 class="serif-title text-base font-semibold text-gray-900 dark:text-white">Part-time MPhil in Computer Science</h4>
+                            <p class="text-xs text-gray-600 dark:text-gray-400 font-medium">BiWell Lab, City University of Hong Kong</p>
+                            <p class="text-[11px] text-bioLight-textMuted dark:text-bioDark-textMuted mt-1">Focusing research targets on Human-Building Interaction (HBI) and smart environmental optimization metrics.</p>
+                        </div>
+
+                        <!-- Timeline Item 2 -->
+                        <div class="relative">
+                            <div class="absolute -left-[21px] top-1 w-3 h-3 rounded-full bg-bioLight-accentSage dark:bg-bioDark-accentSage border-4 border-bioLight-bg dark:border-bioDark-bg"></div>
+                            <span class="text-[10px] font-bold text-bioLight-accentSage dark:text-bioDark-accentSage">Jul 2025 - Present</span>
+                            <h4 class="serif-title text-base font-semibold text-gray-900 dark:text-white">Graduate Engineer</h4>
+                            <p class="text-xs text-gray-600 dark:text-gray-400 font-medium">MTR Corporation Limited (香港鐵路有限公司)</p>
+                            <p class="text-[11px] text-bioLight-textMuted dark:text-bioDark-textMuted mt-1">Railway Operations and Engineering Trainee within the Scheme 'A' HKIE structured curriculum.</p>
+                        </div>
+
+                        <!-- Timeline Item 3 -->
+                        <div class="relative">
+                            <div class="absolute -left-[21px] top-1 w-3 h-3 rounded-full bg-gray-400 border-4 border-bioLight-bg dark:border-bioDark-bg"></div>
+                            <span class="text-[10px] font-bold text-bioLight-textMuted dark:text-bioDark-textMuted">Jul 2024 - Aug 2024</span>
+                            <h4 class="serif-title text-base font-semibold text-gray-900 dark:text-white">Summer Intern — iAM Smart Team</h4>
+                            <p class="text-xs text-gray-600 dark:text-gray-400 font-medium">OGCIO / Digital Policy Office (DPO)</p>
+                            <p class="text-[11px] text-bioLight-textMuted dark:text-bioDark-textMuted mt-1">Composed promotional media vectors and optimized web portal configurations to enhance public utility visibility.</p>
+                        </div>
+
+                        <!-- Timeline Item 4 -->
+                        <div class="relative">
+                            <div class="absolute -left-[21px] top-1 w-3 h-3 rounded-full bg-gray-400 border-4 border-bioLight-bg dark:border-bioDark-bg"></div>
+                            <span class="text-[10px] font-bold text-bioLight-textMuted dark:text-bioDark-textMuted">Jul 2023 - Sep 2023</span>
+                            <h4 class="serif-title text-base font-semibold text-gray-900 dark:text-white">Summer Intern — Network & HCI</h4>
+                            <p class="text-xs text-gray-600 dark:text-gray-400 font-medium">Electrical & Mechanical Services Dept. (EMSD)</p>
+                            <p class="text-[11px] text-bioLight-textMuted dark:text-bioDark-textMuted mt-1">Coordinated IT infrastructure virtualization frameworks, registering 200+ network components under NetBox models.</p>
+                        </div>
+
+                        <!-- Timeline Item 5 -->
+                        <div class="relative">
+                            <div class="absolute -left-[21px] top-1 w-3 h-3 rounded-full bg-gray-400 border-4 border-bioLight-bg dark:border-bioDark-bg"></div>
+                            <span class="text-[10px] font-bold text-bioLight-textMuted dark:text-bioDark-textMuted">Sep 2020 - Dec 2024</span>
+                            <h4 class="serif-title text-base font-semibold text-gray-900 dark:text-white">B.Eng in Computer Engineering</h4>
+                            <p class="text-xs text-gray-600 dark:text-gray-400 font-medium">The Chinese University of Hong Kong (CUHK)</p>
+                            <p class="text-[11px] text-bioLight-textMuted dark:text-bioDark-textMuted mt-1">Graduated with a Major in Computer Engineering and minor tracks in Journalism and Communication.</p>
+                        </div>
+
+                    </div>
+
+                    <!-- Awards list -->
+                    <div class="pt-4 space-y-3">
+                        <h4 class="serif-title text-lg font-semibold text-gray-900 dark:text-white">Honors & Awards</h4>
+                        <ul class="text-xs space-y-2 text-bioLight-textMuted dark:text-bioDark-textMuted">
+                            <li class="flex items-start gap-2">
+                                <i data-lucide="award" class="w-4 h-4 text-bioLight-accentTerra dark:text-bioDark-accentTerra flex-shrink-0"></i>
+                                <span><strong>IoT Data Hackathon Champion 2026</strong> — Professional Stream (Double Innovation Award Winner)</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i data-lucide="award" class="w-4 h-4 text-bioLight-accentTerra dark:text-bioDark-accentTerra flex-shrink-0"></i>
+                                <span><strong>Professor Charles K. Kao Student Creativity Award 2025</strong> — 1st Runner-up</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i data-lucide="award" class="w-4 h-4 text-bioLight-accentTerra dark:text-bioDark-accentTerra flex-shrink-0"></i>
+                                <span><strong>CUHK Outstanding Students Award 2024</strong> — Focus in Innovation and Invention</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Simulated CV compilation trigger -->
+                    <button onclick="simulateCVDownload()" class="w-full flex items-center justify-center gap-2 py-3 rounded-xl bg-bioLight-accentSage text-white dark:bg-bioDark-accentSage dark:text-bioDark-bg font-bold text-xs shadow-md hover:scale-[1.01] transition-transform">
+                        <i data-lucide="file-text" class="w-4 h-4"></i>
+                        Download Full CV Documents (PDF)
+                    </button>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Custom Elegant Minimal Toast System -->
+    <div id="toast-box" class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none flex items-center gap-3 bg-bioLight-card dark:bg-bioDark-card border border-bioLight-border dark:border-bioDark-border/80 px-4 py-3 rounded-xl shadow-xl">
+        <div id="toast-icon-container" class="w-8 h-8 rounded-lg bg-bioLight-accentSage/15 text-bioLight-accentSage dark:bg-bioDark-accentSage/10 dark:text-bioDark-accentSage flex items-center justify-center">
+            <i data-lucide="info" class="w-4.5 h-4.5"></i>
+        </div>
+        <div>
+            <span class="block text-xs font-bold text-gray-950 dark:text-white" id="toast-title">System Alert</span>
+            <span class="block text-[10px] text-bioLight-textMuted dark:text-bioDark-textMuted mt-0.5" id="toast-message">Task handled successfully.</span>
+        </div>
+    </div>
+
+    <!-- Expanded Prose Modal Reader -->
+    <div id="prose-modal" class="hidden fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+        <div class="bg-bioLight-bg dark:bg-bioDark-bg border border-bioLight-border dark:border-bioDark-border max-w-2xl w-full rounded-2xl shadow-2xl flex flex-col max-h-[85vh] overflow-hidden transform scale-95 transition-transform duration-300" id="prose-modal-box">
+            
+            <!-- Modal Header -->
+            <div class="p-6 border-b border-bioLight-border dark:border-bioDark-border/60 flex justify-between items-start">
+                <div>
+                    <span id="modal-category" class="text-[10px] font-bold text-bioLight-accentSage dark:text-bioDark-accentSage uppercase tracking-widest">Reflection</span>
+                    <h3 id="modal-title" class="serif-title text-2xl font-normal text-gray-900 dark:text-white mt-1">Reflection Title</h3>
+                    <span id="modal-date" class="text-[10px] text-bioLight-textMuted dark:text-bioDark-textMuted block mt-0.5">Date Placeholder</span>
+                </div>
+                <button onclick="closeProse()" class="p-1.5 rounded-lg hover:bg-bioLight-card dark:hover:bg-bioDark-card text-gray-500 hover:text-gray-900 dark:hover:text-white transition-colors">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+            </div>
+
+            <!-- Modal Scrollable Content -->
+            <div class="p-6 overflow-y-auto space-y-4 text-xs text-bioLight-textMuted dark:text-bioDark-textMuted leading-relaxed font-light" id="modal-body-text">
+                <!-- Injected via JavaScript -->
+            </div>
+
+            <!-- Modal Footer -->
+            <div class="p-4 border-t border-bioLight-border dark:border-bioDark-border/60 bg-bioLight-card dark:bg-bioDark-card flex justify-between items-center">
+                <span class="text-[9px] italic">Authored by Jacky Xie Chen</span>
+                <button onclick="closeProse()" class="px-4 py-2 rounded-xl bg-bioLight-border dark:bg-bioDark-border text-xs font-semibold hover:opacity-90 transition-opacity">Close Reading</button>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Footnote Footer -->
+    <footer class="border-t border-bioLight-border dark:border-bioDark-border/50 py-6 bg-bioLight-card/50 dark:bg-bioDark-card/20 z-10">
+        <div class="max-w-6xl mx-auto px-4 text-center sm:flex sm:justify-between sm:items-center space-y-4 sm:space-y-0 text-xs text-bioLight-textMuted dark:text-bioDark-textMuted font-light">
+            <p>&copy; 2026 Jacky Xie Chen. Handcrafted using premium biophilic styling.</p>
+            <div class="flex justify-center gap-6">
+                <a href="https://www.linkedin.com/in/jackyxczj" target="_blank" class="hover:text-gray-900 dark:hover:text-white transition-colors">LinkedIn</a>
+                <a href="https://github.com/JackyZhiJie" target="_blank" class="hover:text-gray-900 dark:hover:text-white transition-colors">GitHub</a>
+                <a href="https://jackyzhijie.github.io/" target="_blank" class="hover:text-gray-900 dark:hover:text-white transition-colors">Live Portfolio</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom Interactive Core Scripting -->
+    <script>
+        // Active Routing States
+        let currentTab = 'home';
+        let isDarkMode = true;
+        let selectedCategory = 'all';
+
+        // Simulated signals for waveform
+        let activeSignalInterval = null;
+
+        window.onload = function() {
+            lucide.createIcons();
+            triggerSignalDecode();
+            updateAmbientSimulation();
+        };
+
+        // Tab and Section Navigation Controller
+        function navigateTo(tabId) {
+            currentTab = tabId;
+
+            const sections = ['home', 'work-research', 'creative-log', 'about'];
+            sections.forEach(sec => {
+                const el = document.getElementById(`tab-${sec}`);
+                if (sec === tabId) {
+                    el.classList.remove('hidden');
+                } else {
+                    el.classList.add('hidden');
+                }
+            });
+
+            // Update Desktop Header Selection States
+            const navLinks = document.querySelectorAll('.nav-link');
+            const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+            
+            navLinks.forEach((link, idx) => {
+                const targetSec = sections[idx];
+                if (targetSec === tabId) {
+                    link.className = "nav-link px-4 py-2 rounded-lg text-sm font-semibold transition-colors text-bioLight-accentSage dark:text-bioDark-accentSage bg-bioLight-card dark:bg-bioDark-accentMoss/30";
+                } else {
+                    link.className = "nav-link px-4 py-2 rounded-lg text-sm font-medium text-bioLight-textMuted dark:text-bioDark-textMuted hover:text-gray-900 dark:hover:text-white transition-colors";
+                }
+            });
+
+            mobileNavLinks.forEach((link, idx) => {
+                const targetSec = sections[idx];
+                if (targetSec === tabId) {
+                    link.className = "mobile-nav-link block w-full text-left px-4 py-3 rounded-xl font-medium bg-bioLight-card dark:bg-bioDark-card text-bioLight-accentSage dark:text-bioDark-accentSage";
+                } else {
+                    link.className = "mobile-nav-link block w-full text-left px-4 py-3 rounded-xl font-medium text-bioLight-textMuted dark:text-bioDark-textMuted";
+                }
+            });
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Deep link redirection with preset filters
+        function navigateToGateway(tabId, presetFilter) {
+            navigateTo(tabId);
+            filterProjects(presetFilter);
+        }
+
+        // Mobile Menu Drawer Handler
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const menuIcon = document.getElementById('menu-icon');
+            
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+                menuIcon.setAttribute('data-lucide', 'x');
+            } else {
+                menu.classList.add('hidden');
+                menuIcon.setAttribute('data-lucide', 'menu');
+            }
+            lucide.createIcons();
+        }
+
+        // Dynamic Filter Engine
+        function filterProjects(categoryId) {
+            selectedCategory = categoryId;
+            const cards = document.querySelectorAll('.project-card');
+            
+            cards.forEach(card => {
+                const cardCategoryStr = card.getAttribute('data-category');
+                if (categoryId === 'all' || cardCategoryStr.includes(categoryId)) {
+                    card.classList.remove('hidden');
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+
+            // Update Active Filter Toggle Buttons
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            filterBtns.forEach(btn => {
+                if (btn.id === `filter-btn-${categoryId}`) {
+                    btn.className = "filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-bioLight-accentSage text-white dark:bg-bioDark-accentSage dark:text-bioDark-bg transition-colors";
+                } else {
+                    btn.className = "filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold text-bioLight-textMuted dark:text-bioDark-textMuted hover:text-gray-900 dark:hover:text-white transition-colors";
+                }
+            });
+        }
+
+        // Dark & Light Theme Controller
+        function toggleTheme() {
+            const body = document.body;
+            const sunIcon = document.getElementById('sun-icon');
+            const moonIcon = document.getElementById('moon-icon');
+
+            if (body.classList.contains('dark')) {
+                body.classList.remove('dark');
+                body.classList.add('bg-bioLight-bg', 'text-gray-800');
+                body.classList.remove('bg-bioDark-bg', 'text-gray-100');
+                sunIcon.classList.remove('hidden');
+                moonIcon.classList.add('hidden');
+                isDarkMode = false;
+                showToast("Theme Altered", "Warm Ceramic light theme initialized.", 'sun');
+            } else {
+                body.classList.add('dark');
+                body.classList.add('bg-bioDark-bg', 'text-gray-100');
+                body.classList.remove('bg-bioLight-bg', 'text-gray-800');
+                sunIcon.classList.add('hidden');
+                moonIcon.classList.remove('hidden');
+                isDarkMode = true;
+                showToast("Theme Altered", "Biophilic Slate dark theme initialized.", 'moon');
+            }
+            
+            updateAmbientSimulation();
+        }
+
+        // Simulation: Signal Decoding Waveform updates (MTR logs diagnostic)
+        function triggerSignalDecode() {
+            const path = document.getElementById('signal-path');
+            const status = document.getElementById('decoder-status');
+            
+            status.textContent = "CONVERTING RAW LOGS...";
+            status.className = "text-[8px] bg-amber-500/15 text-amber-400 px-1.5 py-0.5 rounded-full font-semibold animate-pulse";
+            
+            showToast("Log Diagnostic", "Transforming MTR operational logs to telemetry charts...", 'cpu');
+
+            let step = 0;
+            if (activeSignalInterval) clearInterval(activeSignalInterval);
+
+            activeSignalInterval = setInterval(() => {
+                step += 0.25;
+                let points = [];
+                for (let i = 0; i <= 200; i += 10) {
+                    const wave1 = Math.sin(i * 0.12 + step) * 11;
+                    const wave2 = Math.cos(i * 0.06 - step) * 5;
+                    const combinedY = 20 + wave1 + wave2;
+                    points.push(`${i === 0 ? 'M' : 'L'} ${i} ${combinedY}`);
+                }
+                path.setAttribute('d', points.join(' '));
+            }, 60);
+
+            setTimeout(() => {
+                clearInterval(activeSignalInterval);
+                status.textContent = "SYNCHRONIZED";
+                status.className = "text-[8px] bg-emerald-500/15 text-emerald-400 px-1.5 py-0.5 rounded-full font-semibold";
+                
+                let points = [];
+                for (let i = 0; i <= 200; i += 10) {
+                    const combinedY = 20 + Math.sin(i * 0.06) * 4;
+                    points.push(`${i === 0 ? 'M' : 'L'} ${i} ${combinedY}`);
+                }
+                path.setAttribute('d', points.join(' '));
+                
+                showToast("Parsing Completed", "Subway operational telemetries fully mapped.", 'check');
+            }, 2500);
+        }
+
+        // Simulation: Smart Environmental Facade
+        function updateAmbientSimulation() {
+            const tempVal = document.getElementById('temp-slider').value;
+            const transVal = document.getElementById('trans-slider').value;
+            
+            document.getElementById('temp-val').textContent = `${tempVal} K`;
+            document.getElementById('trans-val').textContent = `${transVal}%`;
+            
+            const canvas = document.getElementById('ambient-canvas');
+            const auraLabel = document.getElementById('ambient-aura-label');
+            const descLabel = document.getElementById('ambient-desc-label');
+            const statusLabel = document.getElementById('ambient-status');
+            const facadeCells = document.getElementById('svg-facade-cell');
+
+            if (facadeCells) {
+                const dynamicRadius = 3.5 + (transVal / 100) * 11;
+                facadeCells.setAttribute('r', dynamicRadius);
+            }
+
+            let colorAura = "";
+            let auraName = "";
+            let auraDesc = "";
+
+            if (tempVal < 3000) {
+                colorAura = `radial-gradient(circle, rgba(194, 123, 99, ${transVal/100 * 0.5}) 0%, rgba(17, 20, 20, 1) 100%)`;
+                auraName = "Restorative Circadian Amber";
+                auraDesc = "Maximizing organic melatonin support to prepare building occupants for natural evening rest.";
+                statusLabel.textContent = "Restoration Cycle Active";
+                statusLabel.className = "inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-orange-500/20 border border-orange-500/40 text-[11px] font-semibold text-orange-300 mb-2";
+            } else if (tempVal >= 3000 && tempVal < 4500) {
+                colorAura = `radial-gradient(circle, rgba(134, 163, 150, ${transVal/100 * 0.5}) 0%, rgba(17, 20, 20, 1) 100%)`;
+                auraName = "Calming Workspace Sage";
+                auraDesc = "Deploying balanced bio-ambient levels to diminish cognitive anxiety and boost creative flow.";
+                statusLabel.textContent = "Cozy Architectural Aura";
+                statusLabel.className = "inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-[11px] font-semibold text-emerald-300 mb-2";
+            } else {
+                colorAura = `radial-gradient(circle, rgba(98, 142, 171, ${transVal/100 * 0.5}) 0%, rgba(17, 20, 20, 1) 100%)`;
+                auraName = "Dawn Stimulation Spectrum";
+                auraDesc = "Triggering high visual cognition cues matching early morning solar patterns.";
+                statusLabel.textContent = "High Focus Daylight Cycle";
+                statusLabel.className = "inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-500/20 border border-blue-500/40 text-[11px] font-semibold text-blue-300 mb-2";
+            }
+
+            canvas.style.background = colorAura;
+            auraLabel.textContent = auraName;
+            descLabel.textContent = auraDesc;
+        }
+
+        // Simulated CV Downloader Action
+        function simulateCVDownload() {
+            showToast("Compiling CV", "Organizing full B.Eng & MPhil portfolio assets...", 'download');
+            
+            setTimeout(() => {
+                const dataStr = "data:text/plain;charset=utf-8," + encodeURIComponent("XIE CHEN Zhi Jie, Jacky (Jacky Chen) - Portfolio Resume\nMTR Graduate Engineer | incoming CityU BiWell Lab MPhil\nCUHK B.Eng Computer Engineering (Minor Journalism)\n");
+                const dlAnchor = document.createElement('a');
+                dlAnchor.setAttribute("href", dataStr);
+                dlAnchor.setAttribute("download", "Jacky_Xie_Chen_CV.pdf");
+                document.body.appendChild(dlAnchor);
+                dlAnchor.click();
+                dlAnchor.remove();
+                showToast("Download Initialized", "Jacky_Xie_Chen_CV.pdf successfully generated.", 'check');
+            }, 1200);
+        }
+
+        // Custom Modular Toast Engine
+        function showToast(title, message, iconName) {
+            const toast = document.getElementById('toast-box');
+            const toastTitle = document.getElementById('toast-title');
+            const toastMsg = document.getElementById('toast-message');
+            const toastIconContainer = document.getElementById('toast-icon-container');
+
+            toastTitle.textContent = title;
+            toastMsg.textContent = message;
+            toastIconContainer.innerHTML = `<i data-lucide="${iconName}" class="w-4.5 h-4.5"></i>`;
+            lucide.createIcons();
+
+            toast.classList.remove('translate-y-20', 'opacity-0');
+            toast.classList.add('translate-y-0', 'opacity-100');
+
+            setTimeout(() => {
+                toast.classList.add('translate-y-20', 'opacity-0');
+                toast.classList.remove('translate-y-0', 'opacity-100');
+            }, 4000);
+        }
+
+        // Database holding custom reflections pairing his Journalism/Systems competencies
+        const PROSE_DATA = {
+            empathy: {
+                title: "On Empathy in Engineering",
+                category: "Analysis & Society",
+                date: "March 12, 2026",
+                text: `
+                    <p class="mb-4">In standard software and systems engineering courses, we are taught to conceptualize problems through pure structural logic. We maximize efficiency, eliminate state leaks, and optimize signal integrity. If we can run a railway signalling pipeline in sub-millisecond durations, we check our achievements boxes and close the terminal shell.</p>
+                    <p class="mb-4">However, returning to real world physical structures—such as massive underground railway stations—demonstrates where mathematical boundaries collapse. Systems do not live in isolation; they are built for, and interacted with, by humans. If an automation tool is designed with high complexity but creates operational cognitive fatigue for technicians, it fails as a human interface.</p>
+                    <p class="mb-4">Bringing my Journalism and Communications training into daily data engineering tasks at MTR teaches me to prioritize sensory validation. Empathy in engineering demands that we don't just ask "Can we build this system?" but rather "How does this system affect the cognitive rhythm of the person operating it?" This balance forms the direct path to my upcoming research explorations at CityU's BiWell Lab.</p>
+                `
+            },
+            glass: {
+                title: "City of Glass, City of Steel",
+                category: "Urban Systems & Wellness",
+                date: "January 20, 2026",
+                text: `
+                    <p class="mb-4">Hong Kong represents the absolute apex of structural vertical density. We stack workspaces, living compartments, and transit tubes on top of each other in tight grids. While this vertical density represents outstanding spatial engineering marvels, it sets massive sensory limits on human sensory well-being.</p>
+                    <p class="mb-4">How do occupants interact with natural light when their workspaces are surrounded by monolithic towers blocking the sky? How does the lack of visual natural changes affect circadian rhythms and daily stress metrics?</p>
+                    <p class="mb-4">In this investigation, we look at responsive structural envelopes. Using smart color-tuned window facades, we can artificially simulate day-to-evening lighting shifts, dynamically altering workspace environments to restore organic circadian wellness. Through Human-Building Interaction (HBI), we intend to transform static structures into active protectors of occupant mental sanity.</p>
+                `
+            },
+            signaling: {
+                title: "The Subterranean Rhythm",
+                category: "Transit Chronicles",
+                date: "November 05, 2025",
+                text: `
+                    <p class="mb-4">Beneath the bustling streets of Hong Kong, there is an invisible rhythmic loop executing millions of cycles an hour. Trains accelerate, route switches shift, telemetry updates flow back to dispatcher screens. It is a massive, automated heartbeat that coordinates structural urban flow.</p>
+                    <p class="mb-4">But transit is also a psychological space. The hum of motors, the timing of automated announcements, and the light layout on train ceilings directly sculpt the subjective passage of time for millions of daily commuters. If we map this telemetry visually to stations operators, we decrease system friction and make travel systems feel organic and calm.</p>
+                    <p class="mb-4">By analyzing these massive railway logs, my work uncovers patterns of spatial behavior. We aim to design tools that simplify complex data feeds, providing operators with high situational awareness without causing cognitive overload.</p>
+                `
+            }
+        };
+
+        // Modal Open Handler
+        function openProse(proseKey) {
+            const modal = document.getElementById('prose-modal');
+            const modalBox = document.getElementById('prose-modal-box');
+            const pData = PROSE_DATA[proseKey];
+            if (!pData) return;
+
+            document.getElementById('modal-title').textContent = pData.title;
+            document.getElementById('modal-category').textContent = pData.category;
+            document.getElementById('modal-date').textContent = pData.date;
+            document.getElementById('modal-body-text').innerHTML = pData.text;
+
+            modal.classList.remove('hidden');
+            setTimeout(() => {
+                modalBox.classList.remove('scale-95');
+                modalBox.classList.add('scale-100');
+            }, 10);
+        }
+
+        // Modal Close Handler
+        function closeProse() {
+            const modal = document.getElementById('prose-modal');
+            const modalBox = document.getElementById('prose-modal-box');
+
+            modalBox.classList.remove('scale-100');
+            modalBox.classList.add('scale-95');
+            
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 150);
+        }
+    </script>
+</body>
+</html>

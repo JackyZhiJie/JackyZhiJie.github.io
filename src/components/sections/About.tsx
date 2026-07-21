@@ -1,26 +1,7 @@
 import React from "react";
 import { Award, Download, GraduationCap, Briefcase } from "lucide-react";
-import { 
-  FaNetworkWired, 
-  FaPython, 
-  FaHtml5, 
-  FaCss3, 
-  FaDocker, 
-  FaCube, 
-  FaBootstrap, 
-  FaCameraRetro, 
-  FaLanguage 
-} from "react-icons/fa";
-import { 
-  SiCplusplus, 
-  SiJavascript, 
-  SiGithub, 
-  SiArduino, 
-  SiOpencv, 
-  SiAdobelightroom, 
-  SiAdobepremierepro, 
-  SiAdobeaudition 
-} from "react-icons/si";
+import { FaNetworkWired, FaPython, FaHtml5, FaCss3, FaDocker, FaCube, FaBootstrap, FaCameraRetro, FaLanguage } from "react-icons/fa";
+import { SiCplusplus, SiJavascript, SiGithub, SiArduino, SiOpencv, SiAdobelightroom, SiAdobepremierepro, SiAdobeaudition } from "react-icons/si";
 import { IoLogoFigma } from "react-icons/io5";
 import { RiReactjsLine } from "react-icons/ri";
 
@@ -155,7 +136,7 @@ export const AboutSection: React.FC<AboutProps> = ({ onShowToast }) => {
     },
     {
       title: "CUHK Outstanding Students Award 2024",
-      description: "Focus in Innovation and Invention",
+      description: "Innovation and Invention",
     },
   ];
 
@@ -186,36 +167,31 @@ export const AboutSection: React.FC<AboutProps> = ({ onShowToast }) => {
               </a>
               , and a <strong>Graduate Engineer</strong> at <strong>MTR Corporation Limited</strong> under the HKIE Scheme A Training.
             </p>
-              <p className="text-sm text-bioLight-textMuted dark:text-bioDark-textMuted leading-relaxed">
+            <p className="text-sm text-bioLight-textMuted dark:text-bioDark-textMuted leading-relaxed">
               My research interests lie in the field of <strong>Human-Computer Interaction (HCI)</strong>, where I explore the intersection of technology, built environments, education and human well-being.
             </p>
             <p className="text-sm text-bioLight-textMuted dark:text-bioDark-textMuted leading-relaxed">
-            I hold a <strong>B.Eng.</strong> in <strong>Computer Engineering</strong> with a minor in <strong>Journalism and Communication</strong> from <strong>The Chinese University of Hong Kong (CUHK)</strong>. My diverse background allows me to approach problems from multiple perspectives, bridging the gap between industry and academia (hopefully).
+              I hold a <strong>B.Eng.</strong> in <strong>Computer Engineering</strong> with a minor in <strong>Journalism and Communication</strong> from <strong>The Chinese University of Hong Kong (CUHK)</strong>. My diverse background allows me to approach problems from multiple perspectives, bridging the gap between industry and academia (hopefully).
             </p>
-              
-              {/* Throughout my experience with MTR's massive signaling systems, the Digital Policy Office's promotional vectors, and EMSD's network assets mapping, my focus has remained on communication: simplifying complex structures to optimize physical environment wellness.
-               */}
+
+            {/* Throughout my experience with MTR's massive signaling systems, the Digital Policy Office's promotional vectors, and EMSD's network assets mapping, my focus has remained on communication: simplifying complex structures to optimize physical environment wellness.
+             */}
           </div>
         </div>
 
         {/* Left Column: Timeline */}
         <div className="lg:col-span-6 space-y-6">
-        {/* Professional Timeline */}
+          {/* Professional Timeline */}
           <h3 className="serif-title text-xl font-normal text-gray-900 dark:text-white">Professional Timeline</h3>
           <div className="relative border-l-2 border-bioLight-border dark:border-bioDark-border/600 pl-8 space-y-8 mt-4">
             {timeline.map((event, idx) => (
               <div key={idx} className="relative group pl-1.5 transition-all duration-300 hover:translate-x-5 cursor-default">
-                <div className={`absolute -left-12 top-[2px] w-8 h-8 rounded-full border-2 bg-bioLight-bg dark:bg-bioDark-bg flex items-center justify-center transition-all duration-300 group-hover:scale-110 shadow-sm
-                  ${event.type === "current" 
-                    ? "border-bioLight-accentTerra dark:border-bioDark-accentTerra text-bioLight-accentTerra dark:text-bioDark-accentTerra" 
-                    : "border-gray-300 dark:border-bioDark-border text-bioLight-textMuted dark:text-bioDark-textMuted group-hover:border-bioLight-accentSage dark:group-hover:border-bioDark-accentSage group-hover:text-bioLight-accentSage dark:group-hover:text-bioDark-accentSage"
-                  }
-                `}>
-                  {event.iconType === "education" ? (
-                    <GraduationCap className="w-4 h-4 transition-transform duration-300 group-hover:scale-110" />
-                  ) : (
-                    <Briefcase className="w-4 h-4 transition-transform duration-300 group-hover:scale-110" />
-                  )}
+                <div
+                  className={`absolute -left-12 top-[2px] w-8 h-8 rounded-full border-2 bg-bioLight-bg dark:bg-bioDark-bg flex items-center justify-center transition-all duration-300 group-hover:scale-110 shadow-sm
+                  ${event.type === "current" ? "border-bioLight-accentTerra dark:border-bioDark-accentTerra text-bioLight-accentTerra dark:text-bioDark-accentTerra" : "border-gray-300 dark:border-bioDark-border text-bioLight-textMuted dark:text-bioDark-textMuted group-hover:border-bioLight-accentSage dark:group-hover:border-bioDark-accentSage group-hover:text-bioLight-accentSage dark:group-hover:text-bioDark-accentSage"}
+                `}
+                >
+                  {event.iconType === "education" ? <GraduationCap className="w-4 h-4 transition-transform duration-300 group-hover:scale-110" /> : <Briefcase className="w-4 h-4 transition-transform duration-300 group-hover:scale-110" />}
                 </div>
                 <span className={`text-[10px] font-bold ${event.type === "current" ? "text-bioLight-accentTerra dark:text-bioDark-accentTerra" : "text-bioLight-textMuted dark:text-bioDark-textMuted"}`}>{event.label}</span>
                 <h4 className={`serif-title text-base font-semibold text-gray-900 dark:text-white mt-0.5 transition-colors duration-300 ${event.type === "current" ? "group-hover:text-bioLight-accentTerra dark:group-hover:text-bioDark-accentTerra" : "group-hover:text-bioLight-accentSage dark:group-hover:text-bioDark-accentSage"}`}>{event.title}</h4>
@@ -232,17 +208,17 @@ export const AboutSection: React.FC<AboutProps> = ({ onShowToast }) => {
         </div>
         <div className="lg:col-span-6 space-y-6">
           {/* Awards */}
-            <h3 className="serif-title text-xl font-normal text-gray-900 dark:text-white">Honours & Awards</h3>
-            <ul className="text-sm space-y-2 text-bioLight-textMuted dark:text-bioDark-textMuted">
-              {awards.map((award, idx) => (
-                <li key={idx} className="group flex items-start gap-3 p-2 -mx-2 rounded-xl border border-transparent hover:border-bioLight-border dark:hover:border-bioDark-border/40 hover:bg-bioLight-card dark:hover:bg-bioDark-card transition-all duration-300 hover:translate-x-1 cursor-default">
-                  <Award className="w-4 h-4 text-bioLight-accentTerra dark:text-bioDark-accentTerra flex-shrink-0 mt-0.5 transition-transform duration-300 group-hover:scale-125" />
-                  <span className="transition-colors duration-300 group-hover:text-gray-900 dark:group-hover:text-white">
-                    <strong className="text-gray-900 dark:text-white transition-colors duration-300 group-hover:text-bioLight-accentTerra dark:group-hover:text-bioDark-accentTerra">{award.title}</strong> — {award.description}
-                  </span>
-                </li>
-              ))}
-            </ul>
+          <h3 className="serif-title text-xl font-normal text-gray-900 dark:text-white">Honours & Awards</h3>
+          <ul className="text-sm space-y-2 text-bioLight-textMuted dark:text-bioDark-textMuted">
+            {awards.map((award, idx) => (
+              <li key={idx} className="group flex items-start gap-3 p-2 -mx-2 rounded-xl border border-transparent hover:border-bioLight-border dark:hover:border-bioDark-border/40 hover:bg-bioLight-card dark:hover:bg-bioDark-card transition-all duration-300 hover:translate-x-1 cursor-default">
+                <Award className="w-4 h-4 text-bioLight-accentTerra dark:text-bioDark-accentTerra flex-shrink-0 mt-0.5 transition-transform duration-300 group-hover:scale-125" />
+                <span className="transition-colors duration-300 group-hover:text-gray-900 dark:group-hover:text-white">
+                  <strong className="text-gray-900 dark:text-white transition-colors duration-300 group-hover:text-bioLight-accentTerra dark:group-hover:text-bioDark-accentTerra">{award.title}</strong> — {award.description}
+                </span>
+              </li>
+            ))}
+          </ul>
           {/* Skills */}
           <div className="space-y-6">
             <h3 className="serif-title text-xl font-normal text-gray-900 dark:text-white">Professional Competences</h3>
@@ -263,7 +239,6 @@ export const AboutSection: React.FC<AboutProps> = ({ onShowToast }) => {
               </div>
             ))}
           </div>
-          
         </div>
       </div>
     </section>

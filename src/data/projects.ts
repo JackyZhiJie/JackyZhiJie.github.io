@@ -9,6 +9,8 @@ import n8n2 from '../img/projects/n8n2.png';
 import n8n1 from '../img/projects/n8n1.png';
 import cintech_green from '../img/projects/cintec_green.png'
 import chinewriting01 from '../img/write_right/algo.jpg'
+import chinewriting02 from '../img/write_right/creativity_award.jpg'
+import chinewriting03 from '../img/write_right/innovation_award.jpg'
 import iot01 from '../img/iot/award.jpg'
 import iot02 from '../img/iot/project1.jpg'
 import iot03 from '../img/iot/project2.jpg'
@@ -32,7 +34,7 @@ export const projects: Project[] = [
       { label: 'Video', url: 'https://www.youtube.com/watch?v=demo' },
       // { label: 'Slides', url: 'https://github.com/JackyZhiJie/chinese-handwriting/raw/main/slides.pdf' }
     ],
-    images: [chinewriting01, img2, img4],
+    images: [chinewriting01, chinewriting02, chinewriting03],
     metadata: {
       label: 'IEEE Publication',
       value: 'DOI: 10.1109/ICEED62316.2024.1092380',
@@ -61,8 +63,8 @@ export const projects: Project[] = [
     imageCaption: 'Innovative Hough Algorithm',
     imageCaptions: [
       'Innovative Hough Algorithm Demo',
-      'Professor Charles K. Kao Student Creativity Awards 1st Runner-up Certificate',
-      'ICEED 2024 Research Presentation Slide Preview'
+      'Professor Charles K. Kao Student Creativity Awards 1st Runner-up',
+      'CUHK Outstanding Student Award for Innovation and Invention 2024',
     ],
   },
   {

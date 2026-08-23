@@ -14,7 +14,7 @@ export const CreativeLogSection: React.FC<CreativeLogProps> = ({ onOpenProse }) 
       <div className="border-b border-bioLight-border dark:border-bioDark-border/50 pb-6">
         <h2 className="serif-title text-3xl font-normal text-gray-900 dark:text-white">Prose & Frames</h2>
         <p className="text-sm text-bioLight-textMuted dark:text-bioDark-textMuted mt-1">
-          I Emo a lot and I like to write and take pictures to express it I guess? Maybe its just my way of processing and coping with things that happen in my life. I think its a cool way to connect with people too, sharing my thoughts and feelings and seeing how they resonate with others. (Not sure if its cool yet...)
+          I Emo a lot and I like to write and take pictures to express it. Maybe it's just my way of processing and coping with things that happen in my life. I think it's a cool way to connect with people too, sharing my thoughts and feelings and seeing how they resonate with others. (Not sure if it's cool yet...)
         </p>
       </div>
 

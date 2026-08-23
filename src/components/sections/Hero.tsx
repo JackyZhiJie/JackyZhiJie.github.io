@@ -144,7 +144,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onNavigateToTab, onSho
         <div className="md:col-span-7 lg:col-span-8 space-y-6 text-center md:text-left">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-bioLight-card dark:bg-bioDark-accentMoss/20 border border-bioLight-border dark:border-bioDark-border/40 text-xs font-semibold text-bioLight-accentSage dark:text-bioDark-accentSage tracking-wide">
             <span className="w-2 h-2 rounded-full bg-bioDark-accentSage animate-pulse"></span>
-            Connecting Public Smart Infrastructure with Human Well-being
+            Connecting Smart Infrastructure with Human Well-being
           </div>
 
           <h1 className="serif-title text-4xl sm:text-5xl lg:text-6xl font-normal tracking-tight text-gray-900 dark:text-white leading-tight">

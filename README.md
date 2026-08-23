@@ -1,4 +1,6 @@
-# Jacky Xie Chen - Professional Portfolio Website
+# Jacky Chen - Professional Portfolio Website
+
+https://jackyzhijie.github.io/
 
 A modern, fully responsive TypeScript/React portfolio website with biophilic design elements.
 
